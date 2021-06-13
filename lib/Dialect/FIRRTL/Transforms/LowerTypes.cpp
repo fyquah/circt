@@ -849,14 +849,13 @@ void TypeLoweringVisitor::visitExpr(SubfieldOp op) {
 
 // Gracefully die on subaccess operations
 void TypeLoweringVisitor::visitExpr(SubaccessOp op) {
-  op.emitError("SubaccessOp not handled.");
+  emitError(op.getLoc(), "SubaccessOp not handled.");
   // We need to do enough transformation to not segfault
   // Lower operation to an access of item 0
-  auto input = op.input();
-  SmallVector<FlatBundleFieldEntry, 8> fieldTypes;
-  flattenType(input.getType().cast<FIRRTLType>(), fieldTypes);
-  op.replaceAllUsesWith(
-      getBundleLowering(FieldRef(input, fieldTypes[0].fieldID)));
+  auto subfieldOp = OpBuilder(op).create<SubindexOp>(op.getLoc(), op.getType(),
+                                                     op.input(), 0);
+  op.replaceAllUsesWith(subfieldOp.result());
+  visitExpr(subfieldOp);
   opsToRemove.push_back(op);
 }
 
