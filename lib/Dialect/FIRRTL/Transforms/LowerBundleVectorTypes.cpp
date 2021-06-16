@@ -698,7 +698,6 @@ void TypeLoweringVisitor::visitDecl(MemOp op) {
       suffix = std::to_string(i++);
   };
 
-  SmallVector<MemOp> newMems;
   SmallVector<SmallVector<Value, 4>, 8> memResultToWire;
   for (auto field : llvm::enumerate(fieldTypes)) {
     // Determine the new port type for this memory. New ports are
@@ -711,18 +710,21 @@ void TypeLoweringVisitor::visitDecl(MemOp op) {
       auto name = op.getPortName(i);
       SmallVector<Value, 4> memPorts;
 
-      for (auto memResultType : op.getResult(i)
-                                    .getType()
-                                    .cast<FIRRTLType>()
-                                    .getPassiveType()
-                                    .cast<BundleType>()
-                                    .getElements()) {
-        auto wire = builder->create<WireOp>(
-            memResultType.type); //, op.name().str() + "_" +
-                                 //memResultType.name.getValue());
-        memPorts.push_back(wire.getResult());
+      if (field.index() == 0) {
+
+        for (auto memResultType : op.getResult(i)
+                                      .getType()
+                                      .cast<FIRRTLType>()
+                                      .getPassiveType()
+                                      .cast<BundleType>()
+                                      .getElements()) {
+          auto wire = builder->create<WireOp>(
+              memResultType.type); //, op.name().str() + "_" +
+                                   //memResultType.name.getValue());
+          memPorts.push_back(wire.getResult());
+        }
+        processUsers(op.getResult(i), memPorts);
       }
-      processUsers(op.getResult(i), memPorts);
       // Any read or write ports are just added.
       if (kind != MemOp::PortKind::ReadWrite) {
         resultPortTypes.push_back(
@@ -758,33 +760,34 @@ void TypeLoweringVisitor::visitDecl(MemOp op) {
                                                     .getElementType()
                                                     .cast<BundleType>()
                                                     .getElements())) {
+        auto tempWire = memResultToWire[i][memResultType.index()];
+        auto newMemSub =
+            builder->create<SubfieldOp>(res, memResultType.value().name);
         if (memResultType.value().name.getValue().contains("data") ||
             memResultType.value().name.getValue().contains("mask")) {
+          Value dataAccess;
+          if (tempWire.getType().cast<FIRRTLType>().dyn_cast<FVectorType>()) {
+            StringRef numStr = field.value().suffix.str().drop_front(1);
+            uint64_t ind;
+            bool err = !numStr.getAsInteger(10, ind);
+            assert(err && " Cant parse int ");
+            dataAccess = builder->create<SubindexOp>(tempWire, ind);
+          } else {
+            dataAccess = builder->create<SubfieldOp>(
+                tempWire, field.value().suffix.str().drop_front(1));
+          }
           if (memResultType.value().type.dyn_cast<FlipType>()) {
-            builder->create<ConnectOp>(
-                builder->create<SubfieldOp>(
-                    memResultToWire[i][memResultType.index()],
-                    field.value().suffix.str().drop_front(1)),
-                builder->create<SubfieldOp>(res, memResultType.value().name));
+            builder->create<ConnectOp>(dataAccess, newMemSub);
           } else
-            builder->create<ConnectOp>(
-                builder->create<SubfieldOp>(res, memResultType.value().name),
-                builder->create<SubfieldOp>(
-                    memResultToWire[i][memResultType.index()],
-                    field.value().suffix.str().drop_front(1)));
+            builder->create<ConnectOp>(newMemSub, dataAccess);
         } else {
           if (memResultType.value().type.dyn_cast<FlipType>()) {
-            builder->create<ConnectOp>(
-                memResultToWire[i][memResultType.index()],
-                builder->create<SubfieldOp>(res, memResultType.value().name));
+            builder->create<ConnectOp>(tempWire, newMemSub);
           } else
-            builder->create<ConnectOp>(
-                builder->create<SubfieldOp>(res, memResultType.value().name),
-                memResultToWire[i][memResultType.index()]);
+            builder->create<ConnectOp>(newMemSub, tempWire);
         }
       }
     }
-    newMems.push_back(newMem);
   }
 
   opsToRemove.push_back(op);
