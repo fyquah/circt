@@ -849,7 +849,7 @@ void TypeLoweringVisitor::visitExpr(SubfieldOp op) {
 
 // Gracefully die on subaccess operations
 void TypeLoweringVisitor::visitExpr(SubaccessOp op) {
-  emitError(op.getLoc(), "SubaccessOp not handled.");
+  //emitError(op.getLoc(), "SubaccessOp not handled.");
   // We need to do enough transformation to not segfault
   // Lower operation to an access of item 0
   auto subfieldOp = OpBuilder(op).create<SubindexOp>(op.getLoc(), op.getType(),
