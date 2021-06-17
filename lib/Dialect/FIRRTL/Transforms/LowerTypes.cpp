@@ -207,6 +207,7 @@ public:
   void visitExpr(SubindexOp op);
   void visitExpr(SubaccessOp op);
   void visitExpr(MuxPrimOp op);
+  void visitExpr(AsPassivePrimOp op);
   void visitStmt(ConnectOp op);
   void visitStmt(WhenOp op);
   void visitStmt(PartialConnectOp op);
@@ -343,9 +344,8 @@ void TypeLoweringVisitor::lowerArg(FModuleOp module, BlockArgument arg,
     // Create new block arguments.
     auto type = field.type;
     // Flip the direction if the field is an output.
-    auto direction =
-        (Direction)((unsigned)getModulePortDirection(module, argNumber) ^
-                    field.isOutput);
+    auto direction = (Direction)(
+        (unsigned)getModulePortDirection(module, argNumber) ^ field.isOutput);
     auto newValue = addArg(module, type, argNumber, direction, field.suffix);
 
     // If this field was flattened from a bundle.
@@ -395,9 +395,9 @@ void TypeLoweringVisitor::visitDecl(FExtModuleOp extModule) {
         pName = builder.getStringAttr("");
       portNames.push_back(pName);
       // Flip the direction if the field is an output.
-      portDirections.push_back((
-          Direction)((unsigned)getModulePortDirection(extModule, oldArgNumber) ^
-                     field.isOutput));
+      portDirections.push_back((Direction)(
+          (unsigned)getModulePortDirection(extModule, oldArgNumber) ^
+          field.isOutput));
 
       // Populate newAnnotations with the old annotations filtered to those
       // associated with just this field.
@@ -930,6 +930,33 @@ void TypeLoweringVisitor::visitExpr(MuxPrimOp op) {
   opsToRemove.push_back(op);
 }
 
+void TypeLoweringVisitor::visitExpr(AsPassivePrimOp op) {
+  // Attempt to get the bundle types, potentially unwrapping an outer flip type
+  // that wraps the whole bundle.
+  FIRRTLType resultType = getCanonicalAggregateType(op.getType());
+
+  // If the wire is not a bundle, there is nothing to do.
+  if (!resultType)
+    return;
+
+  // Get a string name for each result.
+  SmallVector<FlatBundleFieldEntry, 8> fieldTypes;
+  flattenType(resultType, fieldTypes);
+
+  // Get each value.
+  SmallVector<std::pair<Value, bool>, 8> inputValues;
+  getAllBundleLowerings(op.input(), inputValues);
+
+  // Create a cast op for each element.
+  auto result = op.result();
+  for (auto it : llvm::zip(inputValues, fieldTypes)) {
+    auto field = std::get<1>(it);
+    auto passOp = builder->create<AsPassivePrimOp>(std::get<0>(it).first);
+    setBundleLowering(FieldRef(result, field.fieldID), passOp);
+  }
+  opsToRemove.push_back(op);
+}
+
 // Lowering connects only has to deal with one special case: connecting two
 // bundles. This situation should only arise when both of the arguments are a
 // bundle that was:
@@ -1073,8 +1100,8 @@ void TypeLoweringVisitor::visitStmt(PartialConnectOp op) {
   // Partial connects are completely removed and replaced by regular connects.
   // This makes this one of the few ops that actually has to do something during
   // this pass the types are not bundles.
-  auto tmpType = destType.stripFlip().first;
-  if (tmpType.isa<BundleType, FVectorType>()) {
+  destType = destType.stripFlip().first;
+  if (destType.isa<BundleType, FVectorType>()) {
     // Bundle types have to be recursively lowered.
     this->recursivePartialConnect(dest, destType, src, srcType.getPassiveType(),
                                   0, 0);
