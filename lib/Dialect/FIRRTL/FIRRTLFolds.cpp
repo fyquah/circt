@@ -1180,9 +1180,8 @@ LogicalResult SubaccessOp::canonicalize(SubaccessOp op,
       // The SubindexOp require the index value to be unsigned 32-bits
       // integer.
       auto value = constIndex.value().getExtValue();
-      auto valueAttr = rewriter.getI32IntegerAttr(value);
       rewriter.replaceOpWithNewOp<SubindexOp>(op, op.result().getType(),
-                                              op.input(), valueAttr);
+                                              op.input(), value);
       return success();
     }
   }
