@@ -105,3 +105,31 @@ hw.module @compareStrengthReductionRetainCat(%arg0: i9, %arg1: i9) -> (%o : i1) 
   hw.output %2 : i1
 }
 
+// Validates that narrowing signed comparisons without stripping the common suffix
+// must not pad an additional sign bit.
+// CHECK-LABEL: hw.module @compareStrengthSignedCommonSuffix
+// CHECK-NEXT:    [[ARG0:%[0-9]+]] = comb.concat %arg0, %arg0 : (i9, i9) -> i18
+// CHECK-NEXT:    [[ARG1:%[0-9]+]] = comb.concat %arg1, %arg1 : (i9, i9) -> i18
+// CHECK-NEXT:    [[RES:%[0-9]+]] = comb.icmp sge [[ARG0]], [[ARG1]] : i18
+// CHECK-NEXT:    hw.output [[RES]] : i1
+hw.module @compareStrengthSignedCommonSuffix(%arg0: i9, %arg1: i9) -> (%o : i1) {
+  %0 = comb.concat %arg0, %arg0, %arg1 : (i9, i9, i9) -> i27
+  %1 = comb.concat %arg1, %arg1, %arg1 : (i9, i9, i9) -> i27
+  %2 = comb.icmp sge %0, %1 : i27
+  hw.output %2 : i1
+}
+
+// Validates that narrowing signed comparisons that strips of the common suffix
+// must add the sign-bit.
+// CHECK-LABEL: hw.module @compareStrengthSignedCommonPrefix
+// CHECK-NEXT:    [[SIGNBIT:%[0-9]+]] = comb.extract %arg0 from 2 : (i3) -> i1
+// CHECK-NEXT:    [[ARG1:%[0-9]+]] = comb.concat [[SIGNBIT]], %arg1 : (i1, i9) -> i10
+// CHECK-NEXT:    [[ARG2:%[0-9]+]] = comb.concat [[SIGNBIT]], %arg2 : (i1, i9) -> i10
+// CHECK-NEXT:    [[RES:%[0-9]+]] = comb.icmp sge [[ARG1]], [[ARG2]] : i10
+// CHECK-NEXT:    hw.output [[RES]] : i1
+hw.module @compareStrengthSignedCommonPrefix(%arg0 : i3, %arg1: i9, %arg2: i9) -> (%o : i1) {
+  %0 = comb.concat %arg0, %arg1 : (i3, i9) -> i12
+  %1 = comb.concat %arg0, %arg2 : (i3, i9) -> i12
+  %2 = comb.icmp sge %0, %1 : i12
+  hw.output %2 : i1
+}

@@ -227,10 +227,7 @@ def ConcatOp : VariadicOp<"concat"> {
     OpBuilder<(ins "Value":$lhs, "Value":$rhs), [{
       return build($_builder, $_state, ValueRange{lhs, rhs});
     }]>,
-    OpBuilder<(ins "Value":$hd, "ValueRange":$tl), [{
-      $_state.addOperands(ValueRange{hd});
-      return build($_builder, $_state, tl);
-    }]>
+    OpBuilder<(ins "Value":$hd, "ValueRange":$tl)>,
   ];
 }
 

@@ -6,6 +6,8 @@
 //
 //===----------------------------------------------------------------------===//
 
+#include <iostream>
+
 #include "circt/Dialect/Comb/CombOps.h"
 #include "circt/Dialect/HW/HWOps.h"
 #include "mlir/Dialect/CommonFolders.h"
@@ -1010,6 +1012,18 @@ static bool predicateIsSigned (const ICmpPredicate & predicate)
   llvm_unreachable("unknown comparison predicate");
 }
 
+static mlir::Optional<Value>
+findFirstNonEmptyValue(const OperandRange &range)
+{
+  for (auto op : range) {
+    if (op.getType().getIntOrFloatBitWidth() > 1) {
+      return mlir::Optional<Value>(op);
+    }
+  }
+
+  return mlir::None;
+}
+
 // Canonicalizes a ICmp with a single constant
 LogicalResult ICmpOp::canonicalize(ICmpOp op, PatternRewriter &rewriter) {
   APInt lhs, rhs;
@@ -1181,33 +1195,54 @@ LogicalResult ICmpOp::canonicalize(ICmpOp op, PatternRewriter &rewriter) {
           case ICmpPredicate::eq:
             return replaceWithConstantI1(1);
         }
-      } else if (commonPrefixLength > 0 || commonSuffixLength > 0) {
-        auto lhsOnly = lhs.getOperands().drop_front(commonPrefixLength).drop_back(commonSuffixLength);
-        auto rhsOnly = rhs.getOperands().drop_front(commonPrefixLength).drop_back(commonSuffixLength);
-        auto commonPrefixContainsSignBit = false;
+      } else {
+        bool shouldAttemptRewrite = (commonSuffixLength > 0);
 
-        // this is a stronger, but necessary requirement than that of
-        // [commonPrefixContainsSignBit = commonPrefixLength > 0] to account for concat arguments
-        // with zero-length widths.
-        for (size_t i = 0; i < commonPrefixLength ; i++) {
-          if (lhs.getOperand(i).getType().getIntOrFloatBitWidth() > 0) {
-            commonPrefixContainsSignBit = true;
-            break;
+        if (!shouldAttemptRewrite && commonPrefixLength > 0) {
+          size_t totalWidth = 0;
+
+          // In the absence of common suffix, common prefix of length 1 with the sign bit
+          // is already simplfied, and should not be rewritten to avoid infinite loops.
+          for (const Value operand : lhs.getOperands().take_front(commonPrefixLength)) {
+            totalWidth += operand.getType().getIntOrFloatBitWidth();
+            if (totalWidth > 1) {
+              shouldAttemptRewrite = true;
+              break;
+            }
           }
         }
 
-        if (!predicateIsSigned(op.predicate()) || !commonPrefixContainsSignBit) {
-          return replaceWith(op.predicate(), directOrCat(lhsOnly), directOrCat(rhsOnly));
-        } 
+        if (shouldAttemptRewrite) {
+          auto lhsOnly = lhs.getOperands().drop_front(commonPrefixLength).drop_back(commonSuffixLength);
+          auto rhsOnly = rhs.getOperands().drop_front(commonPrefixLength).drop_back(commonSuffixLength);
+          auto commonPrefixContainsSignBit = false;
 
-        auto boolType = IntegerType::get(rewriter.getContext(), 1);
-        auto signBitLhs = rewriter.create<ExtractOp>(op.getLoc(), boolType, lhs, lhs.getType().getWidth() - 1);
-        auto signBitRhs = rewriter.create<ExtractOp>(op.getLoc(), boolType, rhs, rhs.getType().getWidth() - 1);
+          // this is a stronger, but necessary requirement than that of
+          // [commonPrefixContainsSignBit = commonPrefixLength > 0] to account for concat arguments
+          // with zero-length widths.
+          for (size_t i = 0; i < commonPrefixLength ; i++) {
+            if (lhs.getOperand(i).getType().getIntOrFloatBitWidth() > 0) {
+              commonPrefixContainsSignBit = true;
+              break;
+            }
+          }
 
-        return replaceWith(op.predicate(),
-            rewriter.create<ConcatOp>(op.getLoc(), signBitLhs, lhsOnly),
-            rewriter.create<ConcatOp>(op.getLoc(), signBitRhs, rhsOnly)
-            );
+          if (!predicateIsSigned(op.predicate()) || !commonPrefixContainsSignBit) {
+            return replaceWith(op.predicate(), directOrCat(lhsOnly), directOrCat(rhsOnly));
+          } 
+
+          auto firstNonEmptyValue = findFirstNonEmptyValue(lhs.getOperands()).getValue();
+          auto signBit = rewriter.create<ExtractOp>(
+              op.getLoc(),
+              IntegerType::get(rewriter.getContext(), 1),
+              firstNonEmptyValue,
+              firstNonEmptyValue.getType().getIntOrFloatBitWidth() - 1);
+
+          return replaceWith(op.predicate(),
+              rewriter.create<ConcatOp>(op.getLoc(), signBit, lhsOnly),
+              rewriter.create<ConcatOp>(op.getLoc(), signBit, rhsOnly)
+              );
+        }
       }
     }
   }
