@@ -260,3 +260,26 @@ def MuxOp : CombOp<"mux",
     }]>
   ];
 }
+
+def MuxNOp : CombOp<"muxN", [NoSideEffect]> {
+  let summary = "Multiplex N elements of an array together based on some selector.";
+  let description = [{
+    Requires that len(cases) <= 2**(select.width()). When select indexes something that is
+    not specified in cases (possible when len(cases) < 2**(select.width())), produces
+    undefined results.
+  }];
+
+  let arguments = (ins CombIntegerType:$selector,
+                       Variadic<AnyType>:$cases);
+  let results = (outs AnyType:$result);
+
+  let assemblyFormat =
+    "`[`$selector `:` type($selector)`]` `,` $cases attr-dict `:` functional-type($cases, $result)";
+
+  let hasFolder = true;
+  let hasCanonicalizeMethod = true;
+
+  let builders = [
+    OpBuilder<(ins "Value":$selector, "ValueRange":$cases)>
+  ];
+}
