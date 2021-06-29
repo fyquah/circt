@@ -980,24 +980,33 @@ LogicalResult ICmpOp::canonicalize(ICmpOp op, PatternRewriter &rewriter) {
     return success();
   }
 
+  auto getConstant = [&](APInt constant) -> Value {
+    return rewriter.create<hw::ConstantOp>(op.getLoc(), std::move(constant));
+  };
+
+  auto replaceWith = [&](ICmpPredicate predicate, Value lhs,
+      Value rhs) -> LogicalResult {
+    rewriter.replaceOpWithNewOp<ICmpOp>(op, predicate, lhs, rhs);
+    return success();
+  };
+
+  auto replaceWithConstantI1 = [&](bool constant) -> LogicalResult {
+    rewriter.replaceOpWithNewOp<hw::ConstantOp>(op, APInt(1, constant));
+    return success();
+  };
+
+  auto directOrCat = [&](operand_range range) -> mlir::Value {
+    assert (range.size() > 0);
+    if (range.size() == 1) {
+      return range.front();
+    }
+
+    return rewriter.create<ConcatOp>(op.getLoc(), range);
+  };
+
   // Canonicalize with RHS constant
   if (matchPattern(op.rhs(), m_RConstant(rhs))) {
     hw::ConstantOp constant;
-
-    auto getConstant = [&](APInt constant) -> Value {
-      return rewriter.create<hw::ConstantOp>(op.getLoc(), std::move(constant));
-    };
-
-    auto replaceWith = [&](ICmpPredicate predicate, Value lhs,
-                           Value rhs) -> LogicalResult {
-      rewriter.replaceOpWithNewOp<ICmpOp>(op, predicate, lhs, rhs);
-      return success();
-    };
-
-    auto replaceWithConstantI1 = [&](bool constant) -> LogicalResult {
-      rewriter.replaceOpWithNewOp<hw::ConstantOp>(op, APInt(1, constant));
-      return success();
-    };
 
     switch (op.predicate()) {
     case ICmpPredicate::slt:
@@ -1098,6 +1107,47 @@ LogicalResult ICmpOp::canonicalize(ICmpOp op, PatternRewriter &rewriter) {
         return success();
       }
       break;
+    }
+  }
+
+  // icmp (cat(..., a), cat(..., b)) -> icmp(a, b)
+  if (auto lhs = dyn_cast_or_null<ConcatOp>(op.lhs().getDefiningOp())) {
+    if (auto rhs = dyn_cast_or_null<ConcatOp>(op.rhs().getDefiningOp())) {
+      size_t commonPrefixLength = 0;
+      size_t numElements = std::min<size_t>(lhs.getNumOperands(), rhs.getNumOperands());
+
+      for (commonPrefixLength = 0; commonPrefixLength < numElements ; commonPrefixLength++) {
+        if (lhs.getOperand(commonPrefixLength) != rhs.getOperand(commonPrefixLength)) {
+          break;
+        }
+      }
+
+      if (commonPrefixLength == numElements) {
+        // cat(a, b, c) == cat(a, b, c) -> 1
+        switch (op.predicate()) {
+          case ICmpPredicate::ult:
+          case ICmpPredicate::ugt:
+          case ICmpPredicate::ne:
+            return replaceWithConstantI1(0);
+
+          case ICmpPredicate::slt:
+          case ICmpPredicate::sgt:
+
+          case ICmpPredicate::sle:
+          case ICmpPredicate::sge:
+          case ICmpPredicate::ule:
+          case ICmpPredicate::uge:
+          case ICmpPredicate::eq:
+            return replaceWithConstantI1(1);
+        }
+      } else if (commonPrefixLength > 0) {
+        // icmp cat(a, b, c) cat(a, d, e) -> icmp cat(b, c) cat(d, e)
+        // TODO(fyquah): Think carefully about signed stuff.
+        
+        return replaceWith(op.predicate(),
+            directOrCat(lhs.getOperands().drop_front(commonPrefixLength)),
+            directOrCat(rhs.getOperands().drop_front(commonPrefixLength)));
+      }
     }
   }
 
