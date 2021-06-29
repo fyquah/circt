@@ -968,6 +968,48 @@ OpFoldResult ICmpOp::fold(ArrayRef<Attribute> constants) {
   return {};
 }
 
+static std::pair<size_t, size_t>
+computeCommonPrefixAndSuffix(const OperandRange &a, const OperandRange &b)
+{
+  size_t commonPrefixLength = 0;
+  size_t commonSuffixLength = 0;
+  const size_t sizeA = a.size();
+  const size_t sizeB = b.size();
+
+  for (; commonPrefixLength < std::min(sizeA, sizeB); commonPrefixLength++) {
+    if (a[commonPrefixLength] != b[commonPrefixLength]) {
+      break;
+    }
+  }
+
+  for (; commonSuffixLength < std::min(sizeA, sizeB) - commonPrefixLength; commonSuffixLength++) {
+    if (a[sizeA - commonSuffixLength - 1] != b[sizeB - commonSuffixLength - 1]) {
+      break;
+    }
+  }
+
+  return { commonPrefixLength, commonSuffixLength };
+}
+
+static bool predicateIsSigned (const ICmpPredicate & predicate)
+{
+  switch (predicate)  {
+    case ICmpPredicate::ult:
+    case ICmpPredicate::ugt:
+    case ICmpPredicate::ule:
+    case ICmpPredicate::uge:
+    case ICmpPredicate::ne:
+    case ICmpPredicate::eq:
+      return false;
+    case ICmpPredicate::slt:
+    case ICmpPredicate::sgt:
+    case ICmpPredicate::sle:
+    case ICmpPredicate::sge:
+      return true;
+  }
+  llvm_unreachable("unknown comparison predicate");
+}
+
 // Canonicalizes a ICmp with a single constant
 LogicalResult ICmpOp::canonicalize(ICmpOp op, PatternRewriter &rewriter) {
   APInt lhs, rhs;
@@ -1113,14 +1155,14 @@ LogicalResult ICmpOp::canonicalize(ICmpOp op, PatternRewriter &rewriter) {
   // icmp (cat(..., a), cat(..., b)) -> icmp(a, b)
   if (auto lhs = dyn_cast_or_null<ConcatOp>(op.lhs().getDefiningOp())) {
     if (auto rhs = dyn_cast_or_null<ConcatOp>(op.rhs().getDefiningOp())) {
-      size_t commonPrefixLength = 0;
-      size_t numElements = std::min<size_t>(lhs.getNumOperands(), rhs.getNumOperands());
+      auto lhsOperands = lhs.getOperands();
+      auto rhsOperands = lhs.getOperands();
+      size_t numElements = std::min<size_t>(lhsOperands.size(), rhsOperands.size());
 
-      for (commonPrefixLength = 0; commonPrefixLength < numElements ; commonPrefixLength++) {
-        if (lhs.getOperand(commonPrefixLength) != rhs.getOperand(commonPrefixLength)) {
-          break;
-        }
-      }
+      const std::pair<size_t, size_t> commonPrefixSuffixLength = computeCommonPrefixAndSuffix(
+          lhs.getOperands(), rhs.getOperands());
+      const size_t commonPrefixLength = commonPrefixSuffixLength.first;
+      const size_t commonSuffixLength = commonPrefixSuffixLength.second;
 
       if (commonPrefixLength == numElements) {
         // cat(a, b, c) == cat(a, b, c) -> 1
@@ -1128,10 +1170,9 @@ LogicalResult ICmpOp::canonicalize(ICmpOp op, PatternRewriter &rewriter) {
           case ICmpPredicate::ult:
           case ICmpPredicate::ugt:
           case ICmpPredicate::ne:
-            return replaceWithConstantI1(0);
-
           case ICmpPredicate::slt:
           case ICmpPredicate::sgt:
+            return replaceWithConstantI1(0);
 
           case ICmpPredicate::sle:
           case ICmpPredicate::sge:
@@ -1140,13 +1181,33 @@ LogicalResult ICmpOp::canonicalize(ICmpOp op, PatternRewriter &rewriter) {
           case ICmpPredicate::eq:
             return replaceWithConstantI1(1);
         }
-      } else if (commonPrefixLength > 0) {
-        // icmp cat(a, b, c) cat(a, d, e) -> icmp cat(b, c) cat(d, e)
-        // TODO(fyquah): Think carefully about signed stuff.
-        
+      } else if (commonPrefixLength > 0 || commonSuffixLength > 0) {
+        auto lhsOnly = lhs.getOperands().drop_front(commonPrefixLength).drop_back(commonSuffixLength);
+        auto rhsOnly = rhs.getOperands().drop_front(commonPrefixLength).drop_back(commonSuffixLength);
+        auto commonPrefixContainsSignBit = false;
+
+        // this is a stronger, but necessary requirement than that of
+        // [commonPrefixContainsSignBit = commonPrefixLength > 0] to account for concat arguments
+        // with zero-length widths.
+        for (size_t i = 0; i < commonPrefixLength ; i++) {
+          if (lhs.getOperand(i).getType().getIntOrFloatBitWidth() > 0) {
+            commonPrefixContainsSignBit = true;
+            break;
+          }
+        }
+
+        if (!predicateIsSigned(op.predicate()) || !commonPrefixContainsSignBit) {
+          return replaceWith(op.predicate(), directOrCat(lhsOnly), directOrCat(rhsOnly));
+        } 
+
+        auto boolType = IntegerType::get(rewriter.getContext(), 1);
+        auto signBitLhs = rewriter.create<ExtractOp>(op.getLoc(), boolType, lhs, lhs.getType().getWidth() - 1);
+        auto signBitRhs = rewriter.create<ExtractOp>(op.getLoc(), boolType, rhs, rhs.getType().getWidth() - 1);
+
         return replaceWith(op.predicate(),
-            directOrCat(lhs.getOperands().drop_front(commonPrefixLength)),
-            directOrCat(rhs.getOperands().drop_front(commonPrefixLength)));
+            rewriter.create<ConcatOp>(op.getLoc(), signBitLhs, lhsOnly),
+            rewriter.create<ConcatOp>(op.getLoc(), signBitRhs, rhsOnly)
+            );
       }
     }
   }
