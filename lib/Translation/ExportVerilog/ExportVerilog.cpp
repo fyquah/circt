@@ -18,6 +18,7 @@
 #include "circt/Dialect/HW/HWVisitors.h"
 #include "circt/Dialect/SV/SVOps.h"
 #include "circt/Dialect/SV/SVVisitors.h"
+#include "circt/Dialect/XilinxPrimitives/XilinxPrimitivesOps.h"
 #include "circt/Support/LLVM.h"
 #include "circt/Support/LoweringOptions.h"
 #include "mlir/IR/BuiltinOps.h"
@@ -3451,6 +3452,6 @@ void circt::registerToVerilogTranslation() {
         return exportVerilog(module, os);
       },
       [](mlir::DialectRegistry &registry) {
-        registry.insert<CombDialect, HWDialect, SVDialect>();
+        registry.insert<CombDialect, HWDialect, SVDialect, xilinxPrimitives::XilinxPrimitivesDialect>();
       });
 }

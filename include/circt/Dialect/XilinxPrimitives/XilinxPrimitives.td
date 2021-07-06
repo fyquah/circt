@@ -13,8 +13,7 @@ def XilinxPrimitivesDialect : Dialect {
     This dialect defines the `comb` dialect, which is intended to be a generic
     representation of combinational logic outside of a particular use-case.
   }];
-  let hasConstantMaterializer = 1;
-  let cppNamespace = "::circt::xilinx";
+  let cppNamespace = "::circt::xilinxPrimitives";
 }
 
 class InOut<int width>

@@ -8,6 +8,8 @@
 #include "mlir/IR/OpImplementation.h"
 #include "mlir/Interfaces/SideEffectInterfaces.h"
 
+#include "circt/Dialect/XilinxPrimitives/XilinxPrimitivesDialect.h"
+
 #define GET_OP_CLASSES
 #include "circt/Dialect/XilinxPrimitives/XilinxPrimitives.h.inc"
 
