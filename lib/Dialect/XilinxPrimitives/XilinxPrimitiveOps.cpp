@@ -73,7 +73,9 @@ static mlir::ParseResult parseOp(const llvm::ArrayRef<std::tuple<const char*, ci
     }
 
     if (i != numOperands - 1) {
-      return mlir::failure();
+      if (parser.parseComma()) {
+        return ::mlir::failure();
+      }
     }
   }
 
