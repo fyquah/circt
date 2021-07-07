@@ -1,30 +1,20 @@
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::AND2B1L::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::AND2B1L::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"DI", circt::hw::PortDirection::INPUT, 1},
     {"SRI", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::AUTOBUF::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::AUTOBUF::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BIBUF::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BIBUF::primitivePortInfos = {
     {"IO", circt::hw::PortDirection::INOUT, 1},
     {"PAD", circt::hw::PortDirection::INOUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BITSLICEuCONTROL::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BITSLICEuCONTROL::primitivePortInfos = {
     {"CLK_TO_EXT_NORTH", circt::hw::PortDirection::OUTPUT, 1},
     {"CLK_TO_EXT_SOUTH", circt::hw::PortDirection::OUTPUT, 1},
     {"DLY_RDY", circt::hw::PortDirection::OUTPUT, 1},
@@ -82,12 +72,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BITSLICEuC
     {"TX_BIT_CTRL_IN5", circt::hw::PortDirection::INPUT, 40},
     {"TX_BIT_CTRL_IN6", circt::hw::PortDirection::INPUT, 40},
     {"TX_BIT_CTRL_IN_TRI", circt::hw::PortDirection::INPUT, 40},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BSCANE2::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BSCANE2::primitivePortInfos = {
     {"CAPTURE", circt::hw::PortDirection::OUTPUT, 1},
     {"DRCK", circt::hw::PortDirection::OUTPUT, 1},
     {"RESET", circt::hw::PortDirection::OUTPUT, 1},
@@ -99,65 +86,44 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BSCANE2::m
     {"TMS", circt::hw::PortDirection::OUTPUT, 1},
     {"UPDATE", circt::hw::PortDirection::OUTPUT, 1},
     {"TDO", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUF::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BUF::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUFCEuLEAF::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BUFCEuLEAF::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"CE", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUFCEuROW::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BUFCEuROW::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"CE", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUFG::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BUFG::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUFGCE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BUFGCE::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"CE", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUFGCEuDIV::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BUFGCEuDIV::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"CE", circt::hw::PortDirection::INPUT, 1},
     {"CLR", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUFGCTRL::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BUFGCTRL::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"CE0", circt::hw::PortDirection::INPUT, 1},
     {"CE1", circt::hw::PortDirection::INPUT, 1},
@@ -167,20 +133,14 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUFGCTRL::
     {"IGNORE1", circt::hw::PortDirection::INPUT, 1},
     {"S0", circt::hw::PortDirection::INPUT, 1},
     {"S1", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUFGP::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BUFGP::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUFGuGT::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BUFGuGT::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"CE", circt::hw::PortDirection::INPUT, 1},
     {"CEMASK", circt::hw::PortDirection::INPUT, 1},
@@ -188,115 +148,79 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUFGuGT::m
     {"CLRMASK", circt::hw::PortDirection::INPUT, 1},
     {"DIV", circt::hw::PortDirection::INPUT, 3},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUFGuGTuSYNC::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BUFGuGTuSYNC::primitivePortInfos = {
     {"CESYNC", circt::hw::PortDirection::OUTPUT, 1},
     {"CLRSYNC", circt::hw::PortDirection::OUTPUT, 1},
     {"CE", circt::hw::PortDirection::INPUT, 1},
     {"CLK", circt::hw::PortDirection::INPUT, 1},
     {"CLR", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUFGuPS::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BUFGuPS::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUFH::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BUFH::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUFHCE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BUFHCE::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"CE", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUFIO::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BUFIO::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUFMR::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BUFMR::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUFMRCE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BUFMRCE::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"CE", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::BUFR::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::BUFR::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"CE", circt::hw::PortDirection::INPUT, 1},
     {"CLR", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::CAPTUREE2::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::CAPTUREE2::primitivePortInfos = {
     {"CAP", circt::hw::PortDirection::INPUT, 1},
     {"CLK", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::CARRY4::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::CARRY4::primitivePortInfos = {
     {"CO", circt::hw::PortDirection::OUTPUT, 4},
     {"O", circt::hw::PortDirection::OUTPUT, 4},
     {"CI", circt::hw::PortDirection::INPUT, 1},
     {"CYINIT", circt::hw::PortDirection::INPUT, 1},
     {"DI", circt::hw::PortDirection::INPUT, 4},
     {"S", circt::hw::PortDirection::INPUT, 4},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::CARRY8::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::CARRY8::primitivePortInfos = {
     {"CO", circt::hw::PortDirection::OUTPUT, 8},
     {"O", circt::hw::PortDirection::OUTPUT, 8},
     {"CI", circt::hw::PortDirection::INPUT, 1},
     {"CI_TOP", circt::hw::PortDirection::INPUT, 1},
     {"DI", circt::hw::PortDirection::INPUT, 8},
     {"S", circt::hw::PortDirection::INPUT, 8},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::CFGLUT5::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::CFGLUT5::primitivePortInfos = {
     {"CDO", circt::hw::PortDirection::OUTPUT, 1},
     {"O5", circt::hw::PortDirection::OUTPUT, 1},
     {"O6", circt::hw::PortDirection::OUTPUT, 1},
@@ -308,12 +232,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::CFGLUT5::m
     {"I2", circt::hw::PortDirection::INPUT, 1},
     {"I3", circt::hw::PortDirection::INPUT, 1},
     {"I4", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::CMAC::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::CMAC::primitivePortInfos = {
     {"DRP_DO", circt::hw::PortDirection::OUTPUT, 16},
     {"DRP_RDY", circt::hw::PortDirection::OUTPUT, 1},
     {"RX_DATAOUT0", circt::hw::PortDirection::OUTPUT, 128},
@@ -676,12 +597,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::CMAC::modu
     {"TX_SOPIN1", circt::hw::PortDirection::INPUT, 1},
     {"TX_SOPIN2", circt::hw::PortDirection::INPUT, 1},
     {"TX_SOPIN3", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::CMACE4::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::CMACE4::primitivePortInfos = {
     {"DRP_DO", circt::hw::PortDirection::OUTPUT, 16},
     {"DRP_RDY", circt::hw::PortDirection::OUTPUT, 1},
     {"RSFEC_BYPASS_RX_DOUT", circt::hw::PortDirection::OUTPUT, 330},
@@ -1095,20 +1013,14 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::CMACE4::mo
     {"TX_SOPIN1", circt::hw::PortDirection::INPUT, 1},
     {"TX_SOPIN2", circt::hw::PortDirection::INPUT, 1},
     {"TX_SOPIN3", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::DCIRESET::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::DCIRESET::primitivePortInfos = {
     {"LOCKED", circt::hw::PortDirection::OUTPUT, 1},
     {"RST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::DCMuADV::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::DCMuADV::primitivePortInfos = {
     {"CLK0", circt::hw::PortDirection::OUTPUT, 1},
     {"CLK180", circt::hw::PortDirection::OUTPUT, 1},
     {"CLK270", circt::hw::PortDirection::OUTPUT, 1},
@@ -1133,40 +1045,28 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::DCMuADV::m
     {"RST", circt::hw::PortDirection::INPUT, 1},
     {"DI", circt::hw::PortDirection::INPUT, 16},
     {"DADDR", circt::hw::PortDirection::INPUT, 7},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::dcmuadvuclockudivideubyu2::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::dcmuadvuclockudivideubyu2::primitivePortInfos = {
     {"clock", circt::hw::PortDirection::INPUT, 1},
     {"clock_type", circt::hw::PortDirection::INPUT, 1},
     {"rst", circt::hw::PortDirection::INPUT, 1},
     {"clock_out", circt::hw::PortDirection::OUTPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::dcmuadvumaximumuperioducheck::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::dcmuadvumaximumuperioducheck::primitivePortInfos = {
     {"clock", circt::hw::PortDirection::INPUT, 1},
     {"rst", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::dcmuadvuclockulost::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::dcmuadvuclockulost::primitivePortInfos = {
     {"clock", circt::hw::PortDirection::INPUT, 1},
     {"enable", circt::hw::PortDirection::INPUT, 1},
     {"rst", circt::hw::PortDirection::INPUT, 1},
     {"lost", circt::hw::PortDirection::OUTPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::DCMuSP::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::DCMuSP::primitivePortInfos = {
     {"CLKFB", circt::hw::PortDirection::INPUT, 1},
     {"CLKIN", circt::hw::PortDirection::INPUT, 1},
     {"DSSEN", circt::hw::PortDirection::INPUT, 1},
@@ -1186,40 +1086,28 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::DCMuSP::mo
     {"LOCKED", circt::hw::PortDirection::OUTPUT, 1},
     {"PSDONE", circt::hw::PortDirection::OUTPUT, 1},
     {"STATUS", circt::hw::PortDirection::OUTPUT, 8},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::dcmuspuclockudivideubyu2::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::dcmuspuclockudivideubyu2::primitivePortInfos = {
     {"clock", circt::hw::PortDirection::INPUT, 1},
     {"clock_type", circt::hw::PortDirection::INPUT, 1},
     {"rst", circt::hw::PortDirection::INPUT, 1},
     {"clock_out", circt::hw::PortDirection::OUTPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::dcmuspumaximumuperioducheck::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::dcmuspumaximumuperioducheck::primitivePortInfos = {
     {"clock", circt::hw::PortDirection::INPUT, 1},
     {"rst", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::dcmuspuclockulost::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::dcmuspuclockulost::primitivePortInfos = {
     {"clock", circt::hw::PortDirection::INPUT, 1},
     {"enable", circt::hw::PortDirection::INPUT, 1},
     {"rst", circt::hw::PortDirection::INPUT, 1},
     {"lost", circt::hw::PortDirection::OUTPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::DIFFINBUF::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::DIFFINBUF::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"O_B", circt::hw::PortDirection::OUTPUT, 1},
     {"DIFF_IN_N", circt::hw::PortDirection::INPUT, 1},
@@ -1227,23 +1115,17 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::DIFFINBUF:
     {"OSC", circt::hw::PortDirection::INPUT, 4},
     {"OSC_EN", circt::hw::PortDirection::INPUT, 2},
     {"VREF", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::DNAuPORT::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::DNAuPORT::primitivePortInfos = {
     {"DOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CLK", circt::hw::PortDirection::INPUT, 1},
     {"DIN", circt::hw::PortDirection::INPUT, 1},
     {"READ", circt::hw::PortDirection::INPUT, 1},
     {"SHIFT", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::DPHYuDIFFINBUF::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::DPHYuDIFFINBUF::primitivePortInfos = {
     {"HSRX_O", circt::hw::PortDirection::OUTPUT, 1},
     {"LPRX_O_N", circt::hw::PortDirection::OUTPUT, 1},
     {"LPRX_O_P", circt::hw::PortDirection::OUTPUT, 1},
@@ -1251,12 +1133,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::DPHYuDIFFI
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IB", circt::hw::PortDirection::INPUT, 1},
     {"LPRX_DISABLE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::DSP48E1::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::DSP48E1::primitivePortInfos = {
     {"ACOUT", circt::hw::PortDirection::OUTPUT, 30},
     {"BCOUT", circt::hw::PortDirection::OUTPUT, 18},
     {"CARRYCASCOUT", circt::hw::PortDirection::OUTPUT, 1},
@@ -1306,12 +1185,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::DSP48E1::m
     {"RSTINMODE", circt::hw::PortDirection::INPUT, 1},
     {"RSTM", circt::hw::PortDirection::INPUT, 1},
     {"RSTP", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::FRAMEuECCE3::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::FRAMEuECCE3::primitivePortInfos = {
     {"CRCERROR", circt::hw::PortDirection::OUTPUT, 1},
     {"ECCERRORNOTSINGLE", circt::hw::PortDirection::OUTPUT, 1},
     {"ECCERRORSINGLE", circt::hw::PortDirection::OUTPUT, 1},
@@ -1321,12 +1197,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::FRAMEuECCE
     {"FARSEL", circt::hw::PortDirection::INPUT, 2},
     {"ICAPBOTCLK", circt::hw::PortDirection::INPUT, 1},
     {"ICAPTOPCLK", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::FRAMEuECCE4::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::FRAMEuECCE4::primitivePortInfos = {
     {"CRCERROR", circt::hw::PortDirection::OUTPUT, 1},
     {"ECCERRORNOTSINGLE", circt::hw::PortDirection::OUTPUT, 1},
     {"ECCERRORSINGLE", circt::hw::PortDirection::OUTPUT, 1},
@@ -1336,19 +1209,13 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::FRAMEuECCE
     {"FARSEL", circt::hw::PortDirection::INPUT, 2},
     {"ICAPBOTCLK", circt::hw::PortDirection::INPUT, 1},
     {"ICAPTOPCLK", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GND::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::GND::primitivePortInfos = {
     {"G", circt::hw::PortDirection::OUTPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTHE2uCHANNEL::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::GTHE2uCHANNEL::primitivePortInfos = {
     {"CPLLFBCLKLOST", circt::hw::PortDirection::OUTPUT, 1},
     {"CPLLLOCK", circt::hw::PortDirection::OUTPUT, 1},
     {"CPLLREFCLKLOST", circt::hw::PortDirection::OUTPUT, 1},
@@ -1629,12 +1496,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTHE2uCHAN
     {"TXCHARDISPVAL", circt::hw::PortDirection::INPUT, 8},
     {"TXCHARISK", circt::hw::PortDirection::INPUT, 8},
     {"DRPADDR", circt::hw::PortDirection::INPUT, 9},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTHE2uCOMMON::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::GTHE2uCOMMON::primitivePortInfos = {
     {"DRPRDY", circt::hw::PortDirection::OUTPUT, 1},
     {"QPLLFBCLKLOST", circt::hw::PortDirection::OUTPUT, 1},
     {"QPLLLOCK", circt::hw::PortDirection::OUTPUT, 1},
@@ -1672,12 +1536,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTHE2uCOMM
     {"QPLLRSVD2", circt::hw::PortDirection::INPUT, 5},
     {"DRPADDR", circt::hw::PortDirection::INPUT, 8},
     {"PMARSVD", circt::hw::PortDirection::INPUT, 8},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTHE3uCHANNEL::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::GTHE3uCHANNEL::primitivePortInfos = {
     {"BUFGTCE", circt::hw::PortDirection::OUTPUT, 3},
     {"BUFGTCEMASK", circt::hw::PortDirection::OUTPUT, 3},
     {"BUFGTDIV", circt::hw::PortDirection::OUTPUT, 9},
@@ -2007,12 +1868,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTHE3uCHAN
     {"TXUSERRDY", circt::hw::PortDirection::INPUT, 1},
     {"TXUSRCLK", circt::hw::PortDirection::INPUT, 1},
     {"TXUSRCLK2", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTHE3uCOMMON::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::GTHE3uCOMMON::primitivePortInfos = {
     {"DRPDO", circt::hw::PortDirection::OUTPUT, 16},
     {"DRPRDY", circt::hw::PortDirection::OUTPUT, 1},
     {"PMARSVDOUT0", circt::hw::PortDirection::OUTPUT, 8},
@@ -2078,12 +1936,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTHE3uCOMM
     {"QPLLRSVD3", circt::hw::PortDirection::INPUT, 5},
     {"QPLLRSVD4", circt::hw::PortDirection::INPUT, 8},
     {"RCALENB", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTHE4uCHANNEL::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::GTHE4uCHANNEL::primitivePortInfos = {
     {"BUFGTCE", circt::hw::PortDirection::OUTPUT, 1},
     {"BUFGTCEMASK", circt::hw::PortDirection::OUTPUT, 3},
     {"BUFGTDIV", circt::hw::PortDirection::OUTPUT, 9},
@@ -2425,12 +2280,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTHE4uCHAN
     {"TXUSERRDY", circt::hw::PortDirection::INPUT, 1},
     {"TXUSRCLK", circt::hw::PortDirection::INPUT, 1},
     {"TXUSRCLK2", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTHE4uCOMMON::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::GTHE4uCOMMON::primitivePortInfos = {
     {"DRPDO", circt::hw::PortDirection::OUTPUT, 16},
     {"DRPRDY", circt::hw::PortDirection::OUTPUT, 1},
     {"PMARSVDOUT0", circt::hw::PortDirection::OUTPUT, 8},
@@ -2518,12 +2370,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTHE4uCOMM
     {"TCONPOWERUP", circt::hw::PortDirection::INPUT, 1},
     {"TCONRESET", circt::hw::PortDirection::INPUT, 2},
     {"TCONRSVDIN1", circt::hw::PortDirection::INPUT, 2},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTPE2uCHANNEL::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::GTPE2uCHANNEL::primitivePortInfos = {
     {"DRPRDY", circt::hw::PortDirection::OUTPUT, 1},
     {"EYESCANDATAERROR", circt::hw::PortDirection::OUTPUT, 1},
     {"GTPTXN", circt::hw::PortDirection::OUTPUT, 1},
@@ -2751,12 +2600,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTPE2uCHAN
     {"TXMAINCURSOR", circt::hw::PortDirection::INPUT, 7},
     {"TXSEQUENCE", circt::hw::PortDirection::INPUT, 7},
     {"DRPADDR", circt::hw::PortDirection::INPUT, 9},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTPE2uCOMMON::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::GTPE2uCOMMON::primitivePortInfos = {
     {"DRPRDY", circt::hw::PortDirection::OUTPUT, 1},
     {"PLL0FBCLKLOST", circt::hw::PortDirection::OUTPUT, 1},
     {"PLL0LOCK", circt::hw::PortDirection::OUTPUT, 1},
@@ -2805,12 +2651,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTPE2uCOMM
     {"PLLRSVD2", circt::hw::PortDirection::INPUT, 5},
     {"DRPADDR", circt::hw::PortDirection::INPUT, 8},
     {"PMARSVD", circt::hw::PortDirection::INPUT, 8},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTXE2uCHANNEL::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::GTXE2uCHANNEL::primitivePortInfos = {
     {"CPLLFBCLKLOST", circt::hw::PortDirection::OUTPUT, 1},
     {"CPLLLOCK", circt::hw::PortDirection::OUTPUT, 1},
     {"CPLLREFCLKLOST", circt::hw::PortDirection::OUTPUT, 1},
@@ -3041,12 +2884,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTXE2uCHAN
     {"TXCHARDISPVAL", circt::hw::PortDirection::INPUT, 8},
     {"TXCHARISK", circt::hw::PortDirection::INPUT, 8},
     {"DRPADDR", circt::hw::PortDirection::INPUT, 9},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTXE2uCOMMON::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::GTXE2uCOMMON::primitivePortInfos = {
     {"DRPRDY", circt::hw::PortDirection::OUTPUT, 1},
     {"QPLLFBCLKLOST", circt::hw::PortDirection::OUTPUT, 1},
     {"QPLLLOCK", circt::hw::PortDirection::OUTPUT, 1},
@@ -3082,12 +2922,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTXE2uCOMM
     {"QPLLRSVD2", circt::hw::PortDirection::INPUT, 5},
     {"DRPADDR", circt::hw::PortDirection::INPUT, 8},
     {"PMARSVD", circt::hw::PortDirection::INPUT, 8},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTYE3uCHANNEL::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::GTYE3uCHANNEL::primitivePortInfos = {
     {"BUFGTCE", circt::hw::PortDirection::OUTPUT, 3},
     {"BUFGTCEMASK", circt::hw::PortDirection::OUTPUT, 3},
     {"BUFGTDIV", circt::hw::PortDirection::OUTPUT, 9},
@@ -3419,12 +3256,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTYE3uCHAN
     {"TXUSERRDY", circt::hw::PortDirection::INPUT, 1},
     {"TXUSRCLK", circt::hw::PortDirection::INPUT, 1},
     {"TXUSRCLK2", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTYE3uCOMMON::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::GTYE3uCOMMON::primitivePortInfos = {
     {"DRPDO", circt::hw::PortDirection::OUTPUT, 16},
     {"DRPRDY", circt::hw::PortDirection::OUTPUT, 1},
     {"PMARSVDOUT0", circt::hw::PortDirection::OUTPUT, 8},
@@ -3498,12 +3332,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTYE3uCOMM
     {"SDM1DATA", circt::hw::PortDirection::INPUT, 25},
     {"SDM1RESET", circt::hw::PortDirection::INPUT, 1},
     {"SDM1WIDTH", circt::hw::PortDirection::INPUT, 2},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTYE4uCHANNEL::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::GTYE4uCHANNEL::primitivePortInfos = {
     {"BUFGTCE", circt::hw::PortDirection::OUTPUT, 1},
     {"BUFGTCEMASK", circt::hw::PortDirection::OUTPUT, 3},
     {"BUFGTDIV", circt::hw::PortDirection::OUTPUT, 9},
@@ -3836,12 +3667,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTYE4uCHAN
     {"TXUSERRDY", circt::hw::PortDirection::INPUT, 1},
     {"TXUSRCLK", circt::hw::PortDirection::INPUT, 1},
     {"TXUSRCLK2", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTYE4uCOMMON::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::GTYE4uCOMMON::primitivePortInfos = {
     {"DRPDO", circt::hw::PortDirection::OUTPUT, 16},
     {"DRPRDY", circt::hw::PortDirection::OUTPUT, 1},
     {"PMARSVDOUT0", circt::hw::PortDirection::OUTPUT, 8},
@@ -3946,21 +3774,15 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::GTYE4uCOMM
     {"UBMDMSYSRST", circt::hw::PortDirection::INPUT, 1},
     {"UBMDMTCK", circt::hw::PortDirection::INPUT, 1},
     {"UBMDMTDI", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::HARDuSYNC::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::HARDuSYNC::primitivePortInfos = {
     {"DOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CLK", circt::hw::PortDirection::INPUT, 1},
     {"DIN", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::HBMuONEuSTACKuINTF::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::HBMuONEuSTACKuINTF::primitivePortInfos = {
     {"APB_0_PRDATA", circt::hw::PortDirection::OUTPUT, 32},
     {"APB_0_PREADY", circt::hw::PortDirection::OUTPUT, 1},
     {"APB_0_PSLVERR", circt::hw::PortDirection::OUTPUT, 1},
@@ -4704,19 +4526,13 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::HBMuONEuST
     {"MBIST_EN_05", circt::hw::PortDirection::INPUT, 1},
     {"MBIST_EN_06", circt::hw::PortDirection::INPUT, 1},
     {"MBIST_EN_07", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::HBMuREFuCLK::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::HBMuREFuCLK::primitivePortInfos = {
     {"REF_CLK", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::HBMuSNGLBLIuINTFuAPB::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::HBMuSNGLBLIuINTFuAPB::primitivePortInfos = {
     {"CATTRIP_PIPE", circt::hw::PortDirection::OUTPUT, 1},
     {"PRDATA_PIPE", circt::hw::PortDirection::OUTPUT, 32},
     {"PREADY_PIPE", circt::hw::PortDirection::OUTPUT, 1},
@@ -4729,12 +4545,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::HBMuSNGLBL
     {"PSEL", circt::hw::PortDirection::INPUT, 1},
     {"PWDATA", circt::hw::PortDirection::INPUT, 32},
     {"PWRITE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::HBMuSNGLBLIuINTFuAXI::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::HBMuSNGLBLIuINTFuAXI::primitivePortInfos = {
     {"ARREADY_PIPE", circt::hw::PortDirection::OUTPUT, 1},
     {"AWREADY_PIPE", circt::hw::PortDirection::OUTPUT, 1},
     {"BID_PIPE", circt::hw::PortDirection::OUTPUT, 6},
@@ -4787,12 +4600,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::HBMuSNGLBL
     {"WLAST", circt::hw::PortDirection::INPUT, 1},
     {"WSTRB", circt::hw::PortDirection::INPUT, 32},
     {"WVALID", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::HBMuTWOuSTACKuINTF::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::HBMuTWOuSTACKuINTF::primitivePortInfos = {
     {"APB_0_PRDATA", circt::hw::PortDirection::OUTPUT, 32},
     {"APB_0_PREADY", circt::hw::PortDirection::OUTPUT, 1},
     {"APB_0_PSLVERR", circt::hw::PortDirection::OUTPUT, 1},
@@ -6279,20 +6089,14 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::HBMuTWOuST
     {"MBIST_EN_13", circt::hw::PortDirection::INPUT, 1},
     {"MBIST_EN_14", circt::hw::PortDirection::INPUT, 1},
     {"MBIST_EN_15", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::HPIOuVREF::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::HPIOuVREF::primitivePortInfos = {
     {"VREF", circt::hw::PortDirection::OUTPUT, 1},
     {"FABRIC_VREF_TUNE", circt::hw::PortDirection::INPUT, 7},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::HSADC::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::HSADC::primitivePortInfos = {
     {"CLK_ADC", circt::hw::PortDirection::OUTPUT, 1},
     {"DATA_ADC0", circt::hw::PortDirection::OUTPUT, 128},
     {"DATA_ADC1", circt::hw::PortDirection::OUTPUT, 128},
@@ -6341,12 +6145,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::HSADC::mod
     {"VIN_I01_P", circt::hw::PortDirection::INPUT, 1},
     {"VIN_I23_N", circt::hw::PortDirection::INPUT, 1},
     {"VIN_I23_P", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::HSDAC::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::HSDAC::primitivePortInfos = {
     {"CLK_DAC", circt::hw::PortDirection::OUTPUT, 1},
     {"DOUT", circt::hw::PortDirection::OUTPUT, 16},
     {"DRDY", circt::hw::PortDirection::OUTPUT, 1},
@@ -6391,85 +6192,61 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::HSDAC::mod
     {"SYSREF_IN_SOUTH", circt::hw::PortDirection::INPUT, 1},
     {"SYSREF_N", circt::hw::PortDirection::INPUT, 1},
     {"SYSREF_P", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUF::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUF::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFCTRL::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFCTRL::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IBUFDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"INTERMDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"T", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFDS::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFDS::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IB", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFDSE3::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFDSE3::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IB", circt::hw::PortDirection::INPUT, 1},
     {"IBUFDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"OSC", circt::hw::PortDirection::INPUT, 4},
     {"OSC_EN", circt::hw::PortDirection::INPUT, 2},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFDSuDIFFuOUT::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFDSuDIFFuOUT::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"OB", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IB", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFDSuDIFFuOUTuIBUFDISABLE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFDSuDIFFuOUTuIBUFDISABLE::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"OB", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IB", circt::hw::PortDirection::INPUT, 1},
     {"IBUFDISABLE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFDSuDIFFuOUTuINTERMDISABLE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFDSuDIFFuOUTuINTERMDISABLE::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"OB", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IB", circt::hw::PortDirection::INPUT, 1},
     {"IBUFDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"INTERMDISABLE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFDSuDPHY::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFDSuDPHY::primitivePortInfos = {
     {"HSRX_O", circt::hw::PortDirection::OUTPUT, 1},
     {"LPRX_O_N", circt::hw::PortDirection::OUTPUT, 1},
     {"LPRX_O_P", circt::hw::PortDirection::OUTPUT, 1},
@@ -6477,148 +6254,106 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFDSuDPH
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IB", circt::hw::PortDirection::INPUT, 1},
     {"LPRX_DISABLE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFDSuGTE2::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFDSuGTE2::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"ODIV2", circt::hw::PortDirection::OUTPUT, 1},
     {"CEB", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IB", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFDSuGTE3::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFDSuGTE3::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"ODIV2", circt::hw::PortDirection::OUTPUT, 1},
     {"CEB", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IB", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFDSuGTE4::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFDSuGTE4::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"ODIV2", circt::hw::PortDirection::OUTPUT, 1},
     {"CEB", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IB", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFDSuGTM::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFDSuGTM::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"ODIV2", circt::hw::PortDirection::OUTPUT, 1},
     {"CEB", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IB", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFDSuIBUFDISABLE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFDSuIBUFDISABLE::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IB", circt::hw::PortDirection::INPUT, 1},
     {"IBUFDISABLE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFDSuIBUFDISABLEuINT::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFDSuIBUFDISABLEuINT::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IB", circt::hw::PortDirection::INPUT, 1},
     {"IBUFDISABLE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFDSuINTERMDISABLE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFDSuINTERMDISABLE::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IB", circt::hw::PortDirection::INPUT, 1},
     {"IBUFDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"INTERMDISABLE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFDSuINTERMDISABLEuINT::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFDSuINTERMDISABLEuINT::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IB", circt::hw::PortDirection::INPUT, 1},
     {"IBUFDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"INTERMDISABLE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFE3::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFE3::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IBUFDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"OSC", circt::hw::PortDirection::INPUT, 4},
     {"OSC_EN", circt::hw::PortDirection::INPUT, 1},
     {"VREF", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFuANALOG::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFuANALOG::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFuIBUFDISABLE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFuIBUFDISABLE::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IBUFDISABLE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IBUFuINTERMDISABLE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IBUFuINTERMDISABLE::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IBUFDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"INTERMDISABLE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ICAPE2::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::ICAPE2::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 32},
     {"CLK", circt::hw::PortDirection::INPUT, 1},
     {"CSIB", circt::hw::PortDirection::INPUT, 1},
     {"RDWRB", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 32},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ICAPE3::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::ICAPE3::primitivePortInfos = {
     {"AVAIL", circt::hw::PortDirection::OUTPUT, 1},
     {"O", circt::hw::PortDirection::OUTPUT, 32},
     {"PRDONE", circt::hw::PortDirection::OUTPUT, 1},
@@ -6627,12 +6362,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ICAPE3::mo
     {"CSIB", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 32},
     {"RDWRB", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IDDR::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IDDR::primitivePortInfos = {
     {"Q1", circt::hw::PortDirection::OUTPUT, 1},
     {"Q2", circt::hw::PortDirection::OUTPUT, 1},
     {"C", circt::hw::PortDirection::INPUT, 1},
@@ -6640,24 +6372,18 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IDDR::modu
     {"D", circt::hw::PortDirection::INPUT, 1},
     {"R", circt::hw::PortDirection::INPUT, 1},
     {"S", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IDDRE1::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IDDRE1::primitivePortInfos = {
     {"Q1", circt::hw::PortDirection::OUTPUT, 1},
     {"Q2", circt::hw::PortDirection::OUTPUT, 1},
     {"C", circt::hw::PortDirection::INPUT, 1},
     {"CB", circt::hw::PortDirection::INPUT, 1},
     {"D", circt::hw::PortDirection::INPUT, 1},
     {"R", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IDDRu2CLK::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IDDRu2CLK::primitivePortInfos = {
     {"Q1", circt::hw::PortDirection::OUTPUT, 1},
     {"Q2", circt::hw::PortDirection::OUTPUT, 1},
     {"C", circt::hw::PortDirection::INPUT, 1},
@@ -6666,21 +6392,15 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IDDRu2CLK:
     {"D", circt::hw::PortDirection::INPUT, 1},
     {"R", circt::hw::PortDirection::INPUT, 1},
     {"S", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IDELAYCTRL::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IDELAYCTRL::primitivePortInfos = {
     {"RDY", circt::hw::PortDirection::OUTPUT, 1},
     {"REFCLK", circt::hw::PortDirection::INPUT, 1},
     {"RST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IDELAYE2::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IDELAYE2::primitivePortInfos = {
     {"CNTVALUEOUT", circt::hw::PortDirection::OUTPUT, 5},
     {"DATAOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"C", circt::hw::PortDirection::INPUT, 1},
@@ -6693,12 +6413,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IDELAYE2::
     {"LD", circt::hw::PortDirection::INPUT, 1},
     {"LDPIPEEN", circt::hw::PortDirection::INPUT, 1},
     {"REGRST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IDELAYE2uFINEDELAY::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IDELAYE2uFINEDELAY::primitivePortInfos = {
     {"CNTVALUEOUT", circt::hw::PortDirection::OUTPUT, 5},
     {"DATAOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"C", circt::hw::PortDirection::INPUT, 1},
@@ -6712,12 +6429,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IDELAYE2uF
     {"LD", circt::hw::PortDirection::INPUT, 1},
     {"LDPIPEEN", circt::hw::PortDirection::INPUT, 1},
     {"REGRST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IDELAYE3::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IDELAYE3::primitivePortInfos = {
     {"CASC_OUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CNTVALUEOUT", circt::hw::PortDirection::OUTPUT, 9},
     {"DATAOUT", circt::hw::PortDirection::OUTPUT, 1},
@@ -6732,12 +6446,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IDELAYE3::
     {"INC", circt::hw::PortDirection::INPUT, 1},
     {"LOAD", circt::hw::PortDirection::INPUT, 1},
     {"RST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ILKN::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::ILKN::primitivePortInfos = {
     {"DRP_DO", circt::hw::PortDirection::OUTPUT, 16},
     {"DRP_RDY", circt::hw::PortDirection::OUTPUT, 1},
     {"RX_BYPASS_DATAOUT00", circt::hw::PortDirection::OUTPUT, 66},
@@ -6954,12 +6665,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ILKN::modu
     {"TX_SOPIN1", circt::hw::PortDirection::INPUT, 1},
     {"TX_SOPIN2", circt::hw::PortDirection::INPUT, 1},
     {"TX_SOPIN3", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ILKNE4::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::ILKNE4::primitivePortInfos = {
     {"DRP_DO", circt::hw::PortDirection::OUTPUT, 16},
     {"DRP_RDY", circt::hw::PortDirection::OUTPUT, 1},
     {"RX_BYPASS_DATAOUT00", circt::hw::PortDirection::OUTPUT, 66},
@@ -7176,31 +6884,22 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ILKNE4::mo
     {"TX_SOPIN1", circt::hw::PortDirection::INPUT, 1},
     {"TX_SOPIN2", circt::hw::PortDirection::INPUT, 1},
     {"TX_SOPIN3", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::INBUF::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::INBUF::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"OSC", circt::hw::PortDirection::INPUT, 4},
     {"OSC_EN", circt::hw::PortDirection::INPUT, 1},
     {"PAD", circt::hw::PortDirection::INPUT, 1},
     {"VREF", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::INV::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::INV::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::INuFIFO::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::INuFIFO::primitivePortInfos = {
     {"ALMOSTEMPTY", circt::hw::PortDirection::OUTPUT, 1},
     {"ALMOSTFULL", circt::hw::PortDirection::OUTPUT, 1},
     {"EMPTY", circt::hw::PortDirection::OUTPUT, 1},
@@ -7230,30 +6929,21 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::INuFIFO::m
     {"D9", circt::hw::PortDirection::INPUT, 4},
     {"D5", circt::hw::PortDirection::INPUT, 8},
     {"D6", circt::hw::PortDirection::INPUT, 8},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IOBUF::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IOBUF::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"T", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IOBUFDS::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IOBUFDS::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"T", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IOBUFDSE3::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IOBUFDSE3::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"IO", circt::hw::PortDirection::INOUT, 1},
     {"IOB", circt::hw::PortDirection::INOUT, 1},
@@ -7263,34 +6953,25 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IOBUFDSE3:
     {"OSC", circt::hw::PortDirection::INPUT, 4},
     {"OSC_EN", circt::hw::PortDirection::INPUT, 2},
     {"T", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IOBUFDSuDCIEN::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IOBUFDSuDCIEN::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"DCITERMDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IBUFDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"T", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IOBUFDSuDIFFuOUT::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IOBUFDSuDIFFuOUT::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"OB", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"TM", circt::hw::PortDirection::INPUT, 1},
     {"TS", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IOBUFDSuDIFFuOUTuDCIEN::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IOBUFDSuDIFFuOUTuDCIEN::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"OB", circt::hw::PortDirection::OUTPUT, 1},
     {"DCITERMDISABLE", circt::hw::PortDirection::INPUT, 1},
@@ -7298,12 +6979,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IOBUFDSuDI
     {"IBUFDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"TM", circt::hw::PortDirection::INPUT, 1},
     {"TS", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IOBUFDSuDIFFuOUTuINTERMDISABLE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IOBUFDSuDIFFuOUTuINTERMDISABLE::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"OB", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
@@ -7311,23 +6989,17 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IOBUFDSuDI
     {"INTERMDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"TM", circt::hw::PortDirection::INPUT, 1},
     {"TS", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IOBUFDSuINTERMDISABLE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IOBUFDSuINTERMDISABLE::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IBUFDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"INTERMDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"T", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IOBUFE3::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IOBUFE3::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"IO", circt::hw::PortDirection::INOUT, 1},
     {"DCITERMDISABLE", circt::hw::PortDirection::INPUT, 1},
@@ -7337,44 +7009,32 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IOBUFE3::m
     {"OSC_EN", circt::hw::PortDirection::INPUT, 1},
     {"T", circt::hw::PortDirection::INPUT, 1},
     {"VREF", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IOBUFuANALOG::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IOBUFuANALOG::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"IO", circt::hw::PortDirection::INOUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"T", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IOBUFuDCIEN::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IOBUFuDCIEN::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"DCITERMDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IBUFDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"T", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::IOBUFuINTERMDISABLE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::IOBUFuINTERMDISABLE::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"IBUFDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"INTERMDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"T", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ISERDES::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::ISERDES::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"Q1", circt::hw::PortDirection::OUTPUT, 1},
     {"Q2", circt::hw::PortDirection::OUTPUT, 1},
@@ -7398,12 +7058,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ISERDES::m
     {"SHIFTIN1", circt::hw::PortDirection::INPUT, 1},
     {"SHIFTIN2", circt::hw::PortDirection::INPUT, 1},
     {"SR", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ISERDESE1::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::ISERDESE1::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"Q1", circt::hw::PortDirection::OUTPUT, 1},
     {"Q2", circt::hw::PortDirection::OUTPUT, 1},
@@ -7428,24 +7085,18 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ISERDESE1:
     {"RST", circt::hw::PortDirection::INPUT, 1},
     {"SHIFTIN1", circt::hw::PortDirection::INPUT, 1},
     {"SHIFTIN2", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::LUT5::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::LUT5::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I0", circt::hw::PortDirection::INPUT, 1},
     {"I1", circt::hw::PortDirection::INPUT, 1},
     {"I2", circt::hw::PortDirection::INPUT, 1},
     {"I3", circt::hw::PortDirection::INPUT, 1},
     {"I4", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::LUT6::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::LUT6::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I0", circt::hw::PortDirection::INPUT, 1},
     {"I1", circt::hw::PortDirection::INPUT, 1},
@@ -7453,12 +7104,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::LUT6::modu
     {"I3", circt::hw::PortDirection::INPUT, 1},
     {"I4", circt::hw::PortDirection::INPUT, 1},
     {"I5", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::LUT6u2::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::LUT6u2::primitivePortInfos = {
     {"O5", circt::hw::PortDirection::OUTPUT, 1},
     {"O6", circt::hw::PortDirection::OUTPUT, 1},
     {"I0", circt::hw::PortDirection::INPUT, 1},
@@ -7467,22 +7115,16 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::LUT6u2::mo
     {"I3", circt::hw::PortDirection::INPUT, 1},
     {"I4", circt::hw::PortDirection::INPUT, 1},
     {"I5", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::MASTERuJTAG::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::MASTERuJTAG::primitivePortInfos = {
     {"TDO", circt::hw::PortDirection::OUTPUT, 1},
     {"TCK", circt::hw::PortDirection::INPUT, 1},
     {"TDI", circt::hw::PortDirection::INPUT, 1},
     {"TMS", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::MMCME2uADV::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::MMCME2uADV::primitivePortInfos = {
     {"CLKFBOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKFBOUTB", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKFBSTOPPED", circt::hw::PortDirection::OUTPUT, 1},
@@ -7516,12 +7158,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::MMCME2uADV
     {"PSINCDEC", circt::hw::PortDirection::INPUT, 1},
     {"PWRDWN", circt::hw::PortDirection::INPUT, 1},
     {"RST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::MMCME2uBASE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::MMCME2uBASE::primitivePortInfos = {
     {"CLKFBOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKFBOUTB", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKOUT0", circt::hw::PortDirection::OUTPUT, 1},
@@ -7540,12 +7179,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::MMCME2uBAS
     {"CLKIN1", circt::hw::PortDirection::INPUT, 1},
     {"PWRDWN", circt::hw::PortDirection::INPUT, 1},
     {"RST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::MMCME3uADV::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::MMCME3uADV::primitivePortInfos = {
     {"CDDCDONE", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKFBOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKFBOUTB", circt::hw::PortDirection::OUTPUT, 1},
@@ -7581,12 +7217,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::MMCME3uADV
     {"PSINCDEC", circt::hw::PortDirection::INPUT, 1},
     {"PWRDWN", circt::hw::PortDirection::INPUT, 1},
     {"RST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::MMCME3uBASE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::MMCME3uBASE::primitivePortInfos = {
     {"CLKFBOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKFBOUTB", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKOUT0", circt::hw::PortDirection::OUTPUT, 1},
@@ -7605,12 +7238,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::MMCME3uBAS
     {"CLKIN1", circt::hw::PortDirection::INPUT, 1},
     {"PWRDWN", circt::hw::PortDirection::INPUT, 1},
     {"RST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::MMCME4uADV::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::MMCME4uADV::primitivePortInfos = {
     {"CDDCDONE", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKFBOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKFBOUTB", circt::hw::PortDirection::OUTPUT, 1},
@@ -7646,12 +7276,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::MMCME4uADV
     {"PSINCDEC", circt::hw::PortDirection::INPUT, 1},
     {"PWRDWN", circt::hw::PortDirection::INPUT, 1},
     {"RST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::MMCME4uBASE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::MMCME4uBASE::primitivePortInfos = {
     {"CLKFBOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKFBOUTB", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKOUT0", circt::hw::PortDirection::OUTPUT, 1},
@@ -7670,69 +7297,48 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::MMCME4uBAS
     {"CLKIN1", circt::hw::PortDirection::INPUT, 1},
     {"PWRDWN", circt::hw::PortDirection::INPUT, 1},
     {"RST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::MUXCY::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::MUXCY::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"CI", circt::hw::PortDirection::INPUT, 1},
     {"DI", circt::hw::PortDirection::INPUT, 1},
     {"S", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::MUXF7::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::MUXF7::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I0", circt::hw::PortDirection::INPUT, 1},
     {"I1", circt::hw::PortDirection::INPUT, 1},
     {"S", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::MUXF8::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::MUXF8::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I0", circt::hw::PortDirection::INPUT, 1},
     {"I1", circt::hw::PortDirection::INPUT, 1},
     {"S", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::MUXF9::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::MUXF9::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I0", circt::hw::PortDirection::INPUT, 1},
     {"I1", circt::hw::PortDirection::INPUT, 1},
     {"S", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OBUF::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OBUF::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OBUFDS::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OBUFDS::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"OB", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OBUFDSuDPHY::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OBUFDSuDPHY::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"OB", circt::hw::PortDirection::OUTPUT, 1},
     {"HSTX_I", circt::hw::PortDirection::INPUT, 1},
@@ -7740,114 +7346,81 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OBUFDSuDPH
     {"LPTX_I_N", circt::hw::PortDirection::INPUT, 1},
     {"LPTX_I_P", circt::hw::PortDirection::INPUT, 1},
     {"LPTX_T", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OBUFDSuGTE3::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OBUFDSuGTE3::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"OB", circt::hw::PortDirection::OUTPUT, 1},
     {"CEB", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OBUFDSuGTE3uADV::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OBUFDSuGTE3uADV::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"OB", circt::hw::PortDirection::OUTPUT, 1},
     {"CEB", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 4},
     {"RXRECCLK_SEL", circt::hw::PortDirection::INPUT, 2},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OBUFDSuGTE4::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OBUFDSuGTE4::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"OB", circt::hw::PortDirection::OUTPUT, 1},
     {"CEB", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OBUFDSuGTE4uADV::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OBUFDSuGTE4uADV::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"OB", circt::hw::PortDirection::OUTPUT, 1},
     {"CEB", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 4},
     {"RXRECCLK_SEL", circt::hw::PortDirection::INPUT, 2},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OBUFDSuGTM::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OBUFDSuGTM::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"OB", circt::hw::PortDirection::OUTPUT, 1},
     {"CEB", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OBUFDSuGTMuADV::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OBUFDSuGTMuADV::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"OB", circt::hw::PortDirection::OUTPUT, 1},
     {"CEB", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 4},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OBUFT::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OBUFT::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"T", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OBUFTDS::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OBUFTDS::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"OB", circt::hw::PortDirection::OUTPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"T", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OBUFTDSuDCIEN::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OBUFTDSuDCIEN::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"OB", circt::hw::PortDirection::OUTPUT, 1},
     {"DCITERMDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"T", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OBUFTuDCIEN::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OBUFTuDCIEN::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"DCITERMDISABLE", circt::hw::PortDirection::INPUT, 1},
     {"I", circt::hw::PortDirection::INPUT, 1},
     {"T", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ODDR::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::ODDR::primitivePortInfos = {
     {"Q", circt::hw::PortDirection::OUTPUT, 1},
     {"C", circt::hw::PortDirection::INPUT, 1},
     {"CE", circt::hw::PortDirection::INPUT, 1},
@@ -7855,23 +7428,17 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ODDR::modu
     {"D2", circt::hw::PortDirection::INPUT, 1},
     {"R", circt::hw::PortDirection::INPUT, 1},
     {"S", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ODDRE1::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::ODDRE1::primitivePortInfos = {
     {"Q", circt::hw::PortDirection::OUTPUT, 1},
     {"C", circt::hw::PortDirection::INPUT, 1},
     {"D1", circt::hw::PortDirection::INPUT, 1},
     {"D2", circt::hw::PortDirection::INPUT, 1},
     {"SR", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ODELAYE2::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::ODELAYE2::primitivePortInfos = {
     {"CNTVALUEOUT", circt::hw::PortDirection::OUTPUT, 5},
     {"DATAOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"C", circt::hw::PortDirection::INPUT, 1},
@@ -7884,12 +7451,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ODELAYE2::
     {"LDPIPEEN", circt::hw::PortDirection::INPUT, 1},
     {"ODATAIN", circt::hw::PortDirection::INPUT, 1},
     {"REGRST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ODELAYE2uFINEDELAY::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::ODELAYE2uFINEDELAY::primitivePortInfos = {
     {"CNTVALUEOUT", circt::hw::PortDirection::OUTPUT, 5},
     {"DATAOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"C", circt::hw::PortDirection::INPUT, 1},
@@ -7903,12 +7467,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ODELAYE2uF
     {"ODATAIN", circt::hw::PortDirection::INPUT, 1},
     {"OFDLY", circt::hw::PortDirection::INPUT, 3},
     {"REGRST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ODELAYE3::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::ODELAYE3::primitivePortInfos = {
     {"CASC_OUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CNTVALUEOUT", circt::hw::PortDirection::OUTPUT, 9},
     {"DATAOUT", circt::hw::PortDirection::OUTPUT, 1},
@@ -7922,21 +7483,15 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ODELAYE3::
     {"LOAD", circt::hw::PortDirection::INPUT, 1},
     {"ODATAIN", circt::hw::PortDirection::INPUT, 1},
     {"RST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OR2L::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OR2L::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"DI", circt::hw::PortDirection::INPUT, 1},
     {"SRI", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OSERDES::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OSERDES::primitivePortInfos = {
     {"OQ", circt::hw::PortDirection::OUTPUT, 1},
     {"SHIFTOUT1", circt::hw::PortDirection::OUTPUT, 1},
     {"SHIFTOUT2", circt::hw::PortDirection::OUTPUT, 1},
@@ -7959,12 +7514,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OSERDES::m
     {"T3", circt::hw::PortDirection::INPUT, 1},
     {"T4", circt::hw::PortDirection::INPUT, 1},
     {"TCE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OSERDESE1::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OSERDESE1::primitivePortInfos = {
     {"OCBEXTEND", circt::hw::PortDirection::OUTPUT, 1},
     {"OFB", circt::hw::PortDirection::OUTPUT, 1},
     {"OQ", circt::hw::PortDirection::OUTPUT, 1},
@@ -7993,78 +7545,42 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OSERDESE1:
     {"T4", circt::hw::PortDirection::INPUT, 1},
     {"TCE", circt::hw::PortDirection::INPUT, 1},
     {"WC", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::selfhealuoserdese1uvlog::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
-  };
-  return ::createModulePortInfos(context, data);
-}
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::selfhealuoserdese1uvlog::primitivePortInfos = {
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::plguoserdese1uvlog::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
-  };
-  return ::createModulePortInfos(context, data);
-}
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::plguoserdese1uvlog::primitivePortInfos = {
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::rank12duoserdese1uvlog::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
-  };
-  return ::createModulePortInfos(context, data);
-}
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::rank12duoserdese1uvlog::primitivePortInfos = {
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::trifuoserdese1uvlog::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
-  };
-  return ::createModulePortInfos(context, data);
-}
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::trifuoserdese1uvlog::primitivePortInfos = {
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::txbufferuoserdese1uvlog::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
-  };
-  return ::createModulePortInfos(context, data);
-}
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::txbufferuoserdese1uvlog::primitivePortInfos = {
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::fifoutdpipeuoserdese1uvlog::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
-  };
-  return ::createModulePortInfos(context, data);
-}
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::fifoutdpipeuoserdese1uvlog::primitivePortInfos = {
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::fifouresetuoserdese1uvlog::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
-  };
-  return ::createModulePortInfos(context, data);
-}
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::fifouresetuoserdese1uvlog::primitivePortInfos = {
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::fifouaddruoserdese1uvlog::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
-  };
-  return ::createModulePortInfos(context, data);
-}
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::fifouaddruoserdese1uvlog::primitivePortInfos = {
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::iodlyctrlunpreuoserdese1uvlog::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
-  };
-  return ::createModulePortInfos(context, data);
-}
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::iodlyctrlunpreuoserdese1uvlog::primitivePortInfos = {
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::doutuoserdese1uvlog::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
-  };
-  return ::createModulePortInfos(context, data);
-}
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::doutuoserdese1uvlog::primitivePortInfos = {
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::toutuoserdese1uvlog::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
-  };
-  return ::createModulePortInfos(context, data);
-}
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::toutuoserdese1uvlog::primitivePortInfos = {
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OSERDESE2::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OSERDESE2::primitivePortInfos = {
     {"OFB", circt::hw::PortDirection::OUTPUT, 1},
     {"OQ", circt::hw::PortDirection::OUTPUT, 1},
     {"SHIFTOUT1", circt::hw::PortDirection::OUTPUT, 1},
@@ -8092,12 +7608,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OSERDESE2:
     {"T4", circt::hw::PortDirection::INPUT, 1},
     {"TBYTEIN", circt::hw::PortDirection::INPUT, 1},
     {"TCE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OSERDESE3::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OSERDESE3::primitivePortInfos = {
     {"OQ", circt::hw::PortDirection::OUTPUT, 1},
     {"T_OUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CLK", circt::hw::PortDirection::INPUT, 1},
@@ -8105,12 +7618,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OSERDESE3:
     {"D", circt::hw::PortDirection::INPUT, 8},
     {"RST", circt::hw::PortDirection::INPUT, 1},
     {"T", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OUTuFIFO::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::OUTuFIFO::primitivePortInfos = {
     {"ALMOSTEMPTY", circt::hw::PortDirection::OUTPUT, 1},
     {"ALMOSTFULL", circt::hw::PortDirection::OUTPUT, 1},
     {"EMPTY", circt::hw::PortDirection::OUTPUT, 1},
@@ -8140,12 +7650,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::OUTuFIFO::
     {"D7", circt::hw::PortDirection::INPUT, 8},
     {"D8", circt::hw::PortDirection::INPUT, 8},
     {"D9", circt::hw::PortDirection::INPUT, 8},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PCIE40E4::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PCIE40E4::primitivePortInfos = {
     {"AXIUSEROUT", circt::hw::PortDirection::OUTPUT, 8},
     {"CFGBUSNUMBER", circt::hw::PortDirection::OUTPUT, 8},
     {"CFGCURRENTSPEED", circt::hw::PortDirection::OUTPUT, 2},
@@ -8852,12 +8359,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PCIE40E4::
     {"USERCLK2", circt::hw::PortDirection::INPUT, 1},
     {"USERCLKEN", circt::hw::PortDirection::INPUT, 1},
     {"USERSPAREIN", circt::hw::PortDirection::INPUT, 32},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PCIE4CE4::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PCIE4CE4::primitivePortInfos = {
     {"AXIUSEROUT", circt::hw::PortDirection::OUTPUT, 8},
     {"CCIXTXCREDIT", circt::hw::PortDirection::OUTPUT, 1},
     {"CFGBUSNUMBER", circt::hw::PortDirection::OUTPUT, 8},
@@ -9583,12 +9087,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PCIE4CE4::
     {"USERCLK2", circt::hw::PortDirection::INPUT, 1},
     {"USERCLKEN", circt::hw::PortDirection::INPUT, 1},
     {"USERSPAREIN", circt::hw::PortDirection::INPUT, 32},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PCIEu3u0::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PCIEu3u0::primitivePortInfos = {
     {"CFGERRCOROUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CFGERRFATALOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CFGERRNONFATALOUT", circt::hw::PortDirection::OUTPUT, 1},
@@ -10059,12 +9560,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PCIEu3u0::
     {"SAXISCCTKEEP", circt::hw::PortDirection::INPUT, 8},
     {"SAXISRQTKEEP", circt::hw::PortDirection::INPUT, 8},
     {"CFGINTERRUPTMSITPHSTTAG", circt::hw::PortDirection::INPUT, 9},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PCIEu3u1::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PCIEu3u1::primitivePortInfos = {
     {"CFGCURRENTSPEED", circt::hw::PortDirection::OUTPUT, 3},
     {"CFGDPASUBSTATECHANGE", circt::hw::PortDirection::OUTPUT, 4},
     {"CFGERRCOROUT", circt::hw::PortDirection::OUTPUT, 1},
@@ -10611,12 +10109,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PCIEu3u1::
     {"SAXISRQTVALID", circt::hw::PortDirection::INPUT, 1},
     {"SPAREIN", circt::hw::PortDirection::INPUT, 32},
     {"USERCLK", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PHASERuIN::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PHASERuIN::primitivePortInfos = {
     {"COUNTERREADVAL", circt::hw::PortDirection::OUTPUT, 6},
     {"FINEOVERFLOW", circt::hw::PortDirection::OUTPUT, 1},
     {"ICLK", circt::hw::PortDirection::OUTPUT, 1},
@@ -10637,12 +10132,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PHASERuIN:
     {"RST", circt::hw::PortDirection::INPUT, 1},
     {"SYNCIN", circt::hw::PortDirection::INPUT, 1},
     {"SYSCLK", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PHASERuINuPHY::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PHASERuINuPHY::primitivePortInfos = {
     {"COUNTERREADVAL", circt::hw::PortDirection::OUTPUT, 6},
     {"DQSFOUND", circt::hw::PortDirection::OUTPUT, 1},
     {"DQSOUTOFRANGE", circt::hw::PortDirection::OUTPUT, 1},
@@ -10668,12 +10160,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PHASERuINu
     {"RSTDQSFIND", circt::hw::PortDirection::INPUT, 1},
     {"SYNCIN", circt::hw::PortDirection::INPUT, 1},
     {"SYSCLK", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PHASERuOUT::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PHASERuOUT::primitivePortInfos = {
     {"COARSEOVERFLOW", circt::hw::PortDirection::OUTPUT, 1},
     {"FINEOVERFLOW", circt::hw::PortDirection::OUTPUT, 1},
     {"OCLK", circt::hw::PortDirection::OUTPUT, 1},
@@ -10697,12 +10186,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PHASERuOUT
     {"SYNCIN", circt::hw::PortDirection::INPUT, 1},
     {"SYSCLK", circt::hw::PortDirection::INPUT, 1},
     {"COUNTERLOADVAL", circt::hw::PortDirection::INPUT, 9},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PHASERuOUTuPHY::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PHASERuOUTuPHY::primitivePortInfos = {
     {"COARSEOVERFLOW", circt::hw::PortDirection::OUTPUT, 1},
     {"FINEOVERFLOW", circt::hw::PortDirection::OUTPUT, 1},
     {"OCLK", circt::hw::PortDirection::OUTPUT, 1},
@@ -10730,22 +10216,16 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PHASERuOUT
     {"SYSCLK", circt::hw::PortDirection::INPUT, 1},
     {"ENCALIBPHY", circt::hw::PortDirection::INPUT, 2},
     {"COUNTERLOADVAL", circt::hw::PortDirection::INPUT, 9},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PHASERuREF::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PHASERuREF::primitivePortInfos = {
     {"LOCKED", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKIN", circt::hw::PortDirection::INPUT, 1},
     {"PWRDWN", circt::hw::PortDirection::INPUT, 1},
     {"RST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PHYuCONTROL::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PHYuCONTROL::primitivePortInfos = {
     {"PHYCTLALMOSTFULL", circt::hw::PortDirection::OUTPUT, 1},
     {"PHYCTLEMPTY", circt::hw::PortDirection::OUTPUT, 1},
     {"PHYCTLFULL", circt::hw::PortDirection::OUTPUT, 1},
@@ -10769,12 +10249,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PHYuCONTRO
     {"SYNCIN", circt::hw::PortDirection::INPUT, 1},
     {"WRITECALIBENABLE", circt::hw::PortDirection::INPUT, 1},
     {"PHYCTLWD", circt::hw::PortDirection::INPUT, 32},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PLLE2uADV::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PLLE2uADV::primitivePortInfos = {
     {"CLKFBOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKOUT0", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKOUT1", circt::hw::PortDirection::OUTPUT, 1},
@@ -10796,12 +10273,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PLLE2uADV:
     {"DWE", circt::hw::PortDirection::INPUT, 1},
     {"PWRDWN", circt::hw::PortDirection::INPUT, 1},
     {"RST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PLLE2uBASE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PLLE2uBASE::primitivePortInfos = {
     {"CLKFBOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKOUT0", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKOUT1", circt::hw::PortDirection::OUTPUT, 1},
@@ -10814,12 +10288,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PLLE2uBASE
     {"CLKIN1", circt::hw::PortDirection::INPUT, 1},
     {"PWRDWN", circt::hw::PortDirection::INPUT, 1},
     {"RST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PLLE3uADV::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PLLE3uADV::primitivePortInfos = {
     {"CLKFBOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKOUT0", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKOUT0B", circt::hw::PortDirection::OUTPUT, 1},
@@ -10839,12 +10310,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PLLE3uADV:
     {"DWE", circt::hw::PortDirection::INPUT, 1},
     {"PWRDWN", circt::hw::PortDirection::INPUT, 1},
     {"RST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PLLE3uBASE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PLLE3uBASE::primitivePortInfos = {
     {"CLKFBOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKOUT0", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKOUT0B", circt::hw::PortDirection::OUTPUT, 1},
@@ -10857,12 +10325,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PLLE3uBASE
     {"CLKOUTPHYEN", circt::hw::PortDirection::INPUT, 1},
     {"PWRDWN", circt::hw::PortDirection::INPUT, 1},
     {"RST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PLLE4uADV::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PLLE4uADV::primitivePortInfos = {
     {"CLKFBOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKOUT0", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKOUT0B", circt::hw::PortDirection::OUTPUT, 1},
@@ -10882,12 +10347,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PLLE4uADV:
     {"DWE", circt::hw::PortDirection::INPUT, 1},
     {"PWRDWN", circt::hw::PortDirection::INPUT, 1},
     {"RST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PLLE4uBASE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PLLE4uBASE::primitivePortInfos = {
     {"CLKFBOUT", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKOUT0", circt::hw::PortDirection::OUTPUT, 1},
     {"CLKOUT0B", circt::hw::PortDirection::OUTPUT, 1},
@@ -10900,12 +10362,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PLLE4uBASE
     {"CLKOUTPHYEN", circt::hw::PortDirection::INPUT, 1},
     {"PWRDWN", circt::hw::PortDirection::INPUT, 1},
     {"RST", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PS7::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PS7::primitivePortInfos = {
     {"DMA0DATYPE", circt::hw::PortDirection::OUTPUT, 2},
     {"DMA0DAVALID", circt::hw::PortDirection::OUTPUT, 1},
     {"DMA0DRREADY", circt::hw::PortDirection::OUTPUT, 1},
@@ -11526,12 +10985,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PS7::modul
     {"SAXIHP3WRISSUECAP1EN", circt::hw::PortDirection::INPUT, 1},
     {"SAXIHP3WSTRB", circt::hw::PortDirection::INPUT, 8},
     {"SAXIHP3WVALID", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PS8::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PS8::primitivePortInfos = {
     {"ADMA2PLCACK", circt::hw::PortDirection::OUTPUT, 8},
     {"ADMA2PLTVLD", circt::hw::PortDirection::OUTPUT, 8},
     {"DPAUDIOREFCLK", circt::hw::PortDirection::OUTPUT, 1},
@@ -12547,26 +12003,17 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PS8::modul
     {"SAXIGP6WSTRB", circt::hw::PortDirection::INPUT, 16},
     {"SAXIGP6WVALID", circt::hw::PortDirection::INPUT, 1},
     {"STMEVENT", circt::hw::PortDirection::INPUT, 60},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PULLDOWN::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PULLDOWN::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::PULLUP::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::PULLUP::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM128X1D::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::RAM128X1D::primitivePortInfos = {
     {"DPO", circt::hw::PortDirection::OUTPUT, 1},
     {"SPO", circt::hw::PortDirection::OUTPUT, 1},
     {"A", circt::hw::PortDirection::INPUT, 7},
@@ -12574,12 +12021,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM128X1D:
     {"DPRA", circt::hw::PortDirection::INPUT, 7},
     {"WCLK", circt::hw::PortDirection::INPUT, 1},
     {"WE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM128X1S::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::RAM128X1S::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"A0", circt::hw::PortDirection::INPUT, 1},
     {"A1", circt::hw::PortDirection::INPUT, 1},
@@ -12591,12 +12035,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM128X1S:
     {"D", circt::hw::PortDirection::INPUT, 1},
     {"WCLK", circt::hw::PortDirection::INPUT, 1},
     {"WE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM256X1D::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::RAM256X1D::primitivePortInfos = {
     {"DPO", circt::hw::PortDirection::OUTPUT, 1},
     {"SPO", circt::hw::PortDirection::OUTPUT, 1},
     {"A", circt::hw::PortDirection::INPUT, 8},
@@ -12604,23 +12045,17 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM256X1D:
     {"DPRA", circt::hw::PortDirection::INPUT, 8},
     {"WCLK", circt::hw::PortDirection::INPUT, 1},
     {"WE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM256X1S::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::RAM256X1S::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"A", circt::hw::PortDirection::INPUT, 8},
     {"D", circt::hw::PortDirection::INPUT, 1},
     {"WCLK", circt::hw::PortDirection::INPUT, 1},
     {"WE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM32M::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::RAM32M::primitivePortInfos = {
     {"DOA", circt::hw::PortDirection::OUTPUT, 2},
     {"DOB", circt::hw::PortDirection::OUTPUT, 2},
     {"DOC", circt::hw::PortDirection::OUTPUT, 2},
@@ -12635,12 +12070,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM32M::mo
     {"DID", circt::hw::PortDirection::INPUT, 2},
     {"WCLK", circt::hw::PortDirection::INPUT, 1},
     {"WE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM32M16::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::RAM32M16::primitivePortInfos = {
     {"DOA", circt::hw::PortDirection::OUTPUT, 2},
     {"DOB", circt::hw::PortDirection::OUTPUT, 2},
     {"DOC", circt::hw::PortDirection::OUTPUT, 2},
@@ -12667,12 +12099,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM32M16::
     {"DIH", circt::hw::PortDirection::INPUT, 2},
     {"WCLK", circt::hw::PortDirection::INPUT, 1},
     {"WE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM32X16DR8::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::RAM32X16DR8::primitivePortInfos = {
     {"DOA", circt::hw::PortDirection::OUTPUT, 1},
     {"DOB", circt::hw::PortDirection::OUTPUT, 1},
     {"DOC", circt::hw::PortDirection::OUTPUT, 1},
@@ -12699,12 +12128,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM32X16DR
     {"DIH", circt::hw::PortDirection::INPUT, 2},
     {"WCLK", circt::hw::PortDirection::INPUT, 1},
     {"WE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM32X1D::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::RAM32X1D::primitivePortInfos = {
     {"DPO", circt::hw::PortDirection::OUTPUT, 1},
     {"SPO", circt::hw::PortDirection::OUTPUT, 1},
     {"A0", circt::hw::PortDirection::INPUT, 1},
@@ -12720,12 +12146,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM32X1D::
     {"DPRA4", circt::hw::PortDirection::INPUT, 1},
     {"WCLK", circt::hw::PortDirection::INPUT, 1},
     {"WE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM32X1S::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::RAM32X1S::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"A0", circt::hw::PortDirection::INPUT, 1},
     {"A1", circt::hw::PortDirection::INPUT, 1},
@@ -12735,23 +12158,17 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM32X1S::
     {"D", circt::hw::PortDirection::INPUT, 1},
     {"WCLK", circt::hw::PortDirection::INPUT, 1},
     {"WE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM512X1S::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::RAM512X1S::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"A", circt::hw::PortDirection::INPUT, 9},
     {"D", circt::hw::PortDirection::INPUT, 1},
     {"WCLK", circt::hw::PortDirection::INPUT, 1},
     {"WE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM64M::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::RAM64M::primitivePortInfos = {
     {"DOA", circt::hw::PortDirection::OUTPUT, 1},
     {"DOB", circt::hw::PortDirection::OUTPUT, 1},
     {"DOC", circt::hw::PortDirection::OUTPUT, 1},
@@ -12766,12 +12183,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM64M::mo
     {"DID", circt::hw::PortDirection::INPUT, 1},
     {"WCLK", circt::hw::PortDirection::INPUT, 1},
     {"WE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM64M8::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::RAM64M8::primitivePortInfos = {
     {"DOA", circt::hw::PortDirection::OUTPUT, 1},
     {"DOB", circt::hw::PortDirection::OUTPUT, 1},
     {"DOC", circt::hw::PortDirection::OUTPUT, 1},
@@ -12798,12 +12212,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM64M8::m
     {"DIH", circt::hw::PortDirection::INPUT, 1},
     {"WCLK", circt::hw::PortDirection::INPUT, 1},
     {"WE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM64X1D::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::RAM64X1D::primitivePortInfos = {
     {"DPO", circt::hw::PortDirection::OUTPUT, 1},
     {"SPO", circt::hw::PortDirection::OUTPUT, 1},
     {"A0", circt::hw::PortDirection::INPUT, 1},
@@ -12821,12 +12232,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM64X1D::
     {"DPRA5", circt::hw::PortDirection::INPUT, 1},
     {"WCLK", circt::hw::PortDirection::INPUT, 1},
     {"WE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM64X1S::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::RAM64X1S::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"A0", circt::hw::PortDirection::INPUT, 1},
     {"A1", circt::hw::PortDirection::INPUT, 1},
@@ -12837,24 +12245,18 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM64X1S::
     {"D", circt::hw::PortDirection::INPUT, 1},
     {"WCLK", circt::hw::PortDirection::INPUT, 1},
     {"WE", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAM64X8SW::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::RAM64X8SW::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 8},
     {"A", circt::hw::PortDirection::INPUT, 6},
     {"D", circt::hw::PortDirection::INPUT, 1},
     {"WCLK", circt::hw::PortDirection::INPUT, 1},
     {"WE", circt::hw::PortDirection::INPUT, 1},
     {"WSEL", circt::hw::PortDirection::INPUT, 3},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAMB18E1::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::RAMB18E1::primitivePortInfos = {
     {"DOADO", circt::hw::PortDirection::OUTPUT, 16},
     {"DOBDO", circt::hw::PortDirection::OUTPUT, 16},
     {"DOPADOP", circt::hw::PortDirection::OUTPUT, 2},
@@ -12877,12 +12279,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::RAMB18E1::
     {"DIPBDIP", circt::hw::PortDirection::INPUT, 2},
     {"WEA", circt::hw::PortDirection::INPUT, 2},
     {"WEBWE", circt::hw::PortDirection::INPUT, 4},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::SIMuCONFIGE3::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::SIMuCONFIGE3::primitivePortInfos = {
     {"AVAIL", circt::hw::PortDirection::OUTPUT, 1},
     {"CSOB", circt::hw::PortDirection::OUTPUT, 1},
     {"PRDONE", circt::hw::PortDirection::OUTPUT, 1},
@@ -12895,12 +12294,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::SIMuCONFIG
     {"M", circt::hw::PortDirection::INPUT, 3},
     {"PROGB", circt::hw::PortDirection::INPUT, 1},
     {"RDWRB", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::SRL16E::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::SRL16E::primitivePortInfos = {
     {"Q", circt::hw::PortDirection::OUTPUT, 1},
     {"A0", circt::hw::PortDirection::INPUT, 1},
     {"A1", circt::hw::PortDirection::INPUT, 1},
@@ -12909,12 +12305,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::SRL16E::mo
     {"CE", circt::hw::PortDirection::INPUT, 1},
     {"CLK", circt::hw::PortDirection::INPUT, 1},
     {"D", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::SRLC16E::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::SRLC16E::primitivePortInfos = {
     {"Q", circt::hw::PortDirection::OUTPUT, 1},
     {"Q15", circt::hw::PortDirection::OUTPUT, 1},
     {"A0", circt::hw::PortDirection::INPUT, 1},
@@ -12924,24 +12317,18 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::SRLC16E::m
     {"CE", circt::hw::PortDirection::INPUT, 1},
     {"CLK", circt::hw::PortDirection::INPUT, 1},
     {"D", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::SRLC32E::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::SRLC32E::primitivePortInfos = {
     {"Q", circt::hw::PortDirection::OUTPUT, 1},
     {"Q31", circt::hw::PortDirection::OUTPUT, 1},
     {"A", circt::hw::PortDirection::INPUT, 5},
     {"CE", circt::hw::PortDirection::INPUT, 1},
     {"CLK", circt::hw::PortDirection::INPUT, 1},
     {"D", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::STARTUPE2::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::STARTUPE2::primitivePortInfos = {
     {"CFGCLK", circt::hw::PortDirection::OUTPUT, 1},
     {"CFGMCLK", circt::hw::PortDirection::OUTPUT, 1},
     {"EOS", circt::hw::PortDirection::OUTPUT, 1},
@@ -12955,12 +12342,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::STARTUPE2:
     {"USRCCLKTS", circt::hw::PortDirection::INPUT, 1},
     {"USRDONEO", circt::hw::PortDirection::INPUT, 1},
     {"USRDONETS", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::STARTUPE3::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::STARTUPE3::primitivePortInfos = {
     {"CFGCLK", circt::hw::PortDirection::OUTPUT, 1},
     {"CFGMCLK", circt::hw::PortDirection::OUTPUT, 1},
     {"DI", circt::hw::PortDirection::OUTPUT, 4},
@@ -12978,12 +12362,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::STARTUPE3:
     {"USRCCLKTS", circt::hw::PortDirection::INPUT, 1},
     {"USRDONEO", circt::hw::PortDirection::INPUT, 1},
     {"USRDONETS", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::SYSMONE1::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::SYSMONE1::primitivePortInfos = {
     {"ALM", circt::hw::PortDirection::OUTPUT, 16},
     {"BUSY", circt::hw::PortDirection::OUTPUT, 1},
     {"CHANNEL", circt::hw::PortDirection::OUTPUT, 6},
@@ -13012,12 +12393,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::SYSMONE1::
     {"VAUXP", circt::hw::PortDirection::INPUT, 16},
     {"VN", circt::hw::PortDirection::INPUT, 1},
     {"VP", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::SYSMONE4::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::SYSMONE4::primitivePortInfos = {
     {"ADC_DATA", circt::hw::PortDirection::OUTPUT, 16},
     {"ALM", circt::hw::PortDirection::OUTPUT, 16},
     {"BUSY", circt::hw::PortDirection::OUTPUT, 1},
@@ -13048,12 +12426,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::SYSMONE4::
     {"VAUXP", circt::hw::PortDirection::INPUT, 16},
     {"VN", circt::hw::PortDirection::INPUT, 1},
     {"VP", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::TXuBITSLICE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::TXuBITSLICE::primitivePortInfos = {
     {"CNTVALUEOUT", circt::hw::PortDirection::OUTPUT, 9},
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"RX_BIT_CTRL_OUT", circt::hw::PortDirection::OUTPUT, 40},
@@ -13072,12 +12447,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::TXuBITSLIC
     {"T", circt::hw::PortDirection::INPUT, 1},
     {"TBYTE_IN", circt::hw::PortDirection::INPUT, 1},
     {"TX_BIT_CTRL_IN", circt::hw::PortDirection::INPUT, 40},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::TXuBITSLICEuTRI::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::TXuBITSLICEuTRI::primitivePortInfos = {
     {"BIT_CTRL_OUT", circt::hw::PortDirection::OUTPUT, 40},
     {"CNTVALUEOUT", circt::hw::PortDirection::OUTPUT, 9},
     {"TRI_OUT", circt::hw::PortDirection::OUTPUT, 1},
@@ -13090,12 +12462,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::TXuBITSLIC
     {"LOAD", circt::hw::PortDirection::INPUT, 1},
     {"RST", circt::hw::PortDirection::INPUT, 1},
     {"RST_DLY", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::URAM288::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::URAM288::primitivePortInfos = {
     {"CAS_OUT_ADDR_A", circt::hw::PortDirection::OUTPUT, 23},
     {"CAS_OUT_ADDR_B", circt::hw::PortDirection::OUTPUT, 23},
     {"CAS_OUT_BWE_A", circt::hw::PortDirection::OUTPUT, 9},
@@ -13162,12 +12531,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::URAM288::m
     {"RST_A", circt::hw::PortDirection::INPUT, 1},
     {"RST_B", circt::hw::PortDirection::INPUT, 1},
     {"SLEEP", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::URAM288uBASE::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::URAM288uBASE::primitivePortInfos = {
     {"DBITERR_A", circt::hw::PortDirection::OUTPUT, 1},
     {"DBITERR_B", circt::hw::PortDirection::OUTPUT, 1},
     {"DOUT_A", circt::hw::PortDirection::OUTPUT, 72},
@@ -13196,28 +12562,19 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::URAM288uBA
     {"RST_A", circt::hw::PortDirection::INPUT, 1},
     {"RST_B", circt::hw::PortDirection::INPUT, 1},
     {"SLEEP", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::USRuACCESSE2::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::USRuACCESSE2::primitivePortInfos = {
     {"CFGCLK", circt::hw::PortDirection::OUTPUT, 1},
     {"DATAVALID", circt::hw::PortDirection::OUTPUT, 1},
     {"DATA", circt::hw::PortDirection::OUTPUT, 32},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::VCC::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::VCC::primitivePortInfos = {
     {"P", circt::hw::PortDirection::OUTPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::VCU::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::VCU::primitivePortInfos = {
     {"VCUPLARREADYAXILITEAPB", circt::hw::PortDirection::OUTPUT, 1},
     {"VCUPLAWREADYAXILITEAPB", circt::hw::PortDirection::OUTPUT, 1},
     {"VCUPLBRESPAXILITEAPB", circt::hw::PortDirection::OUTPUT, 2},
@@ -13432,12 +12789,9 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::VCU::modul
     {"PLVCUWDATAAXILITEAPB", circt::hw::PortDirection::INPUT, 32},
     {"PLVCUWSTRBAXILITEAPB", circt::hw::PortDirection::INPUT, 4},
     {"PLVCUWVALIDAXILITEAPB", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::XADC::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::XADC::primitivePortInfos = {
     {"BUSY", circt::hw::PortDirection::OUTPUT, 1},
     {"DRDY", circt::hw::PortDirection::OUTPUT, 1},
     {"EOC", circt::hw::PortDirection::OUTPUT, 1},
@@ -13462,25 +12816,17 @@ llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::XADC::modu
     {"VAUXN", circt::hw::PortDirection::INPUT, 16},
     {"VAUXP", circt::hw::PortDirection::INPUT, 16},
     {"DADDR", circt::hw::PortDirection::INPUT, 7},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::XORCY::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::XORCY::primitivePortInfos = {
     {"O", circt::hw::PortDirection::OUTPUT, 1},
     {"CI", circt::hw::PortDirection::INPUT, 1},
     {"LI", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 
-llvm::SmallVector<circt::hw::ModulePortInfo> circt::xilinxPrimitives::ZHOLDuDELAY::modulePortInfos(::mlir::MLIRContext *context) {
-  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {
+llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> circt::xilinxPrimitives::ZHOLDuDELAY::primitivePortInfos = {
     {"DLYFABRIC", circt::hw::PortDirection::OUTPUT, 1},
     {"DLYIFF", circt::hw::PortDirection::OUTPUT, 1},
     {"DLYIN", circt::hw::PortDirection::INPUT, 1},
-  };
-  return ::createModulePortInfos(context, data);
-}
+};
 

@@ -58,6 +58,33 @@ public:
 
 } // namespace
 
+static llvm::SmallVector<circt::hw::ModulePortInfo>
+createModulePortInfos(
+    mlir::MLIRContext *context,
+    const llvm::ArrayRef<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> portInfos)
+{
+  llvm::SmallVector<circt::hw::ModulePortInfo> ret;
+  uint64_t argumentsIndex = 0;
+  uint64_t resultsIndex = 0;
+  for (auto & entry : portInfos) {
+    auto portNameAttr = mlir::StringAttr::get(context, std::get<0>(entry));
+    auto portDirection = std::get<1>(entry);
+    auto type = mlir::IntegerType::get(context, std::get<2>(entry));
+    uint64_t index = 0;
+    switch (portDirection) {
+      case circt::hw::PortDirection::INPUT:
+      case circt::hw::PortDirection::INOUT:
+        index = argumentsIndex++;
+        break;
+      case circt::hw::PortDirection::OUTPUT:
+        index = resultsIndex++; 
+        break;
+    }
+    ret.push_back({ portNameAttr, portDirection, type, index });
+  }
+  return ret;
+}
+
 static circt::hw::HWModuleExternOp createHWModuleExternOpForPrimitive(
     MLIRContext *context,
     Location location,
@@ -94,16 +121,16 @@ void XilinxPrimitivesToHWPass::runOnOperation() {
 
   top.walk([&](Operation*op){
       // llvm::errs() << "just walkin??? \n" << op->getName().getStringRef();
-      if (!createdPrimitives.contains("xilinxPrimitives.LUT6")) {
-        createdPrimitives.insert("xilinxPrimitives.LUT6");
+      auto primitiveName = op->getName().getStringRef();
+      if (!createdPrimitives.contains(primitiveName)) {
+        createdPrimitives.insert(primitiveName);
         using xilinxPrimitives::LUT6;
         TypeSwitch<Operation*, void>(op)
             .Case<
                 #define GET_OP_LIST
                 #include "circt/Dialect/XilinxPrimitives/XilinxPrimitives.cpp.inc"
             >([&](auto op) {
-              auto portInfos = op.modulePortInfos(&context);
-              externs.push_back(createHWModuleExternOpForPrimitive(&context, op->getLoc(), "LUT6", std::move(portInfos)));
+              externs.push_back(createHWModuleExternOpForPrimitive(&context, op->getLoc(), "LUT6", createModulePortInfos(&context, op.primitivePortInfos)));
             })
             .Default([](Operation *) { });
         }

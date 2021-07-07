@@ -14,8 +14,10 @@ def AND2B1L : XilinxPrimitiveOp<"AND2B1L", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::AND2B1L", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -35,8 +37,10 @@ def AUTOBUF : XilinxPrimitiveOp<"AUTOBUF", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::AUTOBUF", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -54,8 +58,10 @@ def BIBUF : XilinxPrimitiveOp<"BIBUF", []> {
   let results = (outs
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BIBUF", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -152,8 +158,10 @@ def BITSLICEuCONTROL : XilinxPrimitiveOp<"BITSLICE_CONTROL", []> {
     I<1>:$VTC_RDY
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BITSLICE_CONTROL", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -183,8 +191,10 @@ def BSCANE2 : XilinxPrimitiveOp<"BSCANE2", []> {
     I<1>:$UPDATE
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BSCANE2", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -203,8 +213,10 @@ def BUF : XilinxPrimitiveOp<"BUF", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BUF", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -226,8 +238,10 @@ def BUFCEuLEAF : XilinxPrimitiveOp<"BUFCE_LEAF", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BUFCE_LEAF", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -249,8 +263,10 @@ def BUFCEuROW : XilinxPrimitiveOp<"BUFCE_ROW", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BUFCE_ROW", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -268,8 +284,10 @@ def BUFG : XilinxPrimitiveOp<"BUFG", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BUFG", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -293,8 +311,10 @@ def BUFGCE : XilinxPrimitiveOp<"BUFGCE", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BUFGCE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -322,8 +342,10 @@ def BUFGCEuDIV : XilinxPrimitiveOp<"BUFGCE_DIV", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BUFGCE_DIV", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -363,8 +385,10 @@ def BUFGCTRL : XilinxPrimitiveOp<"BUFGCTRL", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BUFGCTRL", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -383,8 +407,10 @@ def BUFGP : XilinxPrimitiveOp<"BUFGP", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BUFGP", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -409,8 +435,10 @@ def BUFGuGT : XilinxPrimitiveOp<"BUFG_GT", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BUFG_GT", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -431,8 +459,10 @@ def BUFGuGTuSYNC : XilinxPrimitiveOp<"BUFG_GT_SYNC", []> {
     I<1>:$CLRSYNC
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BUFG_GT_SYNC", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -452,8 +482,10 @@ def BUFGuPS : XilinxPrimitiveOp<"BUFG_PS", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BUFG_PS", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -472,8 +504,10 @@ def BUFH : XilinxPrimitiveOp<"BUFH", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BUFH", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -495,8 +529,10 @@ def BUFHCE : XilinxPrimitiveOp<"BUFHCE", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BUFHCE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -514,8 +550,10 @@ def BUFIO : XilinxPrimitiveOp<"BUFIO", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BUFIO", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -534,8 +572,10 @@ def BUFMR : XilinxPrimitiveOp<"BUFMR", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BUFMR", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -557,8 +597,10 @@ def BUFMRCE : XilinxPrimitiveOp<"BUFMRCE", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BUFMRCE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -581,8 +623,10 @@ def BUFR : XilinxPrimitiveOp<"BUFR", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::BUFR", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -602,8 +646,10 @@ def CAPTUREE2 : XilinxPrimitiveOp<"CAPTUREE2", []> {
   let results = (outs
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::CAPTUREE2", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -625,8 +671,10 @@ def CARRY4 : XilinxPrimitiveOp<"CARRY4", []> {
     I<4>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::CARRY4", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -649,8 +697,10 @@ def CARRY8 : XilinxPrimitiveOp<"CARRY8", []> {
     I<8>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::CARRY8", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -679,8 +729,10 @@ def CFGLUT5 : XilinxPrimitiveOp<"CFGLUT5", []> {
     I<1>:$O6
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::CFGLUT5", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -1138,8 +1190,10 @@ def CMAC : XilinxPrimitiveOp<"CMAC", []> {
     I<1>:$TX_UNFOUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::CMAC", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -1652,8 +1706,10 @@ def CMACE4 : XilinxPrimitiveOp<"CMACE4", []> {
     I<1>:$TX_UNFOUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::CMACE4", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -1672,8 +1728,10 @@ def DCIRESET : XilinxPrimitiveOp<"DCIRESET", []> {
     I<1>:$LOCKED
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::DCIRESET", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -1735,8 +1793,10 @@ def DCMuADV : XilinxPrimitiveOp<"DCM_ADV", []> {
     I<16>:$DO
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::DCM_ADV", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -1756,8 +1816,10 @@ def dcmuadvuclockudivideubyu2 : XilinxPrimitiveOp<"dcm_adv_clock_divide_by_2", [
     I<1>:$clock_out
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::dcm_adv_clock_divide_by_2", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -1777,8 +1839,10 @@ def dcmuadvumaximumuperioducheck : XilinxPrimitiveOp<"dcm_adv_maximum_period_che
   let results = (outs
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::dcm_adv_maximum_period_check", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -1798,8 +1862,10 @@ def dcmuadvuclockulost : XilinxPrimitiveOp<"dcm_adv_clock_lost", []> {
     I<1>:$lost
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::dcm_adv_clock_lost", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -1854,8 +1920,10 @@ def DCMuSP : XilinxPrimitiveOp<"DCM_SP", []> {
     I<8>:$STATUS
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::DCM_SP", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -1875,8 +1943,10 @@ def dcmuspuclockudivideubyu2 : XilinxPrimitiveOp<"dcm_sp_clock_divide_by_2", []>
     I<1>:$clock_out
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::dcm_sp_clock_divide_by_2", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -1896,8 +1966,10 @@ def dcmuspumaximumuperioducheck : XilinxPrimitiveOp<"dcm_sp_maximum_period_check
   let results = (outs
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::dcm_sp_maximum_period_check", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -1917,8 +1989,10 @@ def dcmuspuclockulost : XilinxPrimitiveOp<"dcm_sp_clock_lost", []> {
     I<1>:$lost
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::dcm_sp_clock_lost", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -1946,8 +2020,10 @@ def DIFFINBUF : XilinxPrimitiveOp<"DIFFINBUF", []> {
     I<1>:$O_B
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::DIFFINBUF", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -1970,8 +2046,10 @@ def DNAuPORT : XilinxPrimitiveOp<"DNA_PORT", []> {
     I<1>:$DOUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::DNA_PORT", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -1996,8 +2074,10 @@ def DPHYuDIFFINBUF : XilinxPrimitiveOp<"DPHY_DIFFINBUF", []> {
     I<1>:$LPRX_O_P
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::DPHY_DIFFINBUF", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -2092,8 +2172,10 @@ def DSP48E1 : XilinxPrimitiveOp<"DSP48E1", []> {
     I<1>:$UNDERFLOW_
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::DSP48E1", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -2118,8 +2200,10 @@ def FRAMEuECCE3 : XilinxPrimitiveOp<"FRAME_ECCE3", []> {
     I<26>:$FAR
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::FRAME_ECCE3", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -2144,8 +2228,10 @@ def FRAMEuECCE4 : XilinxPrimitiveOp<"FRAME_ECCE4", []> {
     I<27>:$FAR
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::FRAME_ECCE4", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -2163,8 +2249,10 @@ def GND : XilinxPrimitiveOp<"GND", []> {
     I<1>:$G
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::GND", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -2729,8 +2817,10 @@ def GTHE2uCHANNEL : XilinxPrimitiveOp<"GTHE2_CHANNEL", []> {
     I<8>:$RXNOTINTABLE
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::GTHE2_CHANNEL", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -2811,8 +2901,10 @@ def GTHE2uCOMMON : XilinxPrimitiveOp<"GTHE2_COMMON", []> {
     I<8>:$QPLLDMONITOR
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::GTHE2_COMMON", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -3545,8 +3637,10 @@ def GTHE3uCHANNEL : XilinxPrimitiveOp<"GTHE3_CHANNEL", []> {
     I<1>:$TXSYNCOUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::GTHE3_CHANNEL", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -3701,8 +3795,10 @@ def GTHE3uCOMMON : XilinxPrimitiveOp<"GTHE3_COMMON", []> {
     I<2>:$RXRECCLK1_SEL
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::GTHE3_COMMON", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -4563,8 +4659,10 @@ def GTHE4uCHANNEL : XilinxPrimitiveOp<"GTHE4_CHANNEL", []> {
     I<1>:$TXSYNCOUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::GTHE4_CHANNEL", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -4749,8 +4847,10 @@ def GTHE4uCOMMON : XilinxPrimitiveOp<"GTHE4_COMMON", []> {
     I<1>:$TCONRSVDOUT0
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::GTHE4_COMMON", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -5236,8 +5336,10 @@ def GTPE2uCHANNEL : XilinxPrimitiveOp<"GTPE2_CHANNEL", []> {
     I<5>:$RXPHSLIPMONITOR
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::GTPE2_CHANNEL", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -5330,8 +5432,10 @@ def GTPE2uCOMMON : XilinxPrimitiveOp<"GTPE2_COMMON", []> {
     I<8>:$DMONITOROUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::GTPE2_COMMON", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -5785,8 +5889,10 @@ def GTXE2uCHANNEL : XilinxPrimitiveOp<"GTXE2_CHANNEL", []> {
     I<10>:$TSTOUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::GTXE2_CHANNEL", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -5860,8 +5966,10 @@ def GTXE2uCOMMON : XilinxPrimitiveOp<"GTXE2_COMMON", []> {
     I<8>:$QPLLDMONITOR
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::GTXE2_COMMON", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -6675,8 +6783,10 @@ def GTYE3uCHANNEL : XilinxPrimitiveOp<"GTYE3_CHANNEL", []> {
     I<1>:$TXSYNCOUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::GTYE3_CHANNEL", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -6837,8 +6947,10 @@ def GTYE3uCOMMON : XilinxPrimitiveOp<"GTYE3_COMMON", []> {
     I<15>:$SDM1TESTDATA
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::GTYE3_COMMON", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -7677,8 +7789,10 @@ def GTYE4uCHANNEL : XilinxPrimitiveOp<"GTYE4_CHANNEL", []> {
     I<1>:$TXSYNCOUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::GTYE4_CHANNEL", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -7887,8 +8001,10 @@ def GTYE4uCOMMON : XilinxPrimitiveOp<"GTYE4_COMMON", []> {
     I<1>:$UBTXUART
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::GTYE4_COMMON", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -7910,8 +8026,10 @@ def HARDuSYNC : XilinxPrimitiveOp<"HARD_SYNC", []> {
     I<1>:$DOUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::HARD_SYNC", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -8792,8 +8910,10 @@ def HBMuONEuSTACKuINTF : XilinxPrimitiveOp<"HBM_ONE_STACK_INTF", []> {
     I<3>:$DRAM_0_STAT_TEMP
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::HBM_ONE_STACK_INTF", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -8810,8 +8930,10 @@ def HBMuREFuCLK : XilinxPrimitiveOp<"HBM_REF_CLK", []> {
   let results = (outs
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::HBM_REF_CLK", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -8846,8 +8968,10 @@ def HBMuSNGLBLIuINTFuAPB : XilinxPrimitiveOp<"HBM_SNGLBLI_INTF_APB", []> {
     I<3>:$TEMP_PIPE
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::HBM_SNGLBLI_INTF_APB", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -8925,8 +9049,10 @@ def HBMuSNGLBLIuINTFuAXI : XilinxPrimitiveOp<"HBM_SNGLBLI_INTF_AXI", []> {
     I<1>:$WREADY_PIPE
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::HBM_SNGLBLI_INTF_AXI", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -10669,8 +10795,10 @@ def HBMuTWOuSTACKuINTF : XilinxPrimitiveOp<"HBM_TWO_STACK_INTF", []> {
     I<3>:$DRAM_1_STAT_TEMP
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::HBM_TWO_STACK_INTF", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -10689,8 +10817,10 @@ def HPIOuVREF : XilinxPrimitiveOp<"HPIO_VREF", []> {
     I<1>:$VREF
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::HPIO_VREF", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -10761,8 +10891,10 @@ def HSADC : XilinxPrimitiveOp<"HSADC", []> {
     I<1>:$SYSREF_OUT_SOUTH
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::HSADC", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -10829,8 +10961,10 @@ def HSDAC : XilinxPrimitiveOp<"HSDAC", []> {
     I<1>:$VOUT3_P
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::HSDAC", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -10854,8 +10988,10 @@ def IBUF : XilinxPrimitiveOp<"IBUF", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUF", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -10878,8 +11014,10 @@ def IBUFCTRL : XilinxPrimitiveOp<"IBUFCTRL", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUFCTRL", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -10906,8 +11044,10 @@ def IBUFDS : XilinxPrimitiveOp<"IBUFDS", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUFDS", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -10936,8 +11076,10 @@ def IBUFDSE3 : XilinxPrimitiveOp<"IBUFDSE3", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUFDSE3", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -10962,8 +11104,10 @@ def IBUFDSuDIFFuOUT : XilinxPrimitiveOp<"IBUFDS_DIFF_OUT", []> {
     I<1>:$OB
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUFDS_DIFF_OUT", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -10991,8 +11135,10 @@ def IBUFDSuDIFFuOUTuIBUFDISABLE : XilinxPrimitiveOp<"IBUFDS_DIFF_OUT_IBUFDISABLE
     I<1>:$OB
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUFDS_DIFF_OUT_IBUFDISABLE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11021,8 +11167,10 @@ def IBUFDSuDIFFuOUTuINTERMDISABLE : XilinxPrimitiveOp<"IBUFDS_DIFF_OUT_INTERMDIS
     I<1>:$OB
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUFDS_DIFF_OUT_INTERMDISABLE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11048,8 +11196,10 @@ def IBUFDSuDPHY : XilinxPrimitiveOp<"IBUFDS_DPHY", []> {
     I<1>:$LPRX_O_P
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUFDS_DPHY", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11074,8 +11224,10 @@ def IBUFDSuGTE2 : XilinxPrimitiveOp<"IBUFDS_GTE2", []> {
     I<1>:$ODIV2
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUFDS_GTE2", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11099,8 +11251,10 @@ def IBUFDSuGTE3 : XilinxPrimitiveOp<"IBUFDS_GTE3", []> {
     I<1>:$ODIV2
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUFDS_GTE3", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11124,8 +11278,10 @@ def IBUFDSuGTE4 : XilinxPrimitiveOp<"IBUFDS_GTE4", []> {
     I<1>:$ODIV2
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUFDS_GTE4", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11149,8 +11305,10 @@ def IBUFDSuGTM : XilinxPrimitiveOp<"IBUFDS_GTM", []> {
     I<1>:$ODIV2
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUFDS_GTM", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11177,8 +11335,10 @@ def IBUFDSuIBUFDISABLE : XilinxPrimitiveOp<"IBUFDS_IBUFDISABLE", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUFDS_IBUFDISABLE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11204,8 +11364,10 @@ def IBUFDSuIBUFDISABLEuINT : XilinxPrimitiveOp<"IBUFDS_IBUFDISABLE_INT", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUFDS_IBUFDISABLE_INT", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11233,8 +11395,10 @@ def IBUFDSuINTERMDISABLE : XilinxPrimitiveOp<"IBUFDS_INTERMDISABLE", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUFDS_INTERMDISABLE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11261,8 +11425,10 @@ def IBUFDSuINTERMDISABLEuINT : XilinxPrimitiveOp<"IBUFDS_INTERMDISABLE_INT", []>
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUFDS_INTERMDISABLE_INT", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11289,8 +11455,10 @@ def IBUFE3 : XilinxPrimitiveOp<"IBUFE3", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUFE3", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11308,8 +11476,10 @@ def IBUFuANALOG : XilinxPrimitiveOp<"IBUF_ANALOG", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUF_ANALOG", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11333,8 +11503,10 @@ def IBUFuIBUFDISABLE : XilinxPrimitiveOp<"IBUF_IBUFDISABLE", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUF_IBUFDISABLE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11359,8 +11531,10 @@ def IBUFuINTERMDISABLE : XilinxPrimitiveOp<"IBUF_INTERMDISABLE", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IBUF_INTERMDISABLE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11385,8 +11559,10 @@ def ICAPE2 : XilinxPrimitiveOp<"ICAPE2", []> {
     I<32>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::ICAPE2", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11413,8 +11589,10 @@ def ICAPE3 : XilinxPrimitiveOp<"ICAPE3", []> {
     I<1>:$PRERROR
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::ICAPE3", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11446,8 +11624,10 @@ def IDDR : XilinxPrimitiveOp<"IDDR", []> {
     I<1>:$Q2
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IDDR", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11472,8 +11652,10 @@ def IDDRE1 : XilinxPrimitiveOp<"IDDRE1", []> {
     I<1>:$Q2
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IDDRE1", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11505,8 +11687,10 @@ def IDDRu2CLK : XilinxPrimitiveOp<"IDDR_2CLK", []> {
     I<1>:$Q2
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IDDR_2CLK", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11526,8 +11710,10 @@ def IDELAYCTRL : XilinxPrimitiveOp<"IDELAYCTRL", []> {
     I<1>:$RDY
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IDELAYCTRL", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11568,8 +11754,10 @@ def IDELAYE2 : XilinxPrimitiveOp<"IDELAYE2", []> {
     I<1>:$DATAOUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IDELAYE2", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11612,8 +11800,10 @@ def IDELAYE2uFINEDELAY : XilinxPrimitiveOp<"IDELAYE2_FINEDELAY", []> {
     I<1>:$DATAOUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IDELAYE2_FINEDELAY", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11655,8 +11845,10 @@ def IDELAYE3 : XilinxPrimitiveOp<"IDELAYE3", []> {
     I<1>:$DATAOUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IDELAYE3", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -11914,8 +12106,10 @@ def ILKN : XilinxPrimitiveOp<"ILKN", []> {
     I<64>:$TX_SERDES_DATA11
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::ILKN", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12173,8 +12367,10 @@ def ILKNE4 : XilinxPrimitiveOp<"ILKNE4", []> {
     I<64>:$TX_SERDES_DATA11
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::ILKNE4", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12198,8 +12394,10 @@ def INBUF : XilinxPrimitiveOp<"INBUF", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::INBUF", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12218,8 +12416,10 @@ def INV : XilinxPrimitiveOp<"INV", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::INV", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12269,8 +12469,10 @@ def INuFIFO : XilinxPrimitiveOp<"IN_FIFO", []> {
     I<8>:$Q9
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IN_FIFO", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12294,8 +12496,10 @@ def IOBUF : XilinxPrimitiveOp<"IOBUF", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IOBUF", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12320,8 +12524,10 @@ def IOBUFDS : XilinxPrimitiveOp<"IOBUFDS", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IOBUFDS", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12353,8 +12559,10 @@ def IOBUFDSE3 : XilinxPrimitiveOp<"IOBUFDSE3", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IOBUFDSE3", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12383,8 +12591,10 @@ def IOBUFDSuDCIEN : XilinxPrimitiveOp<"IOBUFDS_DCIEN", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IOBUFDS_DCIEN", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12410,8 +12620,10 @@ def IOBUFDSuDIFFuOUT : XilinxPrimitiveOp<"IOBUFDS_DIFF_OUT", []> {
     I<1>:$OB
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IOBUFDS_DIFF_OUT", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12441,8 +12653,10 @@ def IOBUFDSuDIFFuOUTuDCIEN : XilinxPrimitiveOp<"IOBUFDS_DIFF_OUT_DCIEN", []> {
     I<1>:$OB
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IOBUFDS_DIFF_OUT_DCIEN", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12472,8 +12686,10 @@ def IOBUFDSuDIFFuOUTuINTERMDISABLE : XilinxPrimitiveOp<"IOBUFDS_DIFF_OUT_INTERMD
     I<1>:$OB
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IOBUFDS_DIFF_OUT_INTERMDISABLE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12502,8 +12718,10 @@ def IOBUFDSuINTERMDISABLE : XilinxPrimitiveOp<"IOBUFDS_INTERMDISABLE", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IOBUFDS_INTERMDISABLE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12534,8 +12752,10 @@ def IOBUFE3 : XilinxPrimitiveOp<"IOBUFE3", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IOBUFE3", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12559,8 +12779,10 @@ def IOBUFuANALOG : XilinxPrimitiveOp<"IOBUF_ANALOG", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IOBUF_ANALOG", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12588,8 +12810,10 @@ def IOBUFuDCIEN : XilinxPrimitiveOp<"IOBUF_DCIEN", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IOBUF_DCIEN", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12617,8 +12841,10 @@ def IOBUFuINTERMDISABLE : XilinxPrimitiveOp<"IOBUF_INTERMDISABLE", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::IOBUF_INTERMDISABLE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12679,8 +12905,10 @@ def ISERDES : XilinxPrimitiveOp<"ISERDES", []> {
     I<1>:$SHIFTOUT2
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::ISERDES", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12738,8 +12966,10 @@ def ISERDESE1 : XilinxPrimitiveOp<"ISERDESE1", []> {
     I<1>:$SHIFTOUT2
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::ISERDESE1", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12762,8 +12992,10 @@ def LUT5 : XilinxPrimitiveOp<"LUT5", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::LUT5", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12787,8 +13019,10 @@ def LUT6 : XilinxPrimitiveOp<"LUT6", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::LUT6", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12813,8 +13047,10 @@ def LUT6u2 : XilinxPrimitiveOp<"LUT6_2", []> {
     I<1>:$O6
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::LUT6_2", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12834,8 +13070,10 @@ def MASTERuJTAG : XilinxPrimitiveOp<"MASTER_JTAG", []> {
     I<1>:$TDO
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::MASTER_JTAG", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12932,8 +13170,10 @@ def MMCME2uADV : XilinxPrimitiveOp<"MMCME2_ADV", []> {
     I<1>:$PSDONE
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::MMCME2_ADV", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -12997,8 +13237,10 @@ def MMCME2uBASE : XilinxPrimitiveOp<"MMCME2_BASE", []> {
     I<1>:$LOCKED
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::MMCME2_BASE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13100,8 +13342,10 @@ def MMCME3uADV : XilinxPrimitiveOp<"MMCME3_ADV", []> {
     I<1>:$PSDONE
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::MMCME3_ADV", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13168,8 +13412,10 @@ def MMCME3uBASE : XilinxPrimitiveOp<"MMCME3_BASE", []> {
     I<1>:$LOCKED
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::MMCME3_BASE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13271,8 +13517,10 @@ def MMCME4uADV : XilinxPrimitiveOp<"MMCME4_ADV", []> {
     I<1>:$PSDONE
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::MMCME4_ADV", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13339,8 +13587,10 @@ def MMCME4uBASE : XilinxPrimitiveOp<"MMCME4_BASE", []> {
     I<1>:$LOCKED
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::MMCME4_BASE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13361,8 +13611,10 @@ def MUXCY : XilinxPrimitiveOp<"MUXCY", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::MUXCY", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13383,8 +13635,10 @@ def MUXF7 : XilinxPrimitiveOp<"MUXF7", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::MUXF7", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13405,8 +13659,10 @@ def MUXF8 : XilinxPrimitiveOp<"MUXF8", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::MUXF8", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13426,8 +13682,10 @@ def MUXF9 : XilinxPrimitiveOp<"MUXF9", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::MUXF9", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13450,8 +13708,10 @@ def OBUF : XilinxPrimitiveOp<"OBUF", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OBUF", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13474,8 +13734,10 @@ def OBUFDS : XilinxPrimitiveOp<"OBUFDS", []> {
     I<1>:$OB
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OBUFDS", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13499,8 +13761,10 @@ def OBUFDSuDPHY : XilinxPrimitiveOp<"OBUFDS_DPHY", []> {
     I<1>:$OB
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OBUFDS_DPHY", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13522,8 +13786,10 @@ def OBUFDSuGTE3 : XilinxPrimitiveOp<"OBUFDS_GTE3", []> {
     I<1>:$OB
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OBUFDS_GTE3", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13546,8 +13812,10 @@ def OBUFDSuGTE3uADV : XilinxPrimitiveOp<"OBUFDS_GTE3_ADV", []> {
     I<1>:$OB
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OBUFDS_GTE3_ADV", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13569,8 +13837,10 @@ def OBUFDSuGTE4 : XilinxPrimitiveOp<"OBUFDS_GTE4", []> {
     I<1>:$OB
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OBUFDS_GTE4", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13593,8 +13863,10 @@ def OBUFDSuGTE4uADV : XilinxPrimitiveOp<"OBUFDS_GTE4_ADV", []> {
     I<1>:$OB
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OBUFDS_GTE4_ADV", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13616,8 +13888,10 @@ def OBUFDSuGTM : XilinxPrimitiveOp<"OBUFDS_GTM", []> {
     I<1>:$OB
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OBUFDS_GTM", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13640,8 +13914,10 @@ def OBUFDSuGTMuADV : XilinxPrimitiveOp<"OBUFDS_GTM_ADV", []> {
     I<1>:$OB
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OBUFDS_GTM_ADV", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13665,8 +13941,10 @@ def OBUFT : XilinxPrimitiveOp<"OBUFT", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OBUFT", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13690,8 +13968,10 @@ def OBUFTDS : XilinxPrimitiveOp<"OBUFTDS", []> {
     I<1>:$OB
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OBUFTDS", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13715,8 +13995,10 @@ def OBUFTDSuDCIEN : XilinxPrimitiveOp<"OBUFTDS_DCIEN", []> {
     I<1>:$OB
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OBUFTDS_DCIEN", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13740,8 +14022,10 @@ def OBUFTuDCIEN : XilinxPrimitiveOp<"OBUFT_DCIEN", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OBUFT_DCIEN", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13773,8 +14057,10 @@ def ODDR : XilinxPrimitiveOp<"ODDR", []> {
     I<1>:$Q
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::ODDR", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13800,8 +14086,10 @@ def ODDRE1 : XilinxPrimitiveOp<"ODDRE1", []> {
     I<1>:$Q
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::ODDRE1", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13841,8 +14129,10 @@ def ODELAYE2 : XilinxPrimitiveOp<"ODELAYE2", []> {
     I<1>:$DATAOUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::ODELAYE2", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13884,8 +14174,10 @@ def ODELAYE2uFINEDELAY : XilinxPrimitiveOp<"ODELAYE2_FINEDELAY", []> {
     I<1>:$DATAOUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::ODELAYE2_FINEDELAY", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13924,8 +14216,10 @@ def ODELAYE3 : XilinxPrimitiveOp<"ODELAYE3", []> {
     I<1>:$DATAOUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::ODELAYE3", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13945,8 +14239,10 @@ def OR2L : XilinxPrimitiveOp<"OR2L", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OR2L", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -13994,8 +14290,10 @@ def OSERDES : XilinxPrimitiveOp<"OSERDES", []> {
     I<1>:$TQ
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OSERDES", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -14052,8 +14350,10 @@ def OSERDESE1 : XilinxPrimitiveOp<"OSERDESE1", []> {
     I<1>:$TQ
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OSERDESE1", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -14070,8 +14370,10 @@ def selfhealuoserdese1uvlog : XilinxPrimitiveOp<"selfheal_oserdese1_vlog", []> {
   let results = (outs
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::selfheal_oserdese1_vlog", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -14090,8 +14392,10 @@ def plguoserdese1uvlog : XilinxPrimitiveOp<"plg_oserdese1_vlog", []> {
   let results = (outs
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::plg_oserdese1_vlog", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -14108,8 +14412,10 @@ def rank12duoserdese1uvlog : XilinxPrimitiveOp<"rank12d_oserdese1_vlog", []> {
   let results = (outs
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::rank12d_oserdese1_vlog", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -14127,8 +14433,10 @@ def trifuoserdese1uvlog : XilinxPrimitiveOp<"trif_oserdese1_vlog", []> {
   let results = (outs
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::trif_oserdese1_vlog", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -14144,8 +14452,10 @@ def txbufferuoserdese1uvlog : XilinxPrimitiveOp<"txbuffer_oserdese1_vlog", []> {
   let results = (outs
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::txbuffer_oserdese1_vlog", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -14161,8 +14471,10 @@ def fifoutdpipeuoserdese1uvlog : XilinxPrimitiveOp<"fifo_tdpipe_oserdese1_vlog",
   let results = (outs
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::fifo_tdpipe_oserdese1_vlog", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -14178,8 +14490,10 @@ def fifouresetuoserdese1uvlog : XilinxPrimitiveOp<"fifo_reset_oserdese1_vlog", [
   let results = (outs
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::fifo_reset_oserdese1_vlog", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -14195,8 +14509,10 @@ def fifouaddruoserdese1uvlog : XilinxPrimitiveOp<"fifo_addr_oserdese1_vlog", []>
   let results = (outs
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::fifo_addr_oserdese1_vlog", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -14212,8 +14528,10 @@ def iodlyctrlunpreuoserdese1uvlog : XilinxPrimitiveOp<"iodlyctrl_npre_oserdese1_
   let results = (outs
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::iodlyctrl_npre_oserdese1_vlog", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -14230,8 +14548,10 @@ def doutuoserdese1uvlog : XilinxPrimitiveOp<"dout_oserdese1_vlog", []> {
   let results = (outs
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::dout_oserdese1_vlog", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -14249,8 +14569,10 @@ def toutuoserdese1uvlog : XilinxPrimitiveOp<"tout_oserdese1_vlog", []> {
   let results = (outs
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::tout_oserdese1_vlog", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -14319,8 +14641,10 @@ def OSERDESE2 : XilinxPrimitiveOp<"OSERDESE2", []> {
     I<1>:$TQ
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OSERDESE2", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -14353,8 +14677,10 @@ def OSERDESE3 : XilinxPrimitiveOp<"OSERDESE3", []> {
     I<1>:$T_OUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OSERDESE3", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -14405,8 +14731,10 @@ def OUTuFIFO : XilinxPrimitiveOp<"OUT_FIFO", []> {
     I<8>:$Q6
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::OUT_FIFO", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -15648,8 +15976,10 @@ def PCIE40E4 : XilinxPrimitiveOp<"PCIE40E4", []> {
     I<32>:$USERSPAREOUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PCIE40E4", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -16968,8 +17298,10 @@ def PCIE4CE4 : XilinxPrimitiveOp<"PCIE4CE4", []> {
     I<24>:$USERSPAREOUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PCIE4CE4", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -17889,8 +18221,10 @@ def PCIEu3u0 : XilinxPrimitiveOp<"PCIE_3_0", []> {
     I<10>:$MICOMPLETIONRAMWRITEADDRESSBU
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PCIE_3_0", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -19171,8 +19505,10 @@ def PCIEu3u1 : XilinxPrimitiveOp<"PCIE_3_1", []> {
     I<32>:$SPAREOUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PCIE_3_1", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -19220,8 +19556,10 @@ def PHASERuIN : XilinxPrimitiveOp<"PHASER_IN", []> {
     I<1>:$RCLK
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PHASER_IN", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -19277,8 +19615,10 @@ def PHASERuINuPHY : XilinxPrimitiveOp<"PHASER_IN_PHY", []> {
     I<1>:$WRENABLE
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PHASER_IN_PHY", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -19332,8 +19672,10 @@ def PHASERuOUT : XilinxPrimitiveOp<"PHASER_OUT", []> {
     I<9>:$COUNTERREADVAL
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PHASER_OUT", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -19392,8 +19734,10 @@ def PHASERuOUTuPHY : XilinxPrimitiveOp<"PHASER_OUT_PHY", []> {
     I<9>:$COUNTERREADVAL
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PHASER_OUT_PHY", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -19416,8 +19760,10 @@ def PHASERuREF : XilinxPrimitiveOp<"PHASER_REF", []> {
     I<1>:$LOCKED
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PHASER_REF", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -19491,8 +19837,10 @@ def PHYuCONTROL : XilinxPrimitiveOp<"PHY_CONTROL", []> {
     I<4>:$OUTBURSTPENDING
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PHY_CONTROL", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -19560,8 +19908,10 @@ def PLLE2uADV : XilinxPrimitiveOp<"PLLE2_ADV", []> {
     I<1>:$LOCKED
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PLLE2_ADV", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -19615,8 +19965,10 @@ def PLLE2uBASE : XilinxPrimitiveOp<"PLLE2_BASE", []> {
     I<1>:$LOCKED
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PLLE2_BASE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -19669,8 +20021,10 @@ def PLLE3uADV : XilinxPrimitiveOp<"PLLE3_ADV", []> {
     I<1>:$LOCKED
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PLLE3_ADV", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -19715,8 +20069,10 @@ def PLLE3uBASE : XilinxPrimitiveOp<"PLLE3_BASE", []> {
     I<1>:$LOCKED
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PLLE3_BASE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -19769,8 +20125,10 @@ def PLLE4uADV : XilinxPrimitiveOp<"PLLE4_ADV", []> {
     I<1>:$LOCKED
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PLLE4_ADV", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -19815,8 +20173,10 @@ def PLLE4uBASE : XilinxPrimitiveOp<"PLLE4_BASE", []> {
     I<1>:$LOCKED
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PLLE4_BASE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -20452,8 +20812,10 @@ def PS7 : XilinxPrimitiveOp<"PS7", []> {
     I<1>:$SAXIHP3WREADY
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PS7", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -21484,8 +21846,10 @@ def PS8 : XilinxPrimitiveOp<"PS8", []> {
     I<1>:$SAXIGP6WREADY
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PS8", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -21503,8 +21867,10 @@ def PULLDOWN : XilinxPrimitiveOp<"PULLDOWN", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PULLDOWN", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -21522,8 +21888,10 @@ def PULLUP : XilinxPrimitiveOp<"PULLUP", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::PULLUP", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -21548,8 +21916,10 @@ def RAM128X1D : XilinxPrimitiveOp<"RAM128X1D", []> {
     I<1>:$SPO
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::RAM128X1D", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -21578,8 +21948,10 @@ def RAM128X1S : XilinxPrimitiveOp<"RAM128X1S", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::RAM128X1S", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -21604,8 +21976,10 @@ def RAM256X1D : XilinxPrimitiveOp<"RAM256X1D", []> {
     I<1>:$SPO
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::RAM256X1D", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -21628,8 +22002,10 @@ def RAM256X1S : XilinxPrimitiveOp<"RAM256X1S", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::RAM256X1S", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -21664,8 +22040,10 @@ def RAM32M : XilinxPrimitiveOp<"RAM32M", []> {
     I<2>:$DOD
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::RAM32M", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -21716,8 +22094,10 @@ def RAM32M16 : XilinxPrimitiveOp<"RAM32M16", []> {
     I<2>:$DOH
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::RAM32M16", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -21760,8 +22140,10 @@ def RAM32X16DR8 : XilinxPrimitiveOp<"RAM32X16DR8", []> {
     I<2>:$DOH
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::RAM32X16DR8", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -21794,8 +22176,10 @@ def RAM32X1D : XilinxPrimitiveOp<"RAM32X1D", []> {
     I<1>:$SPO
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::RAM32X1D", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -21822,8 +22206,10 @@ def RAM32X1S : XilinxPrimitiveOp<"RAM32X1S", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::RAM32X1S", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -21846,8 +22232,10 @@ def RAM512X1S : XilinxPrimitiveOp<"RAM512X1S", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::RAM512X1S", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -21882,8 +22270,10 @@ def RAM64M : XilinxPrimitiveOp<"RAM64M", []> {
     I<1>:$DOD
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::RAM64M", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -21934,8 +22324,10 @@ def RAM64M8 : XilinxPrimitiveOp<"RAM64M8", []> {
     I<1>:$DOH
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::RAM64M8", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -21970,8 +22362,10 @@ def RAM64X1D : XilinxPrimitiveOp<"RAM64X1D", []> {
     I<1>:$SPO
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::RAM64X1D", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -21999,8 +22393,10 @@ def RAM64X1S : XilinxPrimitiveOp<"RAM64X1S", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::RAM64X1S", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -22031,8 +22427,10 @@ def RAM64X8SW : XilinxPrimitiveOp<"RAM64X8SW", []> {
     I<8>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::RAM64X8SW", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -22170,8 +22568,10 @@ def RAMB18E1 : XilinxPrimitiveOp<"RAMB18E1", []> {
     I<2>:$DOPBDOP
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::RAMB18E1", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -22202,8 +22602,10 @@ def SIMuCONFIGE3 : XilinxPrimitiveOp<"SIM_CONFIGE3", []> {
     I<1>:$PRERROR
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::SIM_CONFIGE3", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -22229,8 +22631,10 @@ def SRL16E : XilinxPrimitiveOp<"SRL16E", []> {
     I<1>:$Q
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::SRL16E", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -22257,8 +22661,10 @@ def SRLC16E : XilinxPrimitiveOp<"SRLC16E", []> {
     I<1>:$Q15
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::SRLC16E", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -22282,8 +22688,10 @@ def SRLC32E : XilinxPrimitiveOp<"SRLC32E", []> {
     I<1>:$Q31
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::SRLC32E", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -22314,8 +22722,10 @@ def STARTUPE2 : XilinxPrimitiveOp<"STARTUPE2", []> {
     I<1>:$PREQ
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::STARTUPE2", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -22350,8 +22760,10 @@ def STARTUPE3 : XilinxPrimitiveOp<"STARTUPE3", []> {
     I<1>:$PREQ
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::STARTUPE3", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -22470,8 +22882,10 @@ def SYSMONE1 : XilinxPrimitiveOp<"SYSMONE1", []> {
     I<1>:$OT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::SYSMONE1", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -22594,8 +23008,10 @@ def SYSMONE4 : XilinxPrimitiveOp<"SYSMONE4", []> {
     I<1>:$SMBALERT_TS
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::SYSMONE4", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -22645,8 +23061,10 @@ def TXuBITSLICE : XilinxPrimitiveOp<"TX_BITSLICE", []> {
     I<1>:$T_OUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::TX_BITSLICE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -22688,8 +23106,10 @@ def TXuBITSLICEuTRI : XilinxPrimitiveOp<"TX_BITSLICE_TRI", []> {
     I<1>:$TRI_OUT
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::TX_BITSLICE_TRI", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -22809,8 +23229,10 @@ def URAM288 : XilinxPrimitiveOp<"URAM288", []> {
     I<1>:$SBITERR_B
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::URAM288", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -22880,8 +23302,10 @@ def URAM288uBASE : XilinxPrimitiveOp<"URAM288_BASE", []> {
     I<1>:$SBITERR_B
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::URAM288_BASE", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -22901,8 +23325,10 @@ def USRuACCESSE2 : XilinxPrimitiveOp<"USR_ACCESSE2", []> {
     I<32>:$DATA
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::USR_ACCESSE2", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -22920,8 +23346,10 @@ def VCC : XilinxPrimitiveOp<"VCC", []> {
     I<1>:$P
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::VCC", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -23166,8 +23594,10 @@ def VCU : XilinxPrimitiveOp<"VCU", []> {
     I<1>:$VCUPLWREADYAXILITEAPB
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::VCU", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -23243,8 +23673,10 @@ def XADC : XilinxPrimitiveOp<"XADC", []> {
     I<5>:$MUXADDR
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::XADC", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -23263,8 +23695,10 @@ def XORCY : XilinxPrimitiveOp<"XORCY", []> {
     I<1>:$O
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::XORCY", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 
@@ -23286,8 +23720,10 @@ def ZHOLDuDELAY : XilinxPrimitiveOp<"ZHOLD_DELAY", []> {
     I<1>:$DLYIFF
   );
 
+  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];
+  let printer = [{ return ::printOp("xilinxPrimitives::ZHOLD_DELAY", p, this->getOperation()); }];
   let extraClassDeclaration = [{
-    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;
   }];
 }
 

@@ -202,20 +202,20 @@ void transformAstToMLIRTd(const std::vector<VerilogModule>& verilogModules)
     }
     tableGenFile << "  );\n\n";
 
+    tableGenFile << "  let parser = [{ return ::parseOp(primitivePortInfos, parser, result); }];\n";
+    tableGenFile << "  let printer = [{ return ::printOp(\"" << "xilinxPrimitives::" << verilogModule.header.module_name << "\", p, this->getOperation()); }];\n";
+
     tableGenFile << "  let extraClassDeclaration = [{\n";
-    tableGenFile << "    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);\n";
+    tableGenFile << "    static llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> primitivePortInfos;\n";
     tableGenFile << "  }];\n";
     tableGenFile << "}\n\n";
 
-    primitivesOpsCppFile << "llvm::SmallVector<circt::hw::ModulePortInfo> ";
-    primitivesOpsCppFile << "circt::xilinxPrimitives::" << className << "::" << "modulePortInfos(::mlir::MLIRContext *context) {\n";
-    primitivesOpsCppFile << "  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {\n";
+    primitivesOpsCppFile << "llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> ";
+    primitivesOpsCppFile << "circt::xilinxPrimitives::" << className << "::" << "primitivePortInfos = {\n";
     for (auto & portInfo : portInfos) {
       primitivesOpsCppFile << "    " << portInfo << "\n";
     }
-    primitivesOpsCppFile << "  };\n";
-    primitivesOpsCppFile << "  return ::createModulePortInfos(context, data);\n";
-    primitivesOpsCppFile << "}\n\n";
+    primitivesOpsCppFile << "};\n\n";
   }
 }
 

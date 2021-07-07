@@ -23,7 +23,7 @@ class InOut<int width>
                ]>,
            width # "-bit signless integer of hw.inout",
            "circt::hw::InOutType">,
-           BuildableType<"$_builder.getIntegerType(" # width # ")"> {
+           BuildableType<"circt::hw::InOutType::get($_builder.getIntegerType(" # width # "))"> {
   int bitwidth = width;
 }
 
