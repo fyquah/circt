@@ -1,3 +1,5 @@
+#include <string>
+
 #include "circt/Dialect/HW/HWOps.h"
 #include "circt/Dialect/SV/SVOps.h"
 #include "circt/Dialect/XilinxPrimitives/XilinxPrimitivesDialect.h"
@@ -34,11 +36,13 @@ static const std::string xilinxPrimitivesNamespace = "xilinxPrimitives";
 
 namespace {
 struct LowerToInstance : public RewritePattern {
+private:
+  const DenseMap<Operation*, uint64_t> & primsToId;
 public:
   using RewritePattern::RewritePattern;
 
-  LowerToInstance(PatternBenefit benefit, MLIRContext *context)
-      : RewritePattern(MatchAnyOpTypeTag(), benefit, context) {
+  LowerToInstance(PatternBenefit benefit, const DenseMap<Operation*, uint64_t> & primsToId, MLIRContext *context)
+      : RewritePattern(MatchAnyOpTypeTag(), benefit, context), primsToId(primsToId) {
       }
   /// This overload constructs a pattern that matches any operation type.
 
@@ -48,7 +52,8 @@ public:
       return failure();
     }
     auto *context = operation->getContext();
-    auto instanceName = StringAttr::get(context, "prim");
+    uint64_t id = primsToId.lookup(operation);
+    auto instanceName = StringAttr::get(context, std::string("prim_") + std::to_string(id));
     auto moduleName = FlatSymbolRefAttr::get(
         context,
         operation->getName().getStringRef().data() + xilinxPrimitivesNamespace.size() + 1);
@@ -129,10 +134,13 @@ void XilinxPrimitivesToHWPass::runOnOperation() {
   MLIRContext &context = getContext();
   llvm::DenseSet<llvm::StringRef> createdPrimitives;
   llvm::SmallVector<Operation*> externs;
+  llvm::DenseMap<Operation*, uint64_t> primsToId;
+  uint64_t primId = 0;
 
   top.walk([&](Operation*op){
       // llvm::errs() << "just walkin??? \n" << op->getName().getStringRef();
       auto operationName = op->getName().getStringRef();
+      primsToId[op] = primId++;
       if (!createdPrimitives.contains(operationName)) {
         createdPrimitives.insert(operationName);
         TypeSwitch<Operation*, void>(op)
@@ -148,9 +156,8 @@ void XilinxPrimitivesToHWPass::runOnOperation() {
   // llvm::errs() << "just walkin??? " << externs.size() << "\n";
   addexternstomodule(top, externs);
   // llvm::errs() << top << "\n";
-
   RewritePatternSet patterns(&ctxt);
-  patterns.add<LowerToInstance>(1, &ctxt);
+  patterns.add<LowerToInstance>(1, primsToId, &ctxt);
   if (failed(applyPartialConversion(top, target, std::move(patterns)))) {
     signalPassFailure();
     return;
