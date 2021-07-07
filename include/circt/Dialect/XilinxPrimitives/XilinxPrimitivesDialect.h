@@ -4,6 +4,14 @@
 #include "mlir/IR/BuiltinAttributes.h"
 #include "mlir/IR/Dialect.h"
 
+namespace circt {
+namespace xilinxPrimitives {
+
+void registerXilinxPrimitivesPasses();
+
+} // namespace xilinxPrimitives
+} // namespace circt
+
 // Pull in the Dialect definition.
 #include "circt/Dialect/XilinxPrimitives/XilinxPrimitives.h.inc"
 #include "circt/Dialect/XilinxPrimitives/XilinxPrimitivesDialect.h.inc"

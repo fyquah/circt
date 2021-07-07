@@ -4,6 +4,7 @@ include "mlir/Interfaces/ControlFlowInterfaces.td"
 include "mlir/IR/OpAsmInterface.td"
 include "mlir/IR/SymbolInterfaces.td"
 include "mlir/IR/RegionKindInterface.td"
+include "mlir/Pass/PassBase.td"
 
 def XilinxPrimitivesDialect : Dialect {
   let name = "xilinxPrimitives";
@@ -33,5 +34,11 @@ class XilinxPrimitiveOp<string mnemonic, list<OpTrait> traits = []> :
 class APIntAttr<I attrValType> :
     SignlessIntegerAttrBase<attrValType, "APInt Attribute">
     { }
+
+def LowerXilinxPrimitivesToHW: Pass<"lower-xilinx-primitives-to-hw", "mlir::ModuleOp"> {
+  let summary = "Lower xilinx primitives ops to HW instantiations";
+  let constructor = "circt::xilinxPrimitives::createXilinxPrimitivesLowerToHW()";
+  let dependentDialects = ["circt::hw::HWDialect"];
+}
 
 include "circt/Dialect/XilinxPrimitives/XilinxRawPrimitives.td"

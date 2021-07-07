@@ -12322,6 +12322,8 @@ def LUT6 : XilinxPrimitiveOp<"LUT6", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let assemblyFormat = "$I0 `,` $I1 `,` $I2 `,` $I3 `,` $I4 `,` $I5  attr-dict `:` type($O)";
 }
 
 def LUT6u2 : XilinxPrimitiveOp<"LUT6_2", []> {
