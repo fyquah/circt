@@ -13,6 +13,10 @@ def AND2B1L : XilinxPrimitiveOp<"AND2B1L", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def AUTOBUF : XilinxPrimitiveOp<"AUTOBUF", []> {
@@ -30,6 +34,10 @@ def AUTOBUF : XilinxPrimitiveOp<"AUTOBUF", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BIBUF : XilinxPrimitiveOp<"BIBUF", []> {
@@ -45,6 +53,10 @@ def BIBUF : XilinxPrimitiveOp<"BIBUF", []> {
 
   let results = (outs
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BITSLICEuCONTROL : XilinxPrimitiveOp<"BITSLICE_CONTROL", []> {
@@ -139,6 +151,10 @@ def BITSLICEuCONTROL : XilinxPrimitiveOp<"BITSLICE_CONTROL", []> {
     I<40>:$TX_BIT_CTRL_OUT_TRI,
     I<1>:$VTC_RDY
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BSCANE2 : XilinxPrimitiveOp<"BSCANE2", []> {
@@ -166,6 +182,10 @@ def BSCANE2 : XilinxPrimitiveOp<"BSCANE2", []> {
     I<1>:$TMS,
     I<1>:$UPDATE
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BUF : XilinxPrimitiveOp<"BUF", []> {
@@ -182,6 +202,10 @@ def BUF : XilinxPrimitiveOp<"BUF", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BUFCEuLEAF : XilinxPrimitiveOp<"BUFCE_LEAF", []> {
@@ -201,6 +225,10 @@ def BUFCEuLEAF : XilinxPrimitiveOp<"BUFCE_LEAF", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BUFCEuROW : XilinxPrimitiveOp<"BUFCE_ROW", []> {
@@ -220,6 +248,10 @@ def BUFCEuROW : XilinxPrimitiveOp<"BUFCE_ROW", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BUFG : XilinxPrimitiveOp<"BUFG", []> {
@@ -235,6 +267,10 @@ def BUFG : XilinxPrimitiveOp<"BUFG", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BUFGCE : XilinxPrimitiveOp<"BUFGCE", []> {
@@ -256,6 +292,10 @@ def BUFGCE : XilinxPrimitiveOp<"BUFGCE", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BUFGCEuDIV : XilinxPrimitiveOp<"BUFGCE_DIV", []> {
@@ -281,6 +321,10 @@ def BUFGCEuDIV : XilinxPrimitiveOp<"BUFGCE_DIV", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BUFGCTRL : XilinxPrimitiveOp<"BUFGCTRL", []> {
@@ -318,6 +362,10 @@ def BUFGCTRL : XilinxPrimitiveOp<"BUFGCTRL", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BUFGP : XilinxPrimitiveOp<"BUFGP", []> {
@@ -334,6 +382,10 @@ def BUFGP : XilinxPrimitiveOp<"BUFGP", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BUFGuGT : XilinxPrimitiveOp<"BUFG_GT", []> {
@@ -356,6 +408,10 @@ def BUFGuGT : XilinxPrimitiveOp<"BUFG_GT", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BUFGuGTuSYNC : XilinxPrimitiveOp<"BUFG_GT_SYNC", []> {
@@ -374,6 +430,10 @@ def BUFGuGTuSYNC : XilinxPrimitiveOp<"BUFG_GT_SYNC", []> {
     I<1>:$CESYNC,
     I<1>:$CLRSYNC
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BUFGuPS : XilinxPrimitiveOp<"BUFG_PS", []> {
@@ -391,6 +451,10 @@ def BUFGuPS : XilinxPrimitiveOp<"BUFG_PS", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BUFH : XilinxPrimitiveOp<"BUFH", []> {
@@ -407,6 +471,10 @@ def BUFH : XilinxPrimitiveOp<"BUFH", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BUFHCE : XilinxPrimitiveOp<"BUFHCE", []> {
@@ -426,6 +494,10 @@ def BUFHCE : XilinxPrimitiveOp<"BUFHCE", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BUFIO : XilinxPrimitiveOp<"BUFIO", []> {
@@ -441,6 +513,10 @@ def BUFIO : XilinxPrimitiveOp<"BUFIO", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BUFMR : XilinxPrimitiveOp<"BUFMR", []> {
@@ -457,6 +533,10 @@ def BUFMR : XilinxPrimitiveOp<"BUFMR", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BUFMRCE : XilinxPrimitiveOp<"BUFMRCE", []> {
@@ -476,6 +556,10 @@ def BUFMRCE : XilinxPrimitiveOp<"BUFMRCE", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def BUFR : XilinxPrimitiveOp<"BUFR", []> {
@@ -496,6 +580,10 @@ def BUFR : XilinxPrimitiveOp<"BUFR", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def CAPTUREE2 : XilinxPrimitiveOp<"CAPTUREE2", []> {
@@ -513,6 +601,10 @@ def CAPTUREE2 : XilinxPrimitiveOp<"CAPTUREE2", []> {
 
   let results = (outs
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def CARRY4 : XilinxPrimitiveOp<"CARRY4", []> {
@@ -532,6 +624,10 @@ def CARRY4 : XilinxPrimitiveOp<"CARRY4", []> {
     I<4>:$CO,
     I<4>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def CARRY8 : XilinxPrimitiveOp<"CARRY8", []> {
@@ -552,6 +648,10 @@ def CARRY8 : XilinxPrimitiveOp<"CARRY8", []> {
     I<8>:$CO,
     I<8>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def CFGLUT5 : XilinxPrimitiveOp<"CFGLUT5", []> {
@@ -578,6 +678,10 @@ def CFGLUT5 : XilinxPrimitiveOp<"CFGLUT5", []> {
     I<1>:$O5,
     I<1>:$O6
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def CMAC : XilinxPrimitiveOp<"CMAC", []> {
@@ -1033,6 +1137,10 @@ def CMAC : XilinxPrimitiveOp<"CMAC", []> {
     I<32>:$TX_SERDES_DATA9,
     I<1>:$TX_UNFOUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def CMACE4 : XilinxPrimitiveOp<"CMACE4", []> {
@@ -1543,6 +1651,10 @@ def CMACE4 : XilinxPrimitiveOp<"CMACE4", []> {
     I<32>:$TX_SERDES_DATA9,
     I<1>:$TX_UNFOUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def DCIRESET : XilinxPrimitiveOp<"DCIRESET", []> {
@@ -1559,6 +1671,10 @@ def DCIRESET : XilinxPrimitiveOp<"DCIRESET", []> {
   let results = (outs
     I<1>:$LOCKED
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def DCMuADV : XilinxPrimitiveOp<"DCM_ADV", []> {
@@ -1618,6 +1734,10 @@ def DCMuADV : XilinxPrimitiveOp<"DCM_ADV", []> {
     I<1>:$PSDONE,
     I<16>:$DO
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def dcmuadvuclockudivideubyu2 : XilinxPrimitiveOp<"dcm_adv_clock_divide_by_2", []> {
@@ -1635,6 +1755,10 @@ def dcmuadvuclockudivideubyu2 : XilinxPrimitiveOp<"dcm_adv_clock_divide_by_2", [
   let results = (outs
     I<1>:$clock_out
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def dcmuadvumaximumuperioducheck : XilinxPrimitiveOp<"dcm_adv_maximum_period_check", []> {
@@ -1652,6 +1776,10 @@ def dcmuadvumaximumuperioducheck : XilinxPrimitiveOp<"dcm_adv_maximum_period_che
 
   let results = (outs
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def dcmuadvuclockulost : XilinxPrimitiveOp<"dcm_adv_clock_lost", []> {
@@ -1669,6 +1797,10 @@ def dcmuadvuclockulost : XilinxPrimitiveOp<"dcm_adv_clock_lost", []> {
   let results = (outs
     I<1>:$lost
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def DCMuSP : XilinxPrimitiveOp<"DCM_SP", []> {
@@ -1721,6 +1853,10 @@ def DCMuSP : XilinxPrimitiveOp<"DCM_SP", []> {
     I<1>:$PSDONE,
     I<8>:$STATUS
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def dcmuspuclockudivideubyu2 : XilinxPrimitiveOp<"dcm_sp_clock_divide_by_2", []> {
@@ -1738,6 +1874,10 @@ def dcmuspuclockudivideubyu2 : XilinxPrimitiveOp<"dcm_sp_clock_divide_by_2", []>
   let results = (outs
     I<1>:$clock_out
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def dcmuspumaximumuperioducheck : XilinxPrimitiveOp<"dcm_sp_maximum_period_check", []> {
@@ -1755,6 +1895,10 @@ def dcmuspumaximumuperioducheck : XilinxPrimitiveOp<"dcm_sp_maximum_period_check
 
   let results = (outs
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def dcmuspuclockulost : XilinxPrimitiveOp<"dcm_sp_clock_lost", []> {
@@ -1772,6 +1916,10 @@ def dcmuspuclockulost : XilinxPrimitiveOp<"dcm_sp_clock_lost", []> {
   let results = (outs
     I<1>:$lost
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def DIFFINBUF : XilinxPrimitiveOp<"DIFFINBUF", []> {
@@ -1797,6 +1945,10 @@ def DIFFINBUF : XilinxPrimitiveOp<"DIFFINBUF", []> {
     I<1>:$O,
     I<1>:$O_B
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def DNAuPORT : XilinxPrimitiveOp<"DNA_PORT", []> {
@@ -1817,6 +1969,10 @@ def DNAuPORT : XilinxPrimitiveOp<"DNA_PORT", []> {
   let results = (outs
     I<1>:$DOUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def DPHYuDIFFINBUF : XilinxPrimitiveOp<"DPHY_DIFFINBUF", []> {
@@ -1839,6 +1995,10 @@ def DPHYuDIFFINBUF : XilinxPrimitiveOp<"DPHY_DIFFINBUF", []> {
     I<1>:$LPRX_O_N,
     I<1>:$LPRX_O_P
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def DSP48E1 : XilinxPrimitiveOp<"DSP48E1", []> {
@@ -1931,6 +2091,10 @@ def DSP48E1 : XilinxPrimitiveOp<"DSP48E1", []> {
     I<48>:$PCOUT,
     I<1>:$UNDERFLOW_
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def FRAMEuECCE3 : XilinxPrimitiveOp<"FRAME_ECCE3", []> {
@@ -1953,6 +2117,10 @@ def FRAMEuECCE3 : XilinxPrimitiveOp<"FRAME_ECCE3", []> {
     I<1>:$ENDOFSCAN,
     I<26>:$FAR
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def FRAMEuECCE4 : XilinxPrimitiveOp<"FRAME_ECCE4", []> {
@@ -1975,6 +2143,10 @@ def FRAMEuECCE4 : XilinxPrimitiveOp<"FRAME_ECCE4", []> {
     I<1>:$ENDOFSCAN,
     I<27>:$FAR
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def GND : XilinxPrimitiveOp<"GND", []> {
@@ -1990,6 +2162,10 @@ def GND : XilinxPrimitiveOp<"GND", []> {
   let results = (outs
     I<1>:$G
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def GTHE2uCHANNEL : XilinxPrimitiveOp<"GTHE2_CHANNEL", []> {
@@ -2552,6 +2728,10 @@ def GTHE2uCHANNEL : XilinxPrimitiveOp<"GTHE2_CHANNEL", []> {
     I<8>:$RXDISPERR,
     I<8>:$RXNOTINTABLE
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def GTHE2uCOMMON : XilinxPrimitiveOp<"GTHE2_COMMON", []> {
@@ -2630,6 +2810,10 @@ def GTHE2uCOMMON : XilinxPrimitiveOp<"GTHE2_COMMON", []> {
     I<16>:$PMARSVDOUT,
     I<8>:$QPLLDMONITOR
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def GTHE3uCHANNEL : XilinxPrimitiveOp<"GTHE3_CHANNEL", []> {
@@ -3360,6 +3544,10 @@ def GTHE3uCHANNEL : XilinxPrimitiveOp<"GTHE3_CHANNEL", []> {
     I<1>:$TXSYNCDONE,
     I<1>:$TXSYNCOUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def GTHE3uCOMMON : XilinxPrimitiveOp<"GTHE3_COMMON", []> {
@@ -3512,6 +3700,10 @@ def GTHE3uCOMMON : XilinxPrimitiveOp<"GTHE3_COMMON", []> {
     I<2>:$RXRECCLK0_SEL,
     I<2>:$RXRECCLK1_SEL
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def GTHE4uCHANNEL : XilinxPrimitiveOp<"GTHE4_CHANNEL", []> {
@@ -4370,6 +4562,10 @@ def GTHE4uCHANNEL : XilinxPrimitiveOp<"GTHE4_CHANNEL", []> {
     I<1>:$TXSYNCDONE,
     I<1>:$TXSYNCOUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def GTHE4uCOMMON : XilinxPrimitiveOp<"GTHE4_COMMON", []> {
@@ -4552,6 +4748,10 @@ def GTHE4uCOMMON : XilinxPrimitiveOp<"GTHE4_COMMON", []> {
     I<10>:$TCONGPO,
     I<1>:$TCONRSVDOUT0
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def GTPE2uCHANNEL : XilinxPrimitiveOp<"GTPE2_CHANNEL", []> {
@@ -5035,6 +5235,10 @@ def GTPE2uCHANNEL : XilinxPrimitiveOp<"GTPE2_CHANNEL", []> {
     I<5>:$RXPHMONITOR,
     I<5>:$RXPHSLIPMONITOR
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def GTPE2uCOMMON : XilinxPrimitiveOp<"GTPE2_COMMON", []> {
@@ -5125,6 +5329,10 @@ def GTPE2uCOMMON : XilinxPrimitiveOp<"GTPE2_COMMON", []> {
     I<16>:$PMARSVDOUT,
     I<8>:$DMONITOROUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def GTXE2uCHANNEL : XilinxPrimitiveOp<"GTXE2_CHANNEL", []> {
@@ -5576,6 +5784,10 @@ def GTXE2uCHANNEL : XilinxPrimitiveOp<"GTXE2_CHANNEL", []> {
     I<8>:$RXNOTINTABLE,
     I<10>:$TSTOUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def GTXE2uCOMMON : XilinxPrimitiveOp<"GTXE2_COMMON", []> {
@@ -5647,6 +5859,10 @@ def GTXE2uCOMMON : XilinxPrimitiveOp<"GTXE2_COMMON", []> {
     I<16>:$DRPDO,
     I<8>:$QPLLDMONITOR
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def GTYE3uCHANNEL : XilinxPrimitiveOp<"GTYE3_CHANNEL", []> {
@@ -6458,6 +6674,10 @@ def GTYE3uCHANNEL : XilinxPrimitiveOp<"GTYE3_CHANNEL", []> {
     I<1>:$TXSYNCDONE,
     I<1>:$TXSYNCOUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def GTYE3uCOMMON : XilinxPrimitiveOp<"GTYE3_COMMON", []> {
@@ -6616,6 +6836,10 @@ def GTYE3uCOMMON : XilinxPrimitiveOp<"GTYE3_COMMON", []> {
     I<4>:$SDM1FINALOUT,
     I<15>:$SDM1TESTDATA
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def GTYE4uCHANNEL : XilinxPrimitiveOp<"GTYE4_CHANNEL", []> {
@@ -7452,6 +7676,10 @@ def GTYE4uCHANNEL : XilinxPrimitiveOp<"GTYE4_CHANNEL", []> {
     I<1>:$TXSYNCDONE,
     I<1>:$TXSYNCOUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def GTYE4uCOMMON : XilinxPrimitiveOp<"GTYE4_COMMON", []> {
@@ -7658,6 +7886,10 @@ def GTYE4uCOMMON : XilinxPrimitiveOp<"GTYE4_COMMON", []> {
     I<1>:$UBRSVDOUT,
     I<1>:$UBTXUART
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def HARDuSYNC : XilinxPrimitiveOp<"HARD_SYNC", []> {
@@ -7677,6 +7909,10 @@ def HARDuSYNC : XilinxPrimitiveOp<"HARD_SYNC", []> {
   let results = (outs
     I<1>:$DOUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def HBMuONEuSTACKuINTF : XilinxPrimitiveOp<"HBM_ONE_STACK_INTF", []> {
@@ -8555,6 +8791,10 @@ def HBMuONEuSTACKuINTF : XilinxPrimitiveOp<"HBM_ONE_STACK_INTF", []> {
     I<1>:$DRAM_0_STAT_CATTRIP,
     I<3>:$DRAM_0_STAT_TEMP
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def HBMuREFuCLK : XilinxPrimitiveOp<"HBM_REF_CLK", []> {
@@ -8569,6 +8809,10 @@ def HBMuREFuCLK : XilinxPrimitiveOp<"HBM_REF_CLK", []> {
 
   let results = (outs
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def HBMuSNGLBLIuINTFuAPB : XilinxPrimitiveOp<"HBM_SNGLBLI_INTF_APB", []> {
@@ -8601,6 +8845,10 @@ def HBMuSNGLBLIuINTFuAPB : XilinxPrimitiveOp<"HBM_SNGLBLI_INTF_APB", []> {
     I<1>:$PSLVERR_PIPE,
     I<3>:$TEMP_PIPE
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def HBMuSNGLBLIuINTFuAXI : XilinxPrimitiveOp<"HBM_SNGLBLI_INTF_AXI", []> {
@@ -8676,6 +8924,10 @@ def HBMuSNGLBLIuINTFuAXI : XilinxPrimitiveOp<"HBM_SNGLBLI_INTF_AXI", []> {
     I<6>:$STATUS,
     I<1>:$WREADY_PIPE
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def HBMuTWOuSTACKuINTF : XilinxPrimitiveOp<"HBM_TWO_STACK_INTF", []> {
@@ -10416,6 +10668,10 @@ def HBMuTWOuSTACKuINTF : XilinxPrimitiveOp<"HBM_TWO_STACK_INTF", []> {
     I<1>:$DRAM_1_STAT_CATTRIP,
     I<3>:$DRAM_1_STAT_TEMP
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def HPIOuVREF : XilinxPrimitiveOp<"HPIO_VREF", []> {
@@ -10432,6 +10688,10 @@ def HPIOuVREF : XilinxPrimitiveOp<"HPIO_VREF", []> {
   let results = (outs
     I<1>:$VREF
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def HSADC : XilinxPrimitiveOp<"HSADC", []> {
@@ -10500,6 +10760,10 @@ def HSADC : XilinxPrimitiveOp<"HSADC", []> {
     I<1>:$SYSREF_OUT_NORTH,
     I<1>:$SYSREF_OUT_SOUTH
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def HSDAC : XilinxPrimitiveOp<"HSDAC", []> {
@@ -10564,6 +10828,10 @@ def HSDAC : XilinxPrimitiveOp<"HSDAC", []> {
     I<1>:$VOUT3_N,
     I<1>:$VOUT3_P
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUF : XilinxPrimitiveOp<"IBUF", []> {
@@ -10585,6 +10853,10 @@ def IBUF : XilinxPrimitiveOp<"IBUF", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFCTRL : XilinxPrimitiveOp<"IBUFCTRL", []> {
@@ -10605,6 +10877,10 @@ def IBUFCTRL : XilinxPrimitiveOp<"IBUFCTRL", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFDS : XilinxPrimitiveOp<"IBUFDS", []> {
@@ -10629,6 +10905,10 @@ def IBUFDS : XilinxPrimitiveOp<"IBUFDS", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFDSE3 : XilinxPrimitiveOp<"IBUFDSE3", []> {
@@ -10655,6 +10935,10 @@ def IBUFDSE3 : XilinxPrimitiveOp<"IBUFDSE3", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFDSuDIFFuOUT : XilinxPrimitiveOp<"IBUFDS_DIFF_OUT", []> {
@@ -10677,6 +10961,10 @@ def IBUFDSuDIFFuOUT : XilinxPrimitiveOp<"IBUFDS_DIFF_OUT", []> {
     I<1>:$O,
     I<1>:$OB
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFDSuDIFFuOUTuIBUFDISABLE : XilinxPrimitiveOp<"IBUFDS_DIFF_OUT_IBUFDISABLE", []> {
@@ -10702,6 +10990,10 @@ def IBUFDSuDIFFuOUTuIBUFDISABLE : XilinxPrimitiveOp<"IBUFDS_DIFF_OUT_IBUFDISABLE
     I<1>:$O,
     I<1>:$OB
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFDSuDIFFuOUTuINTERMDISABLE : XilinxPrimitiveOp<"IBUFDS_DIFF_OUT_INTERMDISABLE", []> {
@@ -10728,6 +11020,10 @@ def IBUFDSuDIFFuOUTuINTERMDISABLE : XilinxPrimitiveOp<"IBUFDS_DIFF_OUT_INTERMDIS
     I<1>:$O,
     I<1>:$OB
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFDSuDPHY : XilinxPrimitiveOp<"IBUFDS_DPHY", []> {
@@ -10751,6 +11047,10 @@ def IBUFDSuDPHY : XilinxPrimitiveOp<"IBUFDS_DPHY", []> {
     I<1>:$LPRX_O_N,
     I<1>:$LPRX_O_P
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFDSuGTE2 : XilinxPrimitiveOp<"IBUFDS_GTE2", []> {
@@ -10773,6 +11073,10 @@ def IBUFDSuGTE2 : XilinxPrimitiveOp<"IBUFDS_GTE2", []> {
     I<1>:$O,
     I<1>:$ODIV2
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFDSuGTE3 : XilinxPrimitiveOp<"IBUFDS_GTE3", []> {
@@ -10794,6 +11098,10 @@ def IBUFDSuGTE3 : XilinxPrimitiveOp<"IBUFDS_GTE3", []> {
     I<1>:$O,
     I<1>:$ODIV2
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFDSuGTE4 : XilinxPrimitiveOp<"IBUFDS_GTE4", []> {
@@ -10815,6 +11123,10 @@ def IBUFDSuGTE4 : XilinxPrimitiveOp<"IBUFDS_GTE4", []> {
     I<1>:$O,
     I<1>:$ODIV2
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFDSuGTM : XilinxPrimitiveOp<"IBUFDS_GTM", []> {
@@ -10836,6 +11148,10 @@ def IBUFDSuGTM : XilinxPrimitiveOp<"IBUFDS_GTM", []> {
     I<1>:$O,
     I<1>:$ODIV2
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFDSuIBUFDISABLE : XilinxPrimitiveOp<"IBUFDS_IBUFDISABLE", []> {
@@ -10860,6 +11176,10 @@ def IBUFDSuIBUFDISABLE : XilinxPrimitiveOp<"IBUFDS_IBUFDISABLE", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFDSuIBUFDISABLEuINT : XilinxPrimitiveOp<"IBUFDS_IBUFDISABLE_INT", []> {
@@ -10883,6 +11203,10 @@ def IBUFDSuIBUFDISABLEuINT : XilinxPrimitiveOp<"IBUFDS_IBUFDISABLE_INT", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFDSuINTERMDISABLE : XilinxPrimitiveOp<"IBUFDS_INTERMDISABLE", []> {
@@ -10908,6 +11232,10 @@ def IBUFDSuINTERMDISABLE : XilinxPrimitiveOp<"IBUFDS_INTERMDISABLE", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFDSuINTERMDISABLEuINT : XilinxPrimitiveOp<"IBUFDS_INTERMDISABLE_INT", []> {
@@ -10932,6 +11260,10 @@ def IBUFDSuINTERMDISABLEuINT : XilinxPrimitiveOp<"IBUFDS_INTERMDISABLE_INT", []>
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFE3 : XilinxPrimitiveOp<"IBUFE3", []> {
@@ -10956,6 +11288,10 @@ def IBUFE3 : XilinxPrimitiveOp<"IBUFE3", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFuANALOG : XilinxPrimitiveOp<"IBUF_ANALOG", []> {
@@ -10971,6 +11307,10 @@ def IBUFuANALOG : XilinxPrimitiveOp<"IBUF_ANALOG", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFuIBUFDISABLE : XilinxPrimitiveOp<"IBUF_IBUFDISABLE", []> {
@@ -10992,6 +11332,10 @@ def IBUFuIBUFDISABLE : XilinxPrimitiveOp<"IBUF_IBUFDISABLE", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IBUFuINTERMDISABLE : XilinxPrimitiveOp<"IBUF_INTERMDISABLE", []> {
@@ -11014,6 +11358,10 @@ def IBUFuINTERMDISABLE : XilinxPrimitiveOp<"IBUF_INTERMDISABLE", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def ICAPE2 : XilinxPrimitiveOp<"ICAPE2", []> {
@@ -11036,6 +11384,10 @@ def ICAPE2 : XilinxPrimitiveOp<"ICAPE2", []> {
   let results = (outs
     I<32>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def ICAPE3 : XilinxPrimitiveOp<"ICAPE3", []> {
@@ -11060,6 +11412,10 @@ def ICAPE3 : XilinxPrimitiveOp<"ICAPE3", []> {
     I<1>:$PRDONE,
     I<1>:$PRERROR
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IDDR : XilinxPrimitiveOp<"IDDR", []> {
@@ -11089,6 +11445,10 @@ def IDDR : XilinxPrimitiveOp<"IDDR", []> {
     I<1>:$Q1,
     I<1>:$Q2
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IDDRE1 : XilinxPrimitiveOp<"IDDRE1", []> {
@@ -11111,6 +11471,10 @@ def IDDRE1 : XilinxPrimitiveOp<"IDDRE1", []> {
     I<1>:$Q1,
     I<1>:$Q2
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IDDRu2CLK : XilinxPrimitiveOp<"IDDR_2CLK", []> {
@@ -11140,6 +11504,10 @@ def IDDRu2CLK : XilinxPrimitiveOp<"IDDR_2CLK", []> {
     I<1>:$Q1,
     I<1>:$Q2
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IDELAYCTRL : XilinxPrimitiveOp<"IDELAYCTRL", []> {
@@ -11157,6 +11525,10 @@ def IDELAYCTRL : XilinxPrimitiveOp<"IDELAYCTRL", []> {
   let results = (outs
     I<1>:$RDY
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IDELAYE2 : XilinxPrimitiveOp<"IDELAYE2", []> {
@@ -11195,6 +11567,10 @@ def IDELAYE2 : XilinxPrimitiveOp<"IDELAYE2", []> {
     I<5>:$CNTVALUEOUT,
     I<1>:$DATAOUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IDELAYE2uFINEDELAY : XilinxPrimitiveOp<"IDELAYE2_FINEDELAY", []> {
@@ -11235,6 +11611,10 @@ def IDELAYE2uFINEDELAY : XilinxPrimitiveOp<"IDELAYE2_FINEDELAY", []> {
     I<5>:$CNTVALUEOUT,
     I<1>:$DATAOUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IDELAYE3 : XilinxPrimitiveOp<"IDELAYE3", []> {
@@ -11274,6 +11654,10 @@ def IDELAYE3 : XilinxPrimitiveOp<"IDELAYE3", []> {
     I<9>:$CNTVALUEOUT,
     I<1>:$DATAOUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def ILKN : XilinxPrimitiveOp<"ILKN", []> {
@@ -11529,6 +11913,10 @@ def ILKN : XilinxPrimitiveOp<"ILKN", []> {
     I<64>:$TX_SERDES_DATA10,
     I<64>:$TX_SERDES_DATA11
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def ILKNE4 : XilinxPrimitiveOp<"ILKNE4", []> {
@@ -11784,6 +12172,10 @@ def ILKNE4 : XilinxPrimitiveOp<"ILKNE4", []> {
     I<64>:$TX_SERDES_DATA10,
     I<64>:$TX_SERDES_DATA11
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def INBUF : XilinxPrimitiveOp<"INBUF", []> {
@@ -11805,6 +12197,10 @@ def INBUF : XilinxPrimitiveOp<"INBUF", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def INV : XilinxPrimitiveOp<"INV", []> {
@@ -11821,6 +12217,10 @@ def INV : XilinxPrimitiveOp<"INV", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def INuFIFO : XilinxPrimitiveOp<"IN_FIFO", []> {
@@ -11868,6 +12268,10 @@ def INuFIFO : XilinxPrimitiveOp<"IN_FIFO", []> {
     I<8>:$Q8,
     I<8>:$Q9
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IOBUF : XilinxPrimitiveOp<"IOBUF", []> {
@@ -11889,6 +12293,10 @@ def IOBUF : XilinxPrimitiveOp<"IOBUF", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IOBUFDS : XilinxPrimitiveOp<"IOBUFDS", []> {
@@ -11911,6 +12319,10 @@ def IOBUFDS : XilinxPrimitiveOp<"IOBUFDS", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IOBUFDSE3 : XilinxPrimitiveOp<"IOBUFDSE3", []> {
@@ -11940,6 +12352,10 @@ def IOBUFDSE3 : XilinxPrimitiveOp<"IOBUFDSE3", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IOBUFDSuDCIEN : XilinxPrimitiveOp<"IOBUFDS_DCIEN", []> {
@@ -11966,6 +12382,10 @@ def IOBUFDSuDCIEN : XilinxPrimitiveOp<"IOBUFDS_DCIEN", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IOBUFDSuDIFFuOUT : XilinxPrimitiveOp<"IOBUFDS_DIFF_OUT", []> {
@@ -11989,6 +12409,10 @@ def IOBUFDSuDIFFuOUT : XilinxPrimitiveOp<"IOBUFDS_DIFF_OUT", []> {
     I<1>:$O,
     I<1>:$OB
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IOBUFDSuDIFFuOUTuDCIEN : XilinxPrimitiveOp<"IOBUFDS_DIFF_OUT_DCIEN", []> {
@@ -12016,6 +12440,10 @@ def IOBUFDSuDIFFuOUTuDCIEN : XilinxPrimitiveOp<"IOBUFDS_DIFF_OUT_DCIEN", []> {
     I<1>:$O,
     I<1>:$OB
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IOBUFDSuDIFFuOUTuINTERMDISABLE : XilinxPrimitiveOp<"IOBUFDS_DIFF_OUT_INTERMDISABLE", []> {
@@ -12043,6 +12471,10 @@ def IOBUFDSuDIFFuOUTuINTERMDISABLE : XilinxPrimitiveOp<"IOBUFDS_DIFF_OUT_INTERMD
     I<1>:$O,
     I<1>:$OB
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IOBUFDSuINTERMDISABLE : XilinxPrimitiveOp<"IOBUFDS_INTERMDISABLE", []> {
@@ -12069,6 +12501,10 @@ def IOBUFDSuINTERMDISABLE : XilinxPrimitiveOp<"IOBUFDS_INTERMDISABLE", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IOBUFE3 : XilinxPrimitiveOp<"IOBUFE3", []> {
@@ -12097,6 +12533,10 @@ def IOBUFE3 : XilinxPrimitiveOp<"IOBUFE3", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IOBUFuANALOG : XilinxPrimitiveOp<"IOBUF_ANALOG", []> {
@@ -12118,6 +12558,10 @@ def IOBUFuANALOG : XilinxPrimitiveOp<"IOBUF_ANALOG", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IOBUFuDCIEN : XilinxPrimitiveOp<"IOBUF_DCIEN", []> {
@@ -12143,6 +12587,10 @@ def IOBUFuDCIEN : XilinxPrimitiveOp<"IOBUF_DCIEN", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def IOBUFuINTERMDISABLE : XilinxPrimitiveOp<"IOBUF_INTERMDISABLE", []> {
@@ -12168,6 +12616,10 @@ def IOBUFuINTERMDISABLE : XilinxPrimitiveOp<"IOBUF_INTERMDISABLE", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def ISERDES : XilinxPrimitiveOp<"ISERDES", []> {
@@ -12226,6 +12678,10 @@ def ISERDES : XilinxPrimitiveOp<"ISERDES", []> {
     I<1>:$SHIFTOUT1,
     I<1>:$SHIFTOUT2
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def ISERDESE1 : XilinxPrimitiveOp<"ISERDESE1", []> {
@@ -12281,6 +12737,10 @@ def ISERDESE1 : XilinxPrimitiveOp<"ISERDESE1", []> {
     I<1>:$SHIFTOUT1,
     I<1>:$SHIFTOUT2
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def LUT5 : XilinxPrimitiveOp<"LUT5", []> {
@@ -12301,6 +12761,10 @@ def LUT5 : XilinxPrimitiveOp<"LUT5", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def LUT6 : XilinxPrimitiveOp<"LUT6", []> {
@@ -12323,7 +12787,9 @@ def LUT6 : XilinxPrimitiveOp<"LUT6", []> {
     I<1>:$O
   );
 
-  let assemblyFormat = "$I0 `,` $I1 `,` $I2 `,` $I3 `,` $I4 `,` $I5  attr-dict `:` type($O)";
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def LUT6u2 : XilinxPrimitiveOp<"LUT6_2", []> {
@@ -12346,6 +12812,10 @@ def LUT6u2 : XilinxPrimitiveOp<"LUT6_2", []> {
     I<1>:$O5,
     I<1>:$O6
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def MASTERuJTAG : XilinxPrimitiveOp<"MASTER_JTAG", []> {
@@ -12363,6 +12833,10 @@ def MASTERuJTAG : XilinxPrimitiveOp<"MASTER_JTAG", []> {
   let results = (outs
     I<1>:$TDO
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def MMCME2uADV : XilinxPrimitiveOp<"MMCME2_ADV", []> {
@@ -12457,6 +12931,10 @@ def MMCME2uADV : XilinxPrimitiveOp<"MMCME2_ADV", []> {
     I<1>:$LOCKED,
     I<1>:$PSDONE
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def MMCME2uBASE : XilinxPrimitiveOp<"MMCME2_BASE", []> {
@@ -12518,6 +12996,10 @@ def MMCME2uBASE : XilinxPrimitiveOp<"MMCME2_BASE", []> {
     I<1>:$CLKOUT6,
     I<1>:$LOCKED
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def MMCME3uADV : XilinxPrimitiveOp<"MMCME3_ADV", []> {
@@ -12617,6 +13099,10 @@ def MMCME3uADV : XilinxPrimitiveOp<"MMCME3_ADV", []> {
     I<1>:$LOCKED,
     I<1>:$PSDONE
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def MMCME3uBASE : XilinxPrimitiveOp<"MMCME3_BASE", []> {
@@ -12681,6 +13167,10 @@ def MMCME3uBASE : XilinxPrimitiveOp<"MMCME3_BASE", []> {
     I<1>:$CLKOUT6,
     I<1>:$LOCKED
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def MMCME4uADV : XilinxPrimitiveOp<"MMCME4_ADV", []> {
@@ -12780,6 +13270,10 @@ def MMCME4uADV : XilinxPrimitiveOp<"MMCME4_ADV", []> {
     I<1>:$LOCKED,
     I<1>:$PSDONE
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def MMCME4uBASE : XilinxPrimitiveOp<"MMCME4_BASE", []> {
@@ -12844,6 +13338,10 @@ def MMCME4uBASE : XilinxPrimitiveOp<"MMCME4_BASE", []> {
     I<1>:$CLKOUT6,
     I<1>:$LOCKED
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def MUXCY : XilinxPrimitiveOp<"MUXCY", []> {
@@ -12862,6 +13360,10 @@ def MUXCY : XilinxPrimitiveOp<"MUXCY", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def MUXF7 : XilinxPrimitiveOp<"MUXF7", []> {
@@ -12880,6 +13382,10 @@ def MUXF7 : XilinxPrimitiveOp<"MUXF7", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def MUXF8 : XilinxPrimitiveOp<"MUXF8", []> {
@@ -12898,6 +13404,10 @@ def MUXF8 : XilinxPrimitiveOp<"MUXF8", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def MUXF9 : XilinxPrimitiveOp<"MUXF9", []> {
@@ -12915,6 +13425,10 @@ def MUXF9 : XilinxPrimitiveOp<"MUXF9", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OBUF : XilinxPrimitiveOp<"OBUF", []> {
@@ -12935,6 +13449,10 @@ def OBUF : XilinxPrimitiveOp<"OBUF", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OBUFDS : XilinxPrimitiveOp<"OBUFDS", []> {
@@ -12955,6 +13473,10 @@ def OBUFDS : XilinxPrimitiveOp<"OBUFDS", []> {
     I<1>:$O,
     I<1>:$OB
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OBUFDSuDPHY : XilinxPrimitiveOp<"OBUFDS_DPHY", []> {
@@ -12976,6 +13498,10 @@ def OBUFDSuDPHY : XilinxPrimitiveOp<"OBUFDS_DPHY", []> {
     I<1>:$O,
     I<1>:$OB
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OBUFDSuGTE3 : XilinxPrimitiveOp<"OBUFDS_GTE3", []> {
@@ -12995,6 +13521,10 @@ def OBUFDSuGTE3 : XilinxPrimitiveOp<"OBUFDS_GTE3", []> {
     I<1>:$O,
     I<1>:$OB
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OBUFDSuGTE3uADV : XilinxPrimitiveOp<"OBUFDS_GTE3_ADV", []> {
@@ -13015,6 +13545,10 @@ def OBUFDSuGTE3uADV : XilinxPrimitiveOp<"OBUFDS_GTE3_ADV", []> {
     I<1>:$O,
     I<1>:$OB
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OBUFDSuGTE4 : XilinxPrimitiveOp<"OBUFDS_GTE4", []> {
@@ -13034,6 +13568,10 @@ def OBUFDSuGTE4 : XilinxPrimitiveOp<"OBUFDS_GTE4", []> {
     I<1>:$O,
     I<1>:$OB
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OBUFDSuGTE4uADV : XilinxPrimitiveOp<"OBUFDS_GTE4_ADV", []> {
@@ -13054,6 +13592,10 @@ def OBUFDSuGTE4uADV : XilinxPrimitiveOp<"OBUFDS_GTE4_ADV", []> {
     I<1>:$O,
     I<1>:$OB
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OBUFDSuGTM : XilinxPrimitiveOp<"OBUFDS_GTM", []> {
@@ -13073,6 +13615,10 @@ def OBUFDSuGTM : XilinxPrimitiveOp<"OBUFDS_GTM", []> {
     I<1>:$O,
     I<1>:$OB
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OBUFDSuGTMuADV : XilinxPrimitiveOp<"OBUFDS_GTM_ADV", []> {
@@ -13093,6 +13639,10 @@ def OBUFDSuGTMuADV : XilinxPrimitiveOp<"OBUFDS_GTM_ADV", []> {
     I<1>:$O,
     I<1>:$OB
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OBUFT : XilinxPrimitiveOp<"OBUFT", []> {
@@ -13114,6 +13664,10 @@ def OBUFT : XilinxPrimitiveOp<"OBUFT", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OBUFTDS : XilinxPrimitiveOp<"OBUFTDS", []> {
@@ -13135,6 +13689,10 @@ def OBUFTDS : XilinxPrimitiveOp<"OBUFTDS", []> {
     I<1>:$O,
     I<1>:$OB
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OBUFTDSuDCIEN : XilinxPrimitiveOp<"OBUFTDS_DCIEN", []> {
@@ -13156,6 +13714,10 @@ def OBUFTDSuDCIEN : XilinxPrimitiveOp<"OBUFTDS_DCIEN", []> {
     I<1>:$O,
     I<1>:$OB
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OBUFTuDCIEN : XilinxPrimitiveOp<"OBUFT_DCIEN", []> {
@@ -13177,6 +13739,10 @@ def OBUFTuDCIEN : XilinxPrimitiveOp<"OBUFT_DCIEN", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def ODDR : XilinxPrimitiveOp<"ODDR", []> {
@@ -13206,6 +13772,10 @@ def ODDR : XilinxPrimitiveOp<"ODDR", []> {
   let results = (outs
     I<1>:$Q
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def ODDRE1 : XilinxPrimitiveOp<"ODDRE1", []> {
@@ -13229,6 +13799,10 @@ def ODDRE1 : XilinxPrimitiveOp<"ODDRE1", []> {
   let results = (outs
     I<1>:$Q
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def ODELAYE2 : XilinxPrimitiveOp<"ODELAYE2", []> {
@@ -13266,6 +13840,10 @@ def ODELAYE2 : XilinxPrimitiveOp<"ODELAYE2", []> {
     I<5>:$CNTVALUEOUT,
     I<1>:$DATAOUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def ODELAYE2uFINEDELAY : XilinxPrimitiveOp<"ODELAYE2_FINEDELAY", []> {
@@ -13305,6 +13883,10 @@ def ODELAYE2uFINEDELAY : XilinxPrimitiveOp<"ODELAYE2_FINEDELAY", []> {
     I<5>:$CNTVALUEOUT,
     I<1>:$DATAOUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def ODELAYE3 : XilinxPrimitiveOp<"ODELAYE3", []> {
@@ -13341,6 +13923,10 @@ def ODELAYE3 : XilinxPrimitiveOp<"ODELAYE3", []> {
     I<9>:$CNTVALUEOUT,
     I<1>:$DATAOUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OR2L : XilinxPrimitiveOp<"OR2L", []> {
@@ -13358,6 +13944,10 @@ def OR2L : XilinxPrimitiveOp<"OR2L", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OSERDES : XilinxPrimitiveOp<"OSERDES", []> {
@@ -13403,6 +13993,10 @@ def OSERDES : XilinxPrimitiveOp<"OSERDES", []> {
     I<1>:$SHIFTOUT2,
     I<1>:$TQ
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OSERDESE1 : XilinxPrimitiveOp<"OSERDESE1", []> {
@@ -13457,6 +14051,10 @@ def OSERDESE1 : XilinxPrimitiveOp<"OSERDESE1", []> {
     I<1>:$TFB,
     I<1>:$TQ
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def selfhealuoserdese1uvlog : XilinxPrimitiveOp<"selfheal_oserdese1_vlog", []> {
@@ -13471,6 +14069,10 @@ def selfhealuoserdese1uvlog : XilinxPrimitiveOp<"selfheal_oserdese1_vlog", []> {
 
   let results = (outs
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def plguoserdese1uvlog : XilinxPrimitiveOp<"plg_oserdese1_vlog", []> {
@@ -13487,6 +14089,10 @@ def plguoserdese1uvlog : XilinxPrimitiveOp<"plg_oserdese1_vlog", []> {
 
   let results = (outs
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def rank12duoserdese1uvlog : XilinxPrimitiveOp<"rank12d_oserdese1_vlog", []> {
@@ -13501,6 +14107,10 @@ def rank12duoserdese1uvlog : XilinxPrimitiveOp<"rank12d_oserdese1_vlog", []> {
 
   let results = (outs
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def trifuoserdese1uvlog : XilinxPrimitiveOp<"trif_oserdese1_vlog", []> {
@@ -13516,6 +14126,10 @@ def trifuoserdese1uvlog : XilinxPrimitiveOp<"trif_oserdese1_vlog", []> {
 
   let results = (outs
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def txbufferuoserdese1uvlog : XilinxPrimitiveOp<"txbuffer_oserdese1_vlog", []> {
@@ -13529,6 +14143,10 @@ def txbufferuoserdese1uvlog : XilinxPrimitiveOp<"txbuffer_oserdese1_vlog", []> {
 
   let results = (outs
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def fifoutdpipeuoserdese1uvlog : XilinxPrimitiveOp<"fifo_tdpipe_oserdese1_vlog", []> {
@@ -13542,6 +14160,10 @@ def fifoutdpipeuoserdese1uvlog : XilinxPrimitiveOp<"fifo_tdpipe_oserdese1_vlog",
 
   let results = (outs
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def fifouresetuoserdese1uvlog : XilinxPrimitiveOp<"fifo_reset_oserdese1_vlog", []> {
@@ -13555,6 +14177,10 @@ def fifouresetuoserdese1uvlog : XilinxPrimitiveOp<"fifo_reset_oserdese1_vlog", [
 
   let results = (outs
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def fifouaddruoserdese1uvlog : XilinxPrimitiveOp<"fifo_addr_oserdese1_vlog", []> {
@@ -13568,6 +14194,10 @@ def fifouaddruoserdese1uvlog : XilinxPrimitiveOp<"fifo_addr_oserdese1_vlog", []>
 
   let results = (outs
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def iodlyctrlunpreuoserdese1uvlog : XilinxPrimitiveOp<"iodlyctrl_npre_oserdese1_vlog", []> {
@@ -13581,6 +14211,10 @@ def iodlyctrlunpreuoserdese1uvlog : XilinxPrimitiveOp<"iodlyctrl_npre_oserdese1_
 
   let results = (outs
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def doutuoserdese1uvlog : XilinxPrimitiveOp<"dout_oserdese1_vlog", []> {
@@ -13595,6 +14229,10 @@ def doutuoserdese1uvlog : XilinxPrimitiveOp<"dout_oserdese1_vlog", []> {
 
   let results = (outs
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def toutuoserdese1uvlog : XilinxPrimitiveOp<"tout_oserdese1_vlog", []> {
@@ -13610,6 +14248,10 @@ def toutuoserdese1uvlog : XilinxPrimitiveOp<"tout_oserdese1_vlog", []> {
 
   let results = (outs
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OSERDESE2 : XilinxPrimitiveOp<"OSERDESE2", []> {
@@ -13676,6 +14318,10 @@ def OSERDESE2 : XilinxPrimitiveOp<"OSERDESE2", []> {
     I<1>:$TFB,
     I<1>:$TQ
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OSERDESE3 : XilinxPrimitiveOp<"OSERDESE3", []> {
@@ -13706,6 +14352,10 @@ def OSERDESE3 : XilinxPrimitiveOp<"OSERDESE3", []> {
     I<1>:$OQ,
     I<1>:$T_OUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def OUTuFIFO : XilinxPrimitiveOp<"OUT_FIFO", []> {
@@ -13754,6 +14404,10 @@ def OUTuFIFO : XilinxPrimitiveOp<"OUT_FIFO", []> {
     I<8>:$Q5,
     I<8>:$Q6
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PCIE40E4 : XilinxPrimitiveOp<"PCIE40E4", []> {
@@ -14993,6 +15647,10 @@ def PCIE40E4 : XilinxPrimitiveOp<"PCIE40E4", []> {
     I<4>:$SAXISRQTREADY,
     I<32>:$USERSPAREOUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PCIE4CE4 : XilinxPrimitiveOp<"PCIE4CE4", []> {
@@ -16309,6 +16967,10 @@ def PCIE4CE4 : XilinxPrimitiveOp<"PCIE4CE4", []> {
     I<4>:$SAXISRQTREADY,
     I<24>:$USERSPAREOUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PCIEu3u0 : XilinxPrimitiveOp<"PCIE_3_0", []> {
@@ -17226,6 +17888,10 @@ def PCIEu3u0 : XilinxPrimitiveOp<"PCIE_3_0", []> {
     I<10>:$MICOMPLETIONRAMWRITEADDRESSBL,
     I<10>:$MICOMPLETIONRAMWRITEADDRESSBU
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PCIEu3u1 : XilinxPrimitiveOp<"PCIE_3_1", []> {
@@ -18504,6 +19170,10 @@ def PCIEu3u1 : XilinxPrimitiveOp<"PCIE_3_1", []> {
     I<4>:$SAXISRQTREADY,
     I<32>:$SPAREOUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PHASERuIN : XilinxPrimitiveOp<"PHASER_IN", []> {
@@ -18549,6 +19219,10 @@ def PHASERuIN : XilinxPrimitiveOp<"PHASER_IN", []> {
     I<1>:$ISERDESRST,
     I<1>:$RCLK
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PHASERuINuPHY : XilinxPrimitiveOp<"PHASER_IN_PHY", []> {
@@ -18602,6 +19276,10 @@ def PHASERuINuPHY : XilinxPrimitiveOp<"PHASER_IN_PHY", []> {
     I<1>:$RCLK,
     I<1>:$WRENABLE
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PHASERuOUT : XilinxPrimitiveOp<"PHASER_OUT", []> {
@@ -18653,6 +19331,10 @@ def PHASERuOUT : XilinxPrimitiveOp<"PHASER_OUT", []> {
     I<1>:$OSERDESRST,
     I<9>:$COUNTERREADVAL
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PHASERuOUTuPHY : XilinxPrimitiveOp<"PHASER_OUT_PHY", []> {
@@ -18709,6 +19391,10 @@ def PHASERuOUTuPHY : XilinxPrimitiveOp<"PHASER_OUT_PHY", []> {
     I<2>:$DTSBUS,
     I<9>:$COUNTERREADVAL
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PHASERuREF : XilinxPrimitiveOp<"PHASER_REF", []> {
@@ -18729,6 +19415,10 @@ def PHASERuREF : XilinxPrimitiveOp<"PHASER_REF", []> {
   let results = (outs
     I<1>:$LOCKED
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PHYuCONTROL : XilinxPrimitiveOp<"PHY_CONTROL", []> {
@@ -18800,6 +19490,10 @@ def PHYuCONTROL : XilinxPrimitiveOp<"PHY_CONTROL", []> {
     I<4>:$INBURSTPENDING,
     I<4>:$OUTBURSTPENDING
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PLLE2uADV : XilinxPrimitiveOp<"PLLE2_ADV", []> {
@@ -18865,6 +19559,10 @@ def PLLE2uADV : XilinxPrimitiveOp<"PLLE2_ADV", []> {
     I<1>:$DRDY,
     I<1>:$LOCKED
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PLLE2uBASE : XilinxPrimitiveOp<"PLLE2_BASE", []> {
@@ -18916,6 +19614,10 @@ def PLLE2uBASE : XilinxPrimitiveOp<"PLLE2_BASE", []> {
     I<1>:$CLKOUT5,
     I<1>:$LOCKED
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PLLE3uADV : XilinxPrimitiveOp<"PLLE3_ADV", []> {
@@ -18966,6 +19668,10 @@ def PLLE3uADV : XilinxPrimitiveOp<"PLLE3_ADV", []> {
     I<1>:$DRDY,
     I<1>:$LOCKED
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PLLE3uBASE : XilinxPrimitiveOp<"PLLE3_BASE", []> {
@@ -19008,6 +19714,10 @@ def PLLE3uBASE : XilinxPrimitiveOp<"PLLE3_BASE", []> {
     I<1>:$CLKOUTPHY,
     I<1>:$LOCKED
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PLLE4uADV : XilinxPrimitiveOp<"PLLE4_ADV", []> {
@@ -19058,6 +19768,10 @@ def PLLE4uADV : XilinxPrimitiveOp<"PLLE4_ADV", []> {
     I<1>:$DRDY,
     I<1>:$LOCKED
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PLLE4uBASE : XilinxPrimitiveOp<"PLLE4_BASE", []> {
@@ -19100,6 +19814,10 @@ def PLLE4uBASE : XilinxPrimitiveOp<"PLLE4_BASE", []> {
     I<1>:$CLKOUTPHY,
     I<1>:$LOCKED
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PS7 : XilinxPrimitiveOp<"PS7", []> {
@@ -19733,6 +20451,10 @@ def PS7 : XilinxPrimitiveOp<"PS7", []> {
     I<8>:$SAXIHP3WCOUNT,
     I<1>:$SAXIHP3WREADY
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PS8 : XilinxPrimitiveOp<"PS8", []> {
@@ -20761,6 +21483,10 @@ def PS8 : XilinxPrimitiveOp<"PS8", []> {
     I<8>:$SAXIGP6WCOUNT,
     I<1>:$SAXIGP6WREADY
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PULLDOWN : XilinxPrimitiveOp<"PULLDOWN", []> {
@@ -20776,6 +21502,10 @@ def PULLDOWN : XilinxPrimitiveOp<"PULLDOWN", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def PULLUP : XilinxPrimitiveOp<"PULLUP", []> {
@@ -20791,6 +21521,10 @@ def PULLUP : XilinxPrimitiveOp<"PULLUP", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def RAM128X1D : XilinxPrimitiveOp<"RAM128X1D", []> {
@@ -20813,6 +21547,10 @@ def RAM128X1D : XilinxPrimitiveOp<"RAM128X1D", []> {
     I<1>:$DPO,
     I<1>:$SPO
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def RAM128X1S : XilinxPrimitiveOp<"RAM128X1S", []> {
@@ -20839,6 +21577,10 @@ def RAM128X1S : XilinxPrimitiveOp<"RAM128X1S", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def RAM256X1D : XilinxPrimitiveOp<"RAM256X1D", []> {
@@ -20861,6 +21603,10 @@ def RAM256X1D : XilinxPrimitiveOp<"RAM256X1D", []> {
     I<1>:$DPO,
     I<1>:$SPO
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def RAM256X1S : XilinxPrimitiveOp<"RAM256X1S", []> {
@@ -20881,6 +21627,10 @@ def RAM256X1S : XilinxPrimitiveOp<"RAM256X1S", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def RAM32M : XilinxPrimitiveOp<"RAM32M", []> {
@@ -20913,6 +21663,10 @@ def RAM32M : XilinxPrimitiveOp<"RAM32M", []> {
     I<2>:$DOC,
     I<2>:$DOD
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def RAM32M16 : XilinxPrimitiveOp<"RAM32M16", []> {
@@ -20961,6 +21715,10 @@ def RAM32M16 : XilinxPrimitiveOp<"RAM32M16", []> {
     I<2>:$DOG,
     I<2>:$DOH
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def RAM32X16DR8 : XilinxPrimitiveOp<"RAM32X16DR8", []> {
@@ -21001,6 +21759,10 @@ def RAM32X16DR8 : XilinxPrimitiveOp<"RAM32X16DR8", []> {
     I<1>:$DOG,
     I<2>:$DOH
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def RAM32X1D : XilinxPrimitiveOp<"RAM32X1D", []> {
@@ -21031,6 +21793,10 @@ def RAM32X1D : XilinxPrimitiveOp<"RAM32X1D", []> {
     I<1>:$DPO,
     I<1>:$SPO
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def RAM32X1S : XilinxPrimitiveOp<"RAM32X1S", []> {
@@ -21055,6 +21821,10 @@ def RAM32X1S : XilinxPrimitiveOp<"RAM32X1S", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def RAM512X1S : XilinxPrimitiveOp<"RAM512X1S", []> {
@@ -21075,6 +21845,10 @@ def RAM512X1S : XilinxPrimitiveOp<"RAM512X1S", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def RAM64M : XilinxPrimitiveOp<"RAM64M", []> {
@@ -21107,6 +21881,10 @@ def RAM64M : XilinxPrimitiveOp<"RAM64M", []> {
     I<1>:$DOC,
     I<1>:$DOD
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def RAM64M8 : XilinxPrimitiveOp<"RAM64M8", []> {
@@ -21155,6 +21933,10 @@ def RAM64M8 : XilinxPrimitiveOp<"RAM64M8", []> {
     I<1>:$DOG,
     I<1>:$DOH
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def RAM64X1D : XilinxPrimitiveOp<"RAM64X1D", []> {
@@ -21187,6 +21969,10 @@ def RAM64X1D : XilinxPrimitiveOp<"RAM64X1D", []> {
     I<1>:$DPO,
     I<1>:$SPO
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def RAM64X1S : XilinxPrimitiveOp<"RAM64X1S", []> {
@@ -21212,6 +21998,10 @@ def RAM64X1S : XilinxPrimitiveOp<"RAM64X1S", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def RAM64X8SW : XilinxPrimitiveOp<"RAM64X8SW", []> {
@@ -21240,6 +22030,10 @@ def RAM64X8SW : XilinxPrimitiveOp<"RAM64X8SW", []> {
   let results = (outs
     I<8>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def RAMB18E1 : XilinxPrimitiveOp<"RAMB18E1", []> {
@@ -21375,6 +22169,10 @@ def RAMB18E1 : XilinxPrimitiveOp<"RAMB18E1", []> {
     I<2>:$DOPADOP,
     I<2>:$DOPBDOP
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def SIMuCONFIGE3 : XilinxPrimitiveOp<"SIM_CONFIGE3", []> {
@@ -21403,6 +22201,10 @@ def SIMuCONFIGE3 : XilinxPrimitiveOp<"SIM_CONFIGE3", []> {
     I<1>:$PRDONE,
     I<1>:$PRERROR
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def SRL16E : XilinxPrimitiveOp<"SRL16E", []> {
@@ -21426,6 +22228,10 @@ def SRL16E : XilinxPrimitiveOp<"SRL16E", []> {
   let results = (outs
     I<1>:$Q
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def SRLC16E : XilinxPrimitiveOp<"SRLC16E", []> {
@@ -21450,6 +22256,10 @@ def SRLC16E : XilinxPrimitiveOp<"SRLC16E", []> {
     I<1>:$Q,
     I<1>:$Q15
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def SRLC32E : XilinxPrimitiveOp<"SRLC32E", []> {
@@ -21471,6 +22281,10 @@ def SRLC32E : XilinxPrimitiveOp<"SRLC32E", []> {
     I<1>:$Q,
     I<1>:$Q31
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def STARTUPE2 : XilinxPrimitiveOp<"STARTUPE2", []> {
@@ -21499,6 +22313,10 @@ def STARTUPE2 : XilinxPrimitiveOp<"STARTUPE2", []> {
     I<1>:$EOS,
     I<1>:$PREQ
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def STARTUPE3 : XilinxPrimitiveOp<"STARTUPE3", []> {
@@ -21531,6 +22349,10 @@ def STARTUPE3 : XilinxPrimitiveOp<"STARTUPE3", []> {
     I<1>:$EOS,
     I<1>:$PREQ
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def SYSMONE1 : XilinxPrimitiveOp<"SYSMONE1", []> {
@@ -21647,6 +22469,10 @@ def SYSMONE1 : XilinxPrimitiveOp<"SYSMONE1", []> {
     I<5>:$MUXADDR,
     I<1>:$OT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def SYSMONE4 : XilinxPrimitiveOp<"SYSMONE4", []> {
@@ -21767,6 +22593,10 @@ def SYSMONE4 : XilinxPrimitiveOp<"SYSMONE4", []> {
     I<1>:$OT,
     I<1>:$SMBALERT_TS
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def TXuBITSLICE : XilinxPrimitiveOp<"TX_BITSLICE", []> {
@@ -21814,6 +22644,10 @@ def TXuBITSLICE : XilinxPrimitiveOp<"TX_BITSLICE", []> {
     I<40>:$TX_BIT_CTRL_OUT,
     I<1>:$T_OUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def TXuBITSLICEuTRI : XilinxPrimitiveOp<"TX_BITSLICE_TRI", []> {
@@ -21853,6 +22687,10 @@ def TXuBITSLICEuTRI : XilinxPrimitiveOp<"TX_BITSLICE_TRI", []> {
     I<9>:$CNTVALUEOUT,
     I<1>:$TRI_OUT
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def URAM288 : XilinxPrimitiveOp<"URAM288", []> {
@@ -21970,6 +22808,10 @@ def URAM288 : XilinxPrimitiveOp<"URAM288", []> {
     I<1>:$SBITERR_A,
     I<1>:$SBITERR_B
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def URAM288uBASE : XilinxPrimitiveOp<"URAM288_BASE", []> {
@@ -22037,6 +22879,10 @@ def URAM288uBASE : XilinxPrimitiveOp<"URAM288_BASE", []> {
     I<1>:$SBITERR_A,
     I<1>:$SBITERR_B
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def USRuACCESSE2 : XilinxPrimitiveOp<"USR_ACCESSE2", []> {
@@ -22054,6 +22900,10 @@ def USRuACCESSE2 : XilinxPrimitiveOp<"USR_ACCESSE2", []> {
     I<1>:$DATAVALID,
     I<32>:$DATA
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def VCC : XilinxPrimitiveOp<"VCC", []> {
@@ -22069,6 +22919,10 @@ def VCC : XilinxPrimitiveOp<"VCC", []> {
   let results = (outs
     I<1>:$P
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def VCU : XilinxPrimitiveOp<"VCU", []> {
@@ -22311,6 +23165,10 @@ def VCU : XilinxPrimitiveOp<"VCU", []> {
     I<1>:$VCUPLRVALIDAXILITEAPB,
     I<1>:$VCUPLWREADYAXILITEAPB
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def XADC : XilinxPrimitiveOp<"XADC", []> {
@@ -22384,6 +23242,10 @@ def XADC : XilinxPrimitiveOp<"XADC", []> {
     I<5>:$CHANNEL,
     I<5>:$MUXADDR
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def XORCY : XilinxPrimitiveOp<"XORCY", []> {
@@ -22400,6 +23262,10 @@ def XORCY : XilinxPrimitiveOp<"XORCY", []> {
   let results = (outs
     I<1>:$O
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 
 def ZHOLDuDELAY : XilinxPrimitiveOp<"ZHOLD_DELAY", []> {
@@ -22419,5 +23285,9 @@ def ZHOLDuDELAY : XilinxPrimitiveOp<"ZHOLD_DELAY", []> {
     I<1>:$DLYFABRIC,
     I<1>:$DLYIFF
   );
+
+  let extraClassDeclaration = [{
+    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);
+  }];
 }
 

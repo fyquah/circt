@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <fstream>
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -91,15 +92,46 @@ BitvectorLiteral BitvectorLiteral::parse(char* start)
   return { width, radix, std::string(p) };
 }
 
+static std::vector<std::string>
+createPortInfoFromPortDeclaration(const PortDeclaration & portDeclaration)
+{
+  std::vector<std::string> ret;
+  for (auto & identifier : portDeclaration.identifiers) {
+    std::stringstream ss;
+    ss << "{";
+    ss << '"'<< identifier << '"' << ", ";
+    switch (portDeclaration.direction) {
+        case Direction::INPUT:
+          ss << "circt::hw::PortDirection::INPUT";
+          break;
+        case Direction::INOUT:
+          ss << "circt::hw::PortDirection::INOUT";
+          break;
+        case Direction::OUTPUT:
+          ss << "circt::hw::PortDirection::OUTPUT";
+          break;
+    }
+    ss << ", ";
+    ss << calculateIndicesWidth(portDeclaration.indices);
+    ss << "},";
+    ret.push_back(ss.str());
+  }
+  return ret;
+}
+
 void transformAstToMLIRTd(const std::vector<VerilogModule>& verilogModules)
 {
+  std::ofstream tableGenFile("../XilinxRawPrimitives.td");
+  std::ofstream primitivesOpsCppFile("../XilinxRawPrimitivesOps.cpp.inc");
+
   for (auto & verilogModule : verilogModules) {
     std::vector<std::string> operands;
     std::vector<std::string> attributes;
     std::vector<std::string> results;
+    std::vector<std::string> portInfos;
 
     // operands and results
-    auto onPortDeclaration = [&operands, &results](const PortDeclaration & portDeclaration) {
+    auto onPortDeclaration = [&](const PortDeclaration & portDeclaration) {
       size_t width = calculateIndicesWidth(portDeclaration.indices);
       switch (portDeclaration.direction) {
         case Direction::INPUT:
@@ -113,6 +145,9 @@ void transformAstToMLIRTd(const std::vector<VerilogModule>& verilogModules)
             results.push_back(createOperandOrResultLine(portDeclaration.direction, width, identifier));
           }
           break;
+      }
+      for (auto s : createPortInfoFromPortDeclaration(portDeclaration)) {
+        portInfos.push_back(s);
       }
     };
     std::for_each(
@@ -137,37 +172,50 @@ void transformAstToMLIRTd(const std::vector<VerilogModule>& verilogModules)
     // Hack necessary, to work around tablegen ignoring chars before the first _
     std::replace(className.begin(), className.end(), '_', 'u');
 
-    std::cout << "def "
+    tableGenFile << "def "
       << className
       << " : XilinxPrimitiveOp<"
       << '"' << verilogModule.header.module_name << "\", "
       << "[]" << "> {\n";
 
-    std::cout << "  let summary = \"" << verilogModule.header.module_name << " Xilinx Primitive.\";\n\n";
+    tableGenFile << "  let summary = \"" << verilogModule.header.module_name << " Xilinx Primitive.\";\n\n";
 
-    std::cout << "  let arguments = (ins\n";
-    std::cout << "    // [input] and [inout] ports follows.\n";
+    tableGenFile << "  let arguments = (ins\n";
+    tableGenFile << "    // [input] and [inout] ports follows.\n";
     for (size_t i = 0; i < operands.size() ; i++) {
-      std::cout << "    " << operands[i] << (i == (operands.size() + attributes.size() - 1) ? "\n" : ",\n");
+      tableGenFile << "    " << operands[i] << (i == (operands.size() + attributes.size() - 1) ? "\n" : ",\n");
     }
-    std::cout << "\n";
+    tableGenFile << "\n";
     if (attributes.size() == 0) {
-      std::cout << "    // " << verilogModule.header.module_name << " does not contain any parameters\n";
+      tableGenFile << "    // " << verilogModule.header.module_name << " does not contain any parameters\n";
     } else {
-      std::cout << "    // " << verilogModule.header.module_name << " parameters follows\n";
+      tableGenFile << "    // " << verilogModule.header.module_name << " parameters follows\n";
     }
     for (size_t i = 0; i < attributes.size() ; i++) {
-      std::cout << "    " << attributes[i] << (i == (attributes.size() - 1) ? "\n" : ",\n");
+      tableGenFile << "    " << attributes[i] << (i == (attributes.size() - 1) ? "\n" : ",\n");
     }
-    std::cout << "  );\n\n";
+    tableGenFile << "  );\n\n";
 
-    std::cout << "  let results = (outs\n";
+    tableGenFile << "  let results = (outs\n";
     for (size_t i = 0; i < results.size() ; i++) {
-      std::cout << "    " << results[i] << (i == results.size() - 1 ? "\n" : ",\n");
+      tableGenFile << "    " << results[i] << (i == results.size() - 1 ? "\n" : ",\n");
     }
-    std::cout << "  );\n";
+    tableGenFile << "  );\n\n";
 
-    std::cout << "}\n\n";
+    tableGenFile << "  let extraClassDeclaration = [{\n";
+    tableGenFile << "    static llvm::SmallVector<circt::hw::ModulePortInfo> modulePortInfos(::mlir::MLIRContext *);\n";
+    tableGenFile << "  }];\n";
+    tableGenFile << "}\n\n";
+
+    primitivesOpsCppFile << "llvm::SmallVector<circt::hw::ModulePortInfo> ";
+    primitivesOpsCppFile << "circt::xilinxPrimitives::" << className << "::" << "modulePortInfos(::mlir::MLIRContext *context) {\n";
+    primitivesOpsCppFile << "  static const llvm::SmallVector<std::tuple<const char*, circt::hw::PortDirection, uint64_t>> data {\n";
+    for (auto & portInfo : portInfos) {
+      primitivesOpsCppFile << "    " << portInfo << "\n";
+    }
+    primitivesOpsCppFile << "  };\n";
+    primitivesOpsCppFile << "  return ::createModulePortInfos(context, data);\n";
+    primitivesOpsCppFile << "}\n\n";
   }
 }
 

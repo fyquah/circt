@@ -3,6 +3,7 @@
 
 // #include "circt/Dialect/Comb/CombDialect.h"
 #include "circt/Support/LLVM.h"
+#include "circt/Dialect/HW/HWOps.h"
 #include "mlir/IR/BuiltinOps.h"
 #include "mlir/IR/FunctionSupport.h"
 #include "mlir/IR/OpImplementation.h"
