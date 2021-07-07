@@ -30,25 +30,36 @@ struct XilinxPrimitivesToHWPass : public LowerXilinxPrimitivesToHWBase<XilinxPri
 };
 } // anonymous namespace
 
-namespace {
-struct LUT6Lower : public OpConversionPattern<xilinxPrimitives::LUT6> {
-public:
-  using OpConversionPattern::OpConversionPattern;
+static const std::string xilinxPrimitivesNamespace = "xilinxPrimitives";
 
-  LogicalResult
-  matchAndRewrite(xilinxPrimitives::LUT6 lut6, ArrayRef<Value> operands,
-                  ConversionPatternRewriter &rewriter) const final {
-    auto context = lut6.getContext();
-    auto instanceName = StringAttr::get(context, "the_lut6");
-    auto moduleName = FlatSymbolRefAttr::get(context, "LUT6");
-    auto parameters = DictionaryAttr::get(context, lut6.getOperation()->getAttrs());
+namespace {
+struct LowerToInstance : public RewritePattern {
+public:
+  using RewritePattern::RewritePattern;
+
+  LowerToInstance(PatternBenefit benefit, MLIRContext *context)
+      : RewritePattern(MatchAnyOpTypeTag(), benefit, context) {
+      }
+  /// This overload constructs a pattern that matches any operation type.
+
+  LogicalResult matchAndRewrite(Operation *operation, PatternRewriter &rewriter) const {
+    auto dialectNamespace = operation->getDialect()->getNamespace();
+    if (dialectNamespace != xilinxPrimitivesNamespace) {
+      return failure();
+    }
+    auto *context = operation->getContext();
+    auto instanceName = StringAttr::get(context, "prim");
+    auto moduleName = FlatSymbolRefAttr::get(
+        context,
+        operation->getName().getStringRef().data() + xilinxPrimitivesNamespace.size() + 1);
+    auto parameters = DictionaryAttr::get(context, operation->getAttrs());
 
     rewriter.replaceOpWithNewOp<hw::InstanceOp>(
-        lut6,
-        lut6.getResult().getType(),
+        operation,
+        operation->getResults().getTypes(),
         instanceName,
         moduleName,
-        lut6->getOperands(),
+        operation->getOperands(),
         parameters,
         nullptr);
 
@@ -88,14 +99,14 @@ createModulePortInfos(
 static circt::hw::HWModuleExternOp createHWModuleExternOpForPrimitive(
     MLIRContext *context,
     Location location,
-    llvm::StringRef primitiveName,
+    llvm::StringRef operationName,
     llvm::ArrayRef<circt::hw::ModulePortInfo> ports
 )
 {
   mlir::OperationState state(location, ::circt::hw::HWModuleExternOp::getOperationName());
   mlir::OpBuilder odsBuilder(context);
 
-  auto moduleName = StringAttr::get(context, primitiveName);
+  auto moduleName = StringAttr::get(context, operationName.data() + xilinxPrimitivesNamespace.size() + 1);
   return odsBuilder.create<circt::hw::HWModuleExternOp>(location, moduleName, ports);
 }
 
@@ -121,16 +132,15 @@ void XilinxPrimitivesToHWPass::runOnOperation() {
 
   top.walk([&](Operation*op){
       // llvm::errs() << "just walkin??? \n" << op->getName().getStringRef();
-      auto primitiveName = op->getName().getStringRef();
-      if (!createdPrimitives.contains(primitiveName)) {
-        createdPrimitives.insert(primitiveName);
-        using xilinxPrimitives::LUT6;
+      auto operationName = op->getName().getStringRef();
+      if (!createdPrimitives.contains(operationName)) {
+        createdPrimitives.insert(operationName);
         TypeSwitch<Operation*, void>(op)
             .Case<
                 #define GET_OP_LIST
                 #include "circt/Dialect/XilinxPrimitives/XilinxPrimitives.cpp.inc"
             >([&](auto op) {
-              externs.push_back(createHWModuleExternOpForPrimitive(&context, op->getLoc(), "LUT6", createModulePortInfos(&context, op.primitivePortInfos)));
+              externs.push_back(createHWModuleExternOpForPrimitive(&context, op->getLoc(), operationName, createModulePortInfos(&context, op.primitivePortInfos)));
             })
             .Default([](Operation *) { });
         }
@@ -140,7 +150,7 @@ void XilinxPrimitivesToHWPass::runOnOperation() {
   // llvm::errs() << top << "\n";
 
   RewritePatternSet patterns(&ctxt);
-  patterns.add<LUT6Lower>(&ctxt);
+  patterns.add<LowerToInstance>(1, &ctxt);
   if (failed(applyPartialConversion(top, target, std::move(patterns)))) {
     signalPassFailure();
     return;
