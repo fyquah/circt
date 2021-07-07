@@ -7,6 +7,8 @@
 #include "mlir/IR/Dialect.h"
 #include "mlir/IR/DialectImplementation.h"
 #include "mlir/Pass/Pass.h"
+#include "mlir/Support/LLVM.h"
+#include "llvm/ADT/TypeSwitch.h"
 #include "mlir/Transforms/DialectConversion.h"
 #include "llvm/ADT/StringRef.h"
 #include "llvm/Support/raw_ostream.h"
@@ -92,21 +94,19 @@ void XilinxPrimitivesToHWPass::runOnOperation() {
 
   top.walk([&](Operation*op){
       // llvm::errs() << "just walkin??? \n" << op->getName().getStringRef();
-      if (op->getName().getStringRef() == "xilinxPrimitives.LUT6") {
-        if (!createdPrimitives.contains("xilinxPrimitives.LUT6")) {
-          createdPrimitives.insert("xilinxPrimitives.LUT6");
-          // llvm::errs() << "Is this real life???\n";
-          SmallVector<circt::hw::ModulePortInfo> portInfos;
-          portInfos.push_back({ StringAttr::get(&context, "I0"), circt::hw::PortDirection::INPUT, IntegerType::get(&context, 1), 0 });
-          portInfos.push_back({ StringAttr::get(&context, "I1"), circt::hw::PortDirection::INPUT, IntegerType::get(&context, 1), 1 });
-          portInfos.push_back({ StringAttr::get(&context, "I2"), circt::hw::PortDirection::INPUT, IntegerType::get(&context, 1), 2 });
-          portInfos.push_back({ StringAttr::get(&context, "I3"), circt::hw::PortDirection::INPUT, IntegerType::get(&context, 1), 3 });
-          portInfos.push_back({ StringAttr::get(&context, "I4"), circt::hw::PortDirection::INPUT, IntegerType::get(&context, 1), 4 });
-          portInfos.push_back({ StringAttr::get(&context, "I5"), circt::hw::PortDirection::INPUT, IntegerType::get(&context, 1), 5 });
-          portInfos.push_back({ StringAttr::get(&context, "O"), circt::hw::PortDirection::OUTPUT , IntegerType::get(&context, 1), 0 });
-          externs.push_back(createHWModuleExternOpForPrimitive(&context, op->getLoc(), "LUT6", portInfos));
+      if (!createdPrimitives.contains("xilinxPrimitives.LUT6")) {
+        createdPrimitives.insert("xilinxPrimitives.LUT6");
+        using xilinxPrimitives::LUT6;
+        TypeSwitch<Operation*, void>(op)
+            .Case<
+                #define GET_OP_LIST
+                #include "circt/Dialect/XilinxPrimitives/XilinxPrimitives.cpp.inc"
+            >([&](auto op) {
+              auto portInfos = op.modulePortInfos(&context);
+              externs.push_back(createHWModuleExternOpForPrimitive(&context, op->getLoc(), "LUT6", std::move(portInfos)));
+            })
+            .Default([](Operation *) { });
         }
-      }
   });
   // llvm::errs() << "just walkin??? " << externs.size() << "\n";
   addexternstomodule(top, externs);
