@@ -22,4 +22,7 @@
 // Pull in all enum type definitions and utility function declarations.
 #include "circt/Dialect/Comb/CombEnums.h.inc"
 
+// Pull in all the passes for ceombinational logic optimization
+#include "circt/Dialect/Comb/CombPasses.h"
+
 #endif // CIRCT_DIALECT_COMB_COMBDIALECT_H

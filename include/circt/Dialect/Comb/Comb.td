@@ -17,6 +17,7 @@ include "mlir/IR/OpBase.td"
 include "mlir/Interfaces/SideEffectInterfaces.td"
 include "mlir/IR/OpAsmInterface.td"
 include "mlir/IR/SymbolInterfaces.td"
+include "mlir/Pass/PassBase.td"
 
 def CombDialect : Dialect {
   let name = "comb";
@@ -39,6 +40,13 @@ def CombIntegerType : Type<CPred<"::isCombIntegerType($_self)">,
 // Base class for the operation in this dialect.
 class CombOp<string mnemonic, list<OpTrait> traits = []> :
     Op<CombDialect, mnemonic, traits>;
+
+// Pass to perform a analysis of demanded bits on operations within modules.
+def DemandedBits: Pass<"demanded-bits", "circt::hw::HWModuleOp"> {
+  let summary = "Print the list of demanded bits from every operation.";
+  let constructor = "circt::comb::createDemandedBitsPass()";
+  let dependentDialects = ["circt::hw::HWDialect"];
+}
 
 include "circt/Dialect/Comb/Combinational.td"
 
