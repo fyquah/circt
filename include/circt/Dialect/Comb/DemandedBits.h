@@ -11,15 +11,19 @@ namespace comb {
 class DemandedBits {
 public:
   DemandedBits(::circt::hw::HWModuleOp rootModule)
-      : aliveBits(), rootModule(rootModule) {}
+      : analyzed(false), aliveBits(), rootModule(rootModule) {}
 
   /// Get the mask of live bits from the given operation. For bits where
   /// analysis has not been performed, simply returns a mask filled with ones.
-  APInt getDemandedBits(Operation *op);
+  /// Returns None if the provided value is unsynthesizable.
+  llvm::Optional<APInt> getDemandedBits(Value);
+
+  /// Print DemandedBits analysis output to specified OS.
+  void print(raw_ostream &);
 
 private:
-  bool hasRunAnalysis;
-  DenseMap<Operation *, APInt> aliveBits;
+  bool analyzed;
+  DenseMap<Value, APInt> aliveBits;
   ::circt::hw::HWModuleOp rootModule;
 
   void performAnalysis();

@@ -10,6 +10,7 @@ target_link_libraries(circt-opt
   PRIVATE
   CIRCTCalyx
   CIRCTCalyxTransforms
+  CIRCTComb
   CIRCTESI
   CIRCTFIRRTL
   CIRCTFIRRTLToHW

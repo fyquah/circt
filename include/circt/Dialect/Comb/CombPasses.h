@@ -5,13 +5,14 @@
 #include "circt/Dialect/HW/HWOps.h"
 #include "mlir/Pass/Pass.h"
 
-#define GEN_PASS_CLASSES
-#include "circt/Dialect/Comb/CombPasses.h.inc"
-
 namespace circt {
 namespace comb {
 
-void registerDemandedBitsPass();
+#define GEN_PASS_CLASSES
+#include "circt/Dialect/Comb/CombPasses.h.inc"
+
+std::unique_ptr<OperationPass<hw::HWModuleOp>> createDemandedBitsPrinterPass();
+void registerCombPasses();
 
 } // namespace comb
 } // namespace circt

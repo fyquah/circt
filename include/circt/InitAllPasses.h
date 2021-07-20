@@ -16,6 +16,7 @@
 
 #include "circt/Conversion/Passes.h"
 #include "circt/Dialect/Calyx/CalyxPasses.h"
+#include "circt/Dialect/Comb/CombPasses.h"
 #include "circt/Dialect/ESI/ESIDialect.h"
 #include "circt/Dialect/FIRRTL/Passes.h"
 #include "circt/Dialect/LLHD/Transforms/Passes.h"
@@ -36,6 +37,8 @@ inline void registerAllPasses() {
   llhd::initLLHDTransformationPasses();
   seq::registerSeqPasses();
   sv::registerPasses();
+  comb::registerCombPasses();
+
   circt::registerPasses();
 }
 

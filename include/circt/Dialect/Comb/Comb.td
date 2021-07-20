@@ -42,9 +42,9 @@ class CombOp<string mnemonic, list<OpTrait> traits = []> :
     Op<CombDialect, mnemonic, traits>;
 
 // Pass to perform a analysis of demanded bits on operations within modules.
-def DemandedBits: Pass<"demanded-bits", "circt::hw::HWModuleOp"> {
+def DemandedBitsPrinter: Pass<"demanded-bits-printer", "circt::hw::HWModuleOp"> {
   let summary = "Print the list of demanded bits from every operation.";
-  let constructor = "circt::comb::createDemandedBitsPass()";
+  let constructor = "circt::comb::createDemandedBitsPrinterPass()";
   let dependentDialects = ["circt::hw::HWDialect"];
 }
 
