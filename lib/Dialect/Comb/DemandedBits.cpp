@@ -79,7 +79,11 @@ void DemandedBits::performAnalysis() {
   while (!workList.empty()) {
     Operation *rootOp = workList.pop_back_val();
     auto operands = rootOp->getOperands();
-    SmallVector<APInt, 4> operationResultsLiveBits;
+
+    auto getOperationResultsLiveBits = [&](unsigned idx){
+      Value result = rootOp->getResult(idx);
+      return aliveBits[result];
+    };
 
     for (size_t operandIndex = 0; operandIndex < operands.size() ; operandIndex++) {
       auto operand = operands[operandIndex];
@@ -101,13 +105,23 @@ void DemandedBits::performAnalysis() {
       APInt operandLiveBits =
         TypeSwitch<Operation*, APInt>(rootOp)
         .Case<AddOp>([&](AddOp rootAddOp){
-            auto resultLiveBits = operationResultsLiveBits[0];
+            auto resultLiveBits = getOperationResultsLiveBits(0);
             if (resultLiveBits.isMask())
               return APInt(resultLiveBits);
 
             size_t trailingZeros = resultLiveBits.countTrailingZeros();
             size_t trailingBitsThatMatter = operandBitWidth - trailingZeros;
             return APInt::getLowBitsSet(operandBitWidth, trailingBitsThatMatter);
+         })
+        .Case<MuxOp, AndOp, OrOp, XorOp>([&](auto unusedOp) {
+            (void) unusedOp;
+            return getOperationResultsLiveBits(0);
+         })
+        .Case<ExtractOp>([&](ExtractOp extractOp) {
+            uint32_t lowBit = extractOp.lowBit();
+            return APInt::getBitsSet(
+                extractOp.input().getType().getIntOrFloatBitWidth(),
+                extractOp.lowBit(), lowBit + extractOp.getType().getWidth());
          })
         .Default([&](auto unused) {
             return APInt::getAllOnesValue(operandBitWidth);
